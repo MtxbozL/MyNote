@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"91caa1c3f40397b7","type":"text","text":"对观看视频内容的筛选","x":-360,"y":-60,"width":225,"height":50},
+		{"id":"de78032976d5467c","type":"text","text":"学习类","x":-28,"y":-230,"width":108,"height":60},
+		{"id":"913d8fa5de84ddb5","type":"text","text":"计算机专业知识","x":167,"y":-289,"width":173,"height":60},
+		{"id":"c4f0527239c26247","type":"text","text":"旅行类视频","x":-21,"y":-72,"width":141,"height":60},
+		{"id":"ffee0f02705581d6","type":"text","text":"购物推荐类","x":-28,"y":41,"width":148,"height":60},
+		{"id":"32efd12eb57da1a4","type":"text","text":"该类型只在需要时观看","x":238,"y":41,"width":222,"height":60},
+		{"id":"e3d31bbea7ab907a","x":254,"y":-87,"width":228,"height":91,"type":"text","text":"搭配学习视频观看，主要是作为背景音乐和学习放松的手段。"}
+	],
+	"edges":[
+		{"id":"18032049c9d64d7f","fromNode":"91caa1c3f40397b7","fromSide":"right","toNode":"de78032976d5467c","toSide":"left"},
+		{"id":"c0bcb3218a98d204","fromNode":"de78032976d5467c","fromSide":"right","toNode":"913d8fa5de84ddb5","toSide":"left"},
+		{"id":"e1a1d70ceb3d5c06","fromNode":"91caa1c3f40397b7","fromSide":"right","toNode":"c4f0527239c26247","toSide":"left"},
+		{"id":"2e1ab9f07e6bc21a","fromNode":"91caa1c3f40397b7","fromSide":"right","toNode":"ffee0f02705581d6","toSide":"left"},
+		{"id":"7e499d5f24df517e","fromNode":"ffee0f02705581d6","fromSide":"right","toNode":"32efd12eb57da1a4","toSide":"left"},
+		{"id":"69fba3b0683ee376","fromNode":"c4f0527239c26247","fromSide":"right","toNode":"e3d31bbea7ab907a","toSide":"left"}
+	]
+}

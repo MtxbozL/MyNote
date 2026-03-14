@@ -1,0 +1,245 @@
+{
+  "main": {
+    "id": "21e51ec7b067912d",
+    "type": "split",
+    "children": [
+      {
+        "id": "90ce2c3af3ccb759",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bfb30eb922ea611a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "运维技术/nginx/1.1 Nginx 反向代理：基础理论.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.1 Nginx 反向代理：基础理论"
+            }
+          },
+          {
+            "id": "6cec8bd0fee1a8c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "运维技术/Redis/1.1 String.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.1 String"
+            }
+          },
+          {
+            "id": "003be2f118f1e460",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "计算机理论基础/运维技术/Git/Git 完整学习路线 + 核心笔记 + 高频错误解决方案.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Git 完整学习路线 + 核心笔记 + 高频错误解决方案"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "62911ee6e4d626b1",
+    "type": "split",
+    "children": [
+      {
+        "id": "531342fcc60f4236",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3cc45aeb9c6f1755",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "bb89f7f6b662f309",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "a509b20bc4100c41",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 249.5
+  },
+  "right": {
+    "id": "b0cd932c16c70b87",
+    "type": "split",
+    "children": [
+      {
+        "id": "930d8f1788d7f2ee",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cf58fa5b530525e6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "运维技术/nginx/6.1 Nginx：重写.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "6.1 Nginx：重写 的反向链接列表"
+            }
+          },
+          {
+            "id": "835a211127533a61",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "资源规划.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "资源规划 的出链列表"
+            }
+          },
+          {
+            "id": "e57341f29b062455",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "567360ec07acb265",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "计算机理论基础/运维技术/Git/Git 完整学习路线 + 核心笔记 + 高频错误解决方案.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Git 完整学习路线 + 核心笔记 + 高频错误解决方案 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 321.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:新建数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "003be2f118f1e460",
+  "lastOpenFiles": [
+    "面试八股文/Golang/现有 100 个 id，需要根据 id 查询对应的 age，要求同时最多开启 10 个协程，用 Go 实现该功能.md",
+    "计算机理论基础/运维技术/Git/Git 完整学习路线 + 核心笔记 + 高频错误解决方案.md",
+    "面试八股文/Golang/请说明 sync.Once 的使用场景与底层实现原理？.md",
+    "面试八股文/Golang/Go 语言的 GC 什么时候会出现卡顿？该如何优化？.md",
+    "面试八股文/Golang/单个 Goroutine 出现 panic 会发生什么？该如何处理？.md",
+    "面试八股文/Golang/请详细说明 Go 语言的 GMP 调度模型？.md",
+    "面试八股文/中间件技术/Kafka 消费者端出现重复消费的问题，根因是什么？该怎么解决？.md",
+    "面试八股文/Golang",
+    "面试八股文/中间件技术/Kafka 如何确定消息成功发送到服务端了？.md",
+    "面试八股文/中间件技术/Redis 缓存击穿和缓存穿透分别是什么？对应的解决方案有哪些？.md",
+    "面试八股文/分布式存储技术/Ceph 的核心架构与组件分别是什么？各自的作用是什么？.md",
+    "面试八股文/中间件技术",
+    "面试八股文/分布式存储技术/Ceph 出现故障，你的完整排查思路是什么？.md",
+    "面试八股文/代理与负载均衡/未命名.md",
+    "面试八股文/分布式存储技术",
+    "面试八股文/代理与负载均衡/Nginx 和 LVS 做四层代理的核心区别是什么？.md",
+    "面试八股文/代理与负载均衡/Nginx 可以做四层代理吗？可以做七层代理吗？LVS 可以做几层代理？.md",
+    "面试八股文/监控与运维自动化/GPU 利用率如何实现求和？相关的监控三剑客是什么？.md",
+    "面试八股文/代理与负载均衡",
+    "面试八股文/监控与运维自动化/Ansible 批量运维工具的核心原理、使用与常见问题.md",
+    "面试八股文/监控与运维自动化/CICD 发布环境备份怎么做？.md",
+    "面试八股文/监控与运维自动化/服务器需要升级配置时，如何规范完成配置的更新和记录？.md",
+    "面试八股文/监控与运维自动化/假设让你维护一千台 &上万台规模的服务器集群，你会怎么处理？.md",
+    "面试八股文/监控与运维自动化/Zabbix 都监控哪些核心指标？.md",
+    "面试八股文/数据库技术/MySQL 中 char 与 varchar 的核心区别是什么？.md",
+    "面试八股文/监控与运维自动化",
+    "面试八股文/数据库技术/MySQL 创建索引的语法是什么？创建索引的核心原则有哪些？.md",
+    "面试八股文/数据库技术/数据库的 ACID 原则分别是什么？.md",
+    "面试八股文/数据库技术/数据库出现慢查询日志，你的完整排查与优化流程是什么？.md",
+    "面试八股文/数据库技术/事务失效的常见场景及解决方案有哪些？.md",
+    "面试八股文/数据库技术/什么是事务的隔离级别？MySQL 默认隔离级别是什么？.md",
+    "面试八股文/数据库技术",
+    "面试八股文/容器与云原生",
+    "面试八股文/linux系统基础",
+    "面试八股文/未命名/未命名",
+    "面试八股文/操作系统",
+    "Pasted image 20260310212943.png",
+    "Pasted image 20260310223106.png",
+    "Pasted image 20260310221101.png",
+    "Pasted image 20260310220358.png",
+    "时间管理/对观看视频内容的筛选.canvas"
+  ]
+}
