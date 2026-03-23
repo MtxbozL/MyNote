@@ -6,11 +6,7 @@
 
 ## 二、语法格式
 
-bash
-
-运行
-
-```
+```bash
 # 核心语法1：符号模式（灵活，适合单次修改）
 chmod [可选参数] [ugoa][+-=][rwxXst] 文件1 文件2 ...
 
@@ -38,8 +34,6 @@ chmod [可选参数] 三位数字 文件1 文件2 ...
 
 ### 1. 符号模式权限类
 
-表格
-
 |符号|核心作用|高频使用场景|
 |:--|:--|:--|
 |`u`|文件**所有者**（user）|修改文件所有者的权限|
@@ -58,8 +52,6 @@ chmod [可选参数] 三位数字 文件1 文件2 ...
 
 ### 2. 数字模式权限类
 
-表格
-
 |数字|权限组合|核心作用|高频使用场景|
 |:--|:--|:--|:--|
 |`7`|`rwx`（4+2+1）|读、写、执行|目录、可执行文件的所有者权限|
@@ -77,8 +69,6 @@ chmod [可选参数] 三位数字 文件1 文件2 ...
 
 ### 3. 通用操作类
 
-表格
-
 |参数|核心作用|高频使用场景|
 |:--|:--|:--|
 |`-R, --recursive`|**递归**修改目录及其所有子目录 / 文件的权限|批量修改目录树权限、目录结构权限统一|
@@ -92,61 +82,37 @@ chmod [可选参数] 三位数字 文件1 文件2 ...
 
 ### 1. 基础入门示例（新手必练，零门槛上手）
 
-bash
-
-运行
-
-```
+```bash
 # 示例1：符号模式，给文件所有者添加执行权限
 chmod u+x test.sh
 # 执行效果：test.sh的所有者权限添加x
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 示例2：符号模式，给文件所属组移除写权限
 chmod g-w test.txt
 # 执行效果：test.txt的所属组权限移除w
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 示例3：符号模式，给所有用户设置只读权限
 chmod a=r test.txt
 # 执行效果：test.txt的所有用户权限设置为r--r--r--
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 示例4：数字模式，设置为755（rwxr-xr-x）
 chmod 755 test.sh
 # 执行效果：test.sh的权限设置为rwxr-xr-x
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 示例5：数字模式，设置为644（rw-r--r--）
 chmod 644 test.txt
 # 执行效果：test.txt的权限设置为rw-r--r--
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 示例6：数字模式，设置为700（rwx------）
 chmod 700 private_dir
 # 执行效果：private_dir的权限设置为rwx------
@@ -158,21 +124,13 @@ chmod 700 private_dir
 
 #### 场景 1：递归修改目录权限
 
-bash
-
-运行
-
-```
+```bash
 # 递归修改目录及其所有子目录/文件的权限
 chmod -R 755 /data/www
 # 执行效果：/data/www及其所有子目录/文件的权限设置为755
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 更安全的递归修改：目录755，文件644
 # 先递归给所有目录添加执行权限
 find /data/www -type d -exec chmod 755 {} \;
@@ -182,22 +140,14 @@ find /data/www -type f -exec chmod 644 {} \;
 
 #### 场景 2：显示详细修改过程
 
-bash
-
-运行
-
-```
+```bash
 # 显示详细修改过程
 chmod -v 644 test.txt
 # 执行效果示例：
 # mode of 'test.txt' changed from 0755 (rwxr-xr-x) to 0644 (rw-r--r--)
 ```
 
-bash
-
-运行
-
-```
+```bash
 # 仅显示被修改的文件
 chmod -c 644 test.txt
 # 执行效果：仅当权限变化时显示，无变化则无输出
@@ -205,11 +155,7 @@ chmod -c 644 test.txt
 
 #### 场景 3：参考其他文件权限
 
-bash
-
-运行
-
-```
+```bash
 # 参考reference.txt的权限，将test.txt的权限设置为一致
 chmod --reference=reference.txt test.txt
 # 执行效果：test.txt的权限与reference.txt完全一致
@@ -217,11 +163,7 @@ chmod --reference=reference.txt test.txt
 
 #### 场景 4：设置粘滞位（如 /tmp 目录）
 
-bash
-
-运行
-
-```
+```bash
 # 给/tmp目录设置粘滞位（1777）
 chmod 1777 /tmp
 # 执行效果：/tmp目录权限为rwxrwxrwt，仅允许所有者删除自己的文件
@@ -233,11 +175,7 @@ chmod 1777 /tmp
 
 #### 奇妙用法 1：批量给目录添加执行权限，不影响普通文件
 
-bash
-
-运行
-
-```
+```bash
 # 用X权限，仅给目录添加执行权限，普通文件不影响
 chmod -R a+X /data/www
 # 执行效果：所有目录添加x权限，普通文件保持不变
@@ -245,22 +183,14 @@ chmod -R a+X /data/www
 
 #### 奇妙用法 2：结合 find，批量修改特定类型文件的权限
 
-bash
-
-运行
-
-```
+```bash
 # 批量给所有.sh脚本添加执行权限
 find /data/script -type f -name "*.sh" -exec chmod +x {} \;
 ```
 
 #### 奇妙用法 3：结合 ls -l，查看权限修改前后的对比
 
-bash
-
-运行
-
-```
+```bash
 # 查看修改前的权限
 ls -l test.txt
 # 修改权限
@@ -271,11 +201,7 @@ ls -l test.txt
 
 #### 奇妙用法 4：设置 SUID/SGID（需谨慎，仅用于可执行文件）
 
-bash
-
-运行
-
-```
+```bash
 # 给可执行文件设置SUID（4755）
 chmod 4755 /usr/bin/sudo
 # 执行效果：文件权限为rwsr-xr-x，执行时以所有者身份运行

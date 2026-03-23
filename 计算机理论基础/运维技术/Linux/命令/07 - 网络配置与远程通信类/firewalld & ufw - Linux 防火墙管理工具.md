@@ -58,35 +58,29 @@ firewall-cmd [选项]
 
 ### 2. 语法格式
 
-bash
-
-运行
-
-```
+```bash
 ufw [选项] 命令
 ```
 
 ### 3. 高频核心命令
 
-表格
-
-|功能|命令|说明|
-|:--|:--|:--|
-|**状态与开关**|`ufw status`|查看防火墙状态和规则|
-||`ufw enable`|开启防火墙|
-||`ufw disable`|关闭防火墙|
-||`ufw reload`|重载规则|
-|**默认策略**|`ufw default deny incoming`|默认拒绝所有入站连接（推荐）|
-||`ufw default allow outgoing`|默认允许所有出站连接（推荐）|
-|**服务 / 端口管理**|`ufw allow ssh`|允许 `ssh` 服务（默认端口 22）|
-||`ufw allow 80/tcp`|允许 80/TCP 端口|
-||`ufw allow 53/udp`|允许 53/UDP 端口（DNS）|
-||`ufw deny 80/tcp`|拒绝 80/TCP 端口|
-||`ufw delete allow 80/tcp`|删除允许 80/TCP 的规则|
-|**源地址 / 接口**|`ufw allow from 192.168.1.0/24`|允许 192.168.1.0/24 网段访问|
-||`ufw allow in on eth0 to any port 80`|允许 `eth0` 接口的 80 端口入站|
-|**规则编号管理**|`ufw status numbered`|查看带编号的规则|
-||`ufw delete 2`|删除编号为 2 的规则|
+| 功能            | 命令                                    | 说明                     |
+| :------------ | :------------------------------------ | :--------------------- |
+| **状态与开关**     | `ufw status`                          | 查看防火墙状态和规则             |
+|               | `ufw enable`                          | 开启防火墙                  |
+|               | `ufw disable`                         | 关闭防火墙                  |
+|               | `ufw reload`                          | 重载规则                   |
+| **默认策略**      | `ufw default deny incoming`           | 默认拒绝所有入站连接（推荐）         |
+|               | `ufw default allow outgoing`          | 默认允许所有出站连接（推荐）         |
+| **服务 / 端口管理** | `ufw allow ssh`                       | 允许 `ssh` 服务（默认端口 22）   |
+|               | `ufw allow 80/tcp`                    | 允许 80/TCP 端口           |
+|               | `ufw allow 53/udp`                    | 允许 53/UDP 端口（DNS）      |
+|               | `ufw deny 80/tcp`                     | 拒绝 80/TCP 端口           |
+|               | `ufw delete allow 80/tcp`             | 删除允许 80/TCP 的规则        |
+| **源地址 / 接口**  | `ufw allow from 192.168.1.0/24`       | 允许 192.168.1.0/24 网段访问 |
+|               | `ufw allow in on eth0 to any port 80` | 允许 `eth0` 接口的 80 端口入站  |
+| **规则编号管理**    | `ufw status numbered`                 | 查看带编号的规则               |
+|               | `ufw delete 2`                        | 删除编号为 2 的规则            |
 
 ---
 
