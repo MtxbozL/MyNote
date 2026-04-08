@@ -1,0 +1,88 @@
+Prometheus_Learning_Roadmap/
+│
+├── 01_初识与核心架构 (Introduction_&_Architecture)
+│   ├── 01_监控基础理论 (白盒监控 vs 黑盒监控、USE原则、RED方法、四个黄金指标)
+│   ├── 02_Prometheus 简介 (云原生监控标准、CNCF毕业项目)
+│   ├── 03_核心架构组件 (Prometheus Server, Exporters, AlertManager, Pushgateway)
+│   ├── 04_工作机制模型 (Pull 拉取模型为主 vs Push 推送模型为辅 的对比与取舍)
+│   └── 05_初体验安装 (二进制文件启动、Docker 快速部署验证)
+│
+├── 02_核心配置文件与机制 (Configuration)
+│   ├── 01_全局配置 (global: scrape_interval, evaluation_interval)
+│   ├── 02_抓取配置 (scrape_configs: job_name, static_configs)
+│   ├── 03_告警规则加载 (rule_files 路径指定)
+│   ├── 04_热加载机制 (kill -HUP / curl -X POST /-/reload)
+│   └── 05_Pushgateway (针对短生命周期/临时批处理任务的数据推送机制)
+│
+├── 03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) => 【重点：底层数据结构】
+│   ├── 01_时序数据概念 (Time Series: Metric Name + Label 键值对唯一确定)
+│   ├── 02_Counter (计数器：只增不减，用于请求量、错误数、任务完成数)
+│   ├── 03_Gauge (仪表盘：可增可减，用于CPU使用率、内存占用、当前并发数)
+│   ├── 04_Histogram (直方图：按区间划分的统计，用于计算 P99/P95 耗时、请求大小)
+│   └── 05_Summary (摘要：客户端计算分位数，与 Histogram 的优缺点对比与选型)
+│
+├── 04_PromQL 查询语言 (PromQL) => 【重点：日常工作与面试核心】
+│   ├── 01_基础查询语法 (实时向量 Instant Vector, 区间向量 Range Vector [5m])
+│   ├── 02_标签匹配器 (=, !=, =~, !~)
+│   ├── 03_时间位移操作 (offset 5m, @ modifier，用于环比/同比查询)
+│   ├── 04_核心函数应用
+│   │   ├── 速率计算 (rate() vs irate() 的本质区别与适用场景, increase())
+│   │   ├── 数学运算 (sum, min, max, avg, count, topk, bottomk)
+│   │   ├── 变化趋势 (deriv(), predict_linear() 磁盘满预警)
+│   │   └── 分位数计算 (histogram_quantile() 服务器端计算 P99 耗时)
+│   └── 05_向量匹配与集合运算 (一对一、一对多 Group Left / Group Right, and/or/unless)
+│
+├── 05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)
+│   ├── 01_机器指标监控 (Node Exporter: CPU/内存/磁盘IO/网络/文件描述符)
+│   ├── 02_黑盒网络监控 (Blackbox Exporter: ICMP/TCP/HTTP/DNS 存活与耗时探测)
+│   ├── 03_中间件/数据库监控 (MySQL Exporter, Redis Exporter, Kafka Exporter)
+│   ├── 04_自定义业务埋点 (Client Libraries)
+│   │   ├── Golang 埋点实战 (暴露 /metrics 接口)
+│   │   └── Java/Spring Boot 埋点 (Micrometer 整合 Prometheus)
+│   └── 05_cAdvisor (Docker 容器级别物理资源监控)
+│
+├── 06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) => 【重点：动态与自动化】
+│   ├── 01_静态配置的局限性 (Static Config)
+│   ├── 02_基于文件的服务发现 (File SD: 结合外部自动化脚本动态更新)
+│   ├── 03_主流动态服务发现 (Consul SD, Kubernetes SD, EC2 SD)
+│   ├── 04_Relabeling 重新打标机制 => (高级玩家必备)
+│   │   ├── 动作解析 (replace, keep, drop, hashmod, labelmap)
+│   │   ├── relabel_configs (在抓取 target 之前执行：路由修改、过滤采集目标)
+│   │   └── metric_relabel_configs (在抓取数据后/存储前执行：剔除无用指标降低基数)
+│   └── 05_生命周期标签 (__address__, __metrics_path__, __meta_kubernetes_pod_ip)
+│
+├── 07_Alertmanager 告警路由与通知 (Alerting)
+│   ├── 01_架构设计 (Prometheus 评估规则 -> 发送告警 -> Alertmanager 处理)
+│   ├── 02_配置告警规则 (PrometheusRule: alert, expr, for, labels, annotations)
+│   ├── 03_Alertmanager 核心机制
+│   │   ├── 分组 (Grouping: group_by 避免告警风暴，将同类报错合并为一条)
+│   │   ├── 抑制 (Inhibition: 主机挂了不发送上面部署的 DB 挂了的告警)
+│   │   └── 静默 (Silences: 维护期间手动在 Web UI 临时屏蔽告警)
+│   ├── 04_时间参数调优 (group_wait, group_interval, repeat_interval)
+│   └── 05_接收器配置 (Receivers: Email, Slack, 企业微信, 钉钉, 自定义 Webhook 对接自研系统)
+│
+├── 08_Grafana 可视化与大盘设计 (Visualization)
+│   ├── 01_接入 Prometheus 数据源 (Data Source 配置)
+│   ├── 02_Dashboard 设计哲学 (由总到分、USE原则布局、颜色与阈值规范)
+│   ├── 03_核心面板类型 (Time series, Stat, Gauge, Bar gauge, Heatmap)
+│   ├── 04_模板化与动态变量 (Variables: 动态切换集群、主机、实例下拉框，关联联动)
+│   └── 05_Dashboard 导入与即用库 (Grafana ID 导入，如 1860 Node Exporter 面板)
+│
+├── 09_高可用与集群长期存储方案 (HA_&_Long_Term_Storage) => 【重点：突破单点瓶颈】
+│   ├── 01_本地 TSDB 底层原理 (WAL 预写日志、Memory chunks、Block 压缩合并机制)
+│   ├── 02_单机性能瓶颈与高基数问题 (High Cardinality 内存撑爆的原因)
+│   ├── 03_联邦集群 (Federation: 树状分层抓取，解决多机房/规模限制，但已被现代方案逐渐替代)
+│   ├── 04_Remote Read/Write 机制 (向外部时序数据库远程读写)
+│   ├── 05_Thanos 架构 (企业级主流方案)
+│   │   ├── 核心组件 (Sidecar, Querier/Query, Store Gateway, Compactor)
+│   │   └── 特性 (全局视图、对接对象存储 OSS/S3 实现廉价无限期存储)
+│   └── 06_VictoriaMetrics (异军突起：更低的内存占用、完全兼容 PromQL 的平滑替换方案)
+│
+└── 10_Kubernetes 云原生监控实战 (Cloud_Native_Monitoring) => 【终极目标】
+    ├── 01_K8s 监控痛点 (Pod IP 动态漂移、服务实例频繁销毁)
+    ├── 02_Kubernetes_SD_Configs (原生机制配置：自动发现 node, pod, service, endpoints)
+    ├── 03_Prometheus Operator (CoreOS 推出的声明式监控方案)
+    │   ├── 核心 CRD 解析 (ServiceMonitor, PodMonitor 自动生成抓取配置)
+    │   └── PrometheusRule CRD (将告警规则作为 K8s 资源对象管理)
+    ├── 04_Kube-Prometheus-Stack (主流装机必备 Helm Chart，一键拉起全套监控体系)
+    └── 05_实战：自定义 Controller / 业务微服务的全链路监控部署

@@ -1,0 +1,295 @@
+{
+  "main": {
+    "id": "397c62dc9a0d08e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5db9447ebbae846",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa0819b575e86765",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心数据类型 (Core_Data_Types)/03_Hash (哈希)/01_常用命令 (hset, hget, hmset, hgetall, hincrby).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_常用命令 (hset, hget, hmset, hgetall, hincrby)"
+            }
+          },
+          {
+            "id": "409fff307d189321",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心数据类型 (Core_Data_Types)/04_Set (集合)/01_常用命令 (sadd, smembers, sismember, sinter_sunion_sdiff).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_常用命令 (sadd, smembers, sismember, sinter_sunion_sdiff)"
+            }
+          },
+          {
+            "id": "137e9944a7767abb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心数据类型 (Core_Data_Types)/04_Set (集合)/02_应用场景 (标签、共同好友、抽奖、IP黑白名单).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02_应用场景 (标签、共同好友、抽奖、IP黑白名单)"
+            }
+          },
+          {
+            "id": "4878f97c7e987734",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心数据类型 (Core_Data_Types)/05_ZSet (有序集合)/01_常用命令 (zadd, zrange, zscore, zrank, zrem).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_常用命令 (zadd, zrange, zscore, zrank, zrem)"
+            }
+          },
+          {
+            "id": "55b90d8c4dcb8b14",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心数据类型 (Core_Data_Types)/05_ZSet (有序集合)/02_应用场景 (排行榜、延迟队列、范围查找).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02_应用场景 (排行榜、延迟队列、范围查找)"
+            }
+          },
+          {
+            "id": "a9fe6afc0743d8ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "06_企业级缓存架构与经典问题 (Enterprise_Architecture)/01_缓存穿透 (Cache_Penetration)/01_产生原因.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_产生原因"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2e4d7c73fc19ea2c",
+    "type": "split",
+    "children": [
+      {
+        "id": "64916138ff3988e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ceb9a27cc43b191",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "d6ad41bfc4e8ba36",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "9dc30b923d4c78db",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 549.5
+  },
+  "right": {
+    "id": "6763d0b17cdefd10",
+    "type": "split",
+    "children": [
+      {
+        "id": "63b138ce1751165e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "13549eb4dffd0d5c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "06_企业级缓存架构与经典问题 (Enterprise_Architecture)/01_缓存穿透 (Cache_Penetration)/01_产生原因.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "01_产生原因 的反向链接列表"
+            }
+          },
+          {
+            "id": "32deb0e10a3b95e2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "d377c97285062950",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "d28c4d0a20dd4a86",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "06ffadd6d7531ada",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "06_企业级缓存架构与经典问题 (Enterprise_Architecture)/01_缓存穿透 (Cache_Penetration)/01_产生原因.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "01_产生原因 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "a9fe6afc0743d8ef",
+  "lastOpenFiles": [
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/01_主从复制 (Replication)/03_常见问题 (数据延迟、读写分离坑、复制风暴).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/01_主从复制 (Replication)/01_拓扑结构 (一主一从、一主多从、树状主从).md",
+    "06_企业级缓存架构与经典问题 (Enterprise_Architecture)/01_缓存穿透 (Cache_Penetration)/01_产生原因.md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/03_Cluster 分片集群 (Redis_Cluster)/01_数据分布算法 (哈希取余、一致性哈希、哈希槽 Hash Slot - 16384).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/03_Cluster 分片集群 (Redis_Cluster)/02_集群通信 (Gossip协议：meet, ping, pong, fail).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/03_Cluster 分片集群 (Redis_Cluster)/03_请求重定向 (MOVED错误、ASK错误).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/03_Cluster 分片集群 (Redis_Cluster)/04_集群扩缩容 (槽位迁移、数据重平衡).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/02_哨兵模式 (Sentinel)/03_ 领导者选举 (Raft算法、故障转移流程).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/02_哨兵模式 (Sentinel)/01_核心作用 (监控、通知、自动故障转移).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/02_哨兵模式 (Sentinel)/02_工作原理 (心跳机制、主观下线sdown、客观下线odown).md",
+    "05_高可用与分布式集群 (High_Availability_&_Cluster)/01_主从复制 (Replication)/02_复制原理 (全量复制、增量复制、PSYNC机制、runid与offset).md",
+    "04_进阶特性与机制 (Advanced_Features)/06_Pub&Sub (发布订阅)/01_机制与局限 (频道订阅、消息丢失问题、与Stream的对比).md",
+    "04_进阶特性与机制 (Advanced_Features)/01_持久化机制 (Persistence)/01_RDB (快照：save&bgsave原理、COW写时复制技术、优缺点).md",
+    "04_进阶特性与机制 (Advanced_Features)/05_Lua 脚本 (Lua_Scripting)/02_常用命令 (eval, evalsha, script load).md",
+    "04_进阶特性与机制 (Advanced_Features)/05_Lua 脚本 (Lua_Scripting)/01_优势 (保证原子性、减少网络开销).md",
+    "04_进阶特性与机制 (Advanced_Features)/04_Pipeline (流水线)/01_原理 (RTT往返时间优化、批量处理提升吞吐量).md",
+    "04_进阶特性与机制 (Advanced_Features)/03_事务机制 (Transactions)/02_局限性 (不保证强一致性、无回滚机制).md",
+    "04_进阶特性与机制 (Advanced_Features)/03_事务机制 (Transactions)/01_核心命令 (multi, exec, discard, watch乐观锁).md",
+    "04_进阶特性与机制 (Advanced_Features)/02_内存管理 (Memory_Management)/02_内存淘汰策略 (noeviction, volatile-lru, allkeys-lru, lfu机制).md",
+    "04_进阶特性与机制 (Advanced_Features)/01_持久化机制 (Persistence)/03_混合持久化 (Redis 4.0+推荐：RDB+AOF结合).md",
+    "04_进阶特性与机制 (Advanced_Features)/02_内存管理 (Memory_Management)/01_过期键删除策略 (定时删除、惰性删除、定期删除).md",
+    "04_进阶特性与机制 (Advanced_Features)/01_持久化机制 (Persistence)/02_AOF (追加日志：AOF缓冲区、fsync刷盘策略、AOF重写机制).md",
+    "02_核心数据类型 (Core_Data_Types)/05_ZSet (有序集合)/03_底层编码 (ziplist, skiplist 跳跃表).md",
+    "02_核心数据类型 (Core_Data_Types)/05_ZSet (有序集合)/01_常用命令 (zadd, zrange, zscore, zrank, zrem).md",
+    "02_核心数据类型 (Core_Data_Types)/05_ZSet (有序集合)/02_应用场景 (排行榜、延迟队列、范围查找).md",
+    "02_核心数据类型 (Core_Data_Types)/04_Set (集合)/01_常用命令 (sadd, smembers, sismember, sinter_sunion_sdiff).md",
+    "10_底层原理与源码探秘 (Under_The_Hood)/03_Redis 新版本特性跟踪",
+    "10_底层原理与源码探秘 (Under_The_Hood)/02_核心数据结构源码剖析",
+    "10_底层原理与源码探秘 (Under_The_Hood)/01_网络与线程模型",
+    "09_性能调优与安全运维 (Tuning_&_Operations)/03_安全管理",
+    "09_性能调优与安全运维 (Tuning_&_Operations)/02_日常监控",
+    "09_性能调优与安全运维 (Tuning_&_Operations)/01_性能调优",
+    "08_客户端开发与集成 (Client_&_Integration)/03_其他语言客户端 (Go-Redis, Redis-Py, Node-Redis)",
+    "08_客户端开发与集成 (Client_&_Integration)/02_Spring Boot 整合",
+    "08_客户端开发与集成 (Client_&_Integration)/01_Java客户端生态",
+    "07_实战应用场景 (Practical_Scenarios)/06_多级缓存架构 (Guava&Caffeine 本地缓存 + Redis 分布式缓存)"
+  ]
+}

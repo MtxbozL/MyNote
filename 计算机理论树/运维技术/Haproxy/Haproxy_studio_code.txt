@@ -1,0 +1,97 @@
+HAProxy_Learning_Roadmap/
+│
+├── 01_初识与核心架构 (Introduction_&_Architecture)
+│   ├── 01_什么是 HAProxy (高性能、单线程事件驱动架构、纯 C 语言编写)
+│   ├── 02_与 Nginx / LVS 的定位对比 (为什么四层代理首选 HAProxy)
+│   ├── 03_代理模型 (代理模式原理，四层 TCP 透传 vs 七层 HTTP 解析)
+│   ├── 04_环境部署 (编译安装、系统包安装、Docker 容器化部署)
+│   └── 05_启动与重载 (无缝重载机制 Seamless Reloading，不中断现有连接)
+│
+├── 02_核心配置文件结构 (Core_Configuration) => 【重点：四大核心配置块】
+│   ├── 01_global (全局配置块)
+│   │   └── (进程数/线程数控制、日志对接、运行用户配置、最大连接数 maxconn)
+│   ├── 02_defaults (默认配置块)
+│   │   └── (为后续的 frontend/backend 设置全局默认参数：超时时间、重试次数)
+│   ├── 03_frontend (前端配置块 - 接收请求)
+│   │   └── (绑定 IP 端口 bind、定义 SSL 卸载、调用 ACL 规则进行请求转发)
+│   ├── 04_backend (后端配置块 - 处理请求)
+│   │   └── (定义后端服务器池 server、负载均衡算法、健康检查策略)
+│   └── 05_listen (综合配置块 - 偷懒写法)
+│       └── (frontend 和 backend 的结合体，常用于配置简单的四层代理或内部统计页面)
+│
+├── 03_负载均衡算法与策略 (Load_Balancing_Algorithms)
+│   ├── 01_roundrobin (动态加权轮询 - 默认且最常用，支持运行时调整权重)
+│   ├── 02_static-rr (静态加权轮询 - 性能稍高，但运行时不可改权重)
+│   ├── 03_leastconn (最少连接数 - 极其适合长连接场景，如 WebSocket、数据库代理)
+│   ├── 04_source (源 IP 哈希 - 类似于 Nginx 的 ip_hash，用于保持会话一致性)
+│   ├── 05_uri / url_param (基于 URI 或 URL 参数哈希 - 适合缓存代理服务器，提高命中率)
+│   ├── 06_hdr (基于 HTTP 请求头哈希 - 根据特定 Header 分发请求)
+│   └── 07_权重的设置与运行时调整 (weight 参数配置)
+│
+├── 04_健康检查与节点隔离 (Health_Checking) => 【重点：比 Nginx 更强大的探活机制】
+│   ├── 01_基础 TCP 健康检查 (默认基于端口连通性检查)
+│   ├── 02_七层 HTTP 健康检查 (option httpchk)
+│   │   └── (发送自定义 HTTP 请求、检查特定状态码 200/3xx、检查页面包含的特定字符串)
+│   ├── 03_特定协议健康检查 (MySQL/Redis/PostgreSQL 原生探测支持)
+│   ├── 04_探活参数解析 (inter 探测间隔, fall 失败多少次踢出, rise 成功多少次拉回)
+│   ├── 05_备用节点机制 (backup 参数，仅当主节点全部挂掉才接管流量的灾备模式)
+│   └── 06_外部 Agent 健康检查 (agent-check: 通过后端机器上运行的自定义脚本动态反馈健康状态和权重)
+│
+├── 05_高级路由与 ACL 访问控制 (Advanced_Routing_&_ACL) => 【重点：七层网关核心逻辑】
+│   ├── 01_ACL 语法基础 (acl [名称] [匹配标准] [标志] [操作符] [值])
+│   ├── 02_常用匹配标准 (fetchers)
+│   │   ├── 网络层 (src 匹配源IP、dst_port 匹配目标端口)
+│   │   ├── HTTP 请求 (path_beg 路径前缀、hdr(Host) 域名匹配、method 动词匹配)
+│   │   └── 会话层 (ssl_fc 判断是否为 HTTPS)
+│   ├── 03_逻辑运算 (AND 隐式、OR 或 ||、! 非)
+│   ├── 04_流量转发控制 (use_backend [后端组] if [ACL条件])
+│   ├── 05_HTTP 请求/响应重写 (http-request / http-response)
+│   │   ├── set-header (新增或修改 Header，如透传客户端真实 IP: X-Forwarded-For)
+│   │   ├── set-path (URL 路径重写)
+│   │   └── redirect (301/302 HTTP 重定向 HTTPS)
+│   └── 06_会话保持技术 (Cookie 植入/前缀模式保持、AppSession)
+│
+├── 06_安全防护与状态跟踪 (Security_&_Stick_Tables) => 【架构师必备：硬核防 CC 攻击】
+│   ├── 01_SSL/TLS 终结与透传
+│   │   ├── SSL Termination (在 HAProxy 终结 HTTPS 卸载证书，减轻后端压力)
+│   │   └── SSL Pass-through (通过 SNI 解析实现四层纯透传，HAProxy 不解密)
+│   ├── 02_Stick Tables (状态表技术) => 【HAProxy 的数据缓存神器】
+│   │   └── (在内存中追踪客户端的连接频率、错误率、请求流量，甚至支持集群间状态同步 Peers)
+│   ├── 03_高并发限流 (Rate Limiting)
+│   │   └── (基于 Stick Tables 实现：同一 IP 每分钟限制 100 次请求，超出则返回 429 状态码)
+│   ├── 04_防 CC 攻击与黑白名单自动封禁 (结合 tcp-request connection reject)
+│   └── 05_基础安全响应头 (HSTS, X-Frame-Options 增加安全头配置)
+│
+├── 07_高可用集群架构 (High_Availability) => 【重点：解决单点故障】
+│   ├── 01_单点故障问题 (负载均衡器自身的灾难防范)
+│   ├── 02_Keepalived 介绍 (VRRP 虚拟路由冗余协议)
+│   ├── 03_HAProxy + Keepalived 主备模式 (Master-Backup 架构，VIP 漂移机制)
+│   ├── 04_HAProxy + Keepalived 双主模式 (多 VIP 配合 DNS 轮询分流)
+│   └── 05_Keepalived 探活脚本 (vrrp_script 定时检查 HAProxy 进程，挂掉自动降级)
+│
+├── 08_性能调优与操作系统调优 (Performance_Tuning) => 【榨干机器性能】
+│   ├── 01_多进程 vs 多线程 (HAProxy 1.8+ 引入 nbthread 多线程，替代旧的多进程模型，共享状态表)
+│   ├── 02_CPU 亲和性 (cpu-map 绑定特定 CPU 核心，减少上下文切换损耗)
+│   ├── 03_连接复用与优化
+│   │   ├── option http-server-close (客户端 Keep-Alive，与后端短连接)
+│   │   └── option http-keep-alive (与后端也保持长连接，极大降低建立 TCP 握手开销)
+│   ├── 04_系统内核调优 (/etc/sysctl.conf)
+│   │   ├── 扩大端口范围 (ip_local_port_range)
+│   │   ├── 解决 TIME_WAIT 过多 (tcp_tw_reuse)
+│   │   └── 调整全连接队列大小 (somaxconn)
+│   └── 05_文件描述符限制 (ulimit 突破 65535 限制与 HAProxy global maxconn 的配合)
+│
+├── 09_监控与日志管理 (Monitoring_&_Logging)
+│   ├── 01_日志机制痛点探秘
+│   │   └── (为什么 HAProxy 不自己写日志文件？为了不阻塞事件循环，全部依赖 Rsyslog 通过 UDP 发送日志)
+│   ├── 02_Rsyslog 配置实战 (按级别分离 info, warning, error 日志，配置日志轮转 Logrotate)
+│   ├── 03_内置状态页面 (Stats Page)
+│   │   └── (开启 stats enable，实时在 Web 网页上查看各节点的 QPS、会话数、健康状况)
+│   ├── 04_Prometheus 生态集成 (HAProxy Exporter 数据抓取与 Grafana 大盘展示)
+│   └── 05_Dataplane API (通过 RESTful API 动态获取和修改状态，无需重启)
+│
+└── 10_云原生与微服务生态延伸 (Cloud_Native_&_Modern_Usage)
+    ├── 01_四层数据库代理 (作为 MySQL Galera / Redis Sentinel 集群的高可用接入层)
+    ├── 02_HAProxy Ingress Controller (在 Kubernetes 集群中替代 Nginx Ingress，性能更强)
+    ├── 03_API 网关化改造 (使用 Lua 脚本介入请求阶段，实现复杂的鉴权与灰度逻辑)
+    └── 04_服务网格的底层数据平面探讨

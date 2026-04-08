@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "66a9429a3634a56c",
+    "type": "split",
+    "children": [
+      {
+        "id": "1842fb591a739658",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1d9f342811866db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "10_高可用集群架构 (High_Availability_Architecture)/01_单点故障问题 (Nginx 宕机导致整个服务不可用).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_单点故障问题 (Nginx 宕机导致整个服务不可用)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b78c0c10e5451034",
+    "type": "split",
+    "children": [
+      {
+        "id": "3d23e004a391947f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32a0fe22c7d0e438",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1dc325319c05c783",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "d580181ca8c28c07",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9e316b5a1d94d296",
+    "type": "split",
+    "children": [
+      {
+        "id": "f91989d8013cdfcc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62611e0a0cf3e109",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "03_Web服务器与静态资源 (Static_Web_Server)/05_浏览器缓存控制 (expires 指令、Cache-Control 头配置).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "05_浏览器缓存控制 (expires 指令、Cache-Control 头配置) 的反向链接列表"
+            }
+          },
+          {
+            "id": "cbbfa9190dcc2f38",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "11_进阶生态：OpenResty 与 Lua (Advanced_Ecosystem) = 【架构师_高阶玩法】/06_实战：自定义 WAF (Web应用防火墙，动态封禁恶意 IP，SQL注入拦截).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "06_实战：自定义 WAF (Web应用防火墙，动态封禁恶意 IP，SQL注入拦截) 的出链列表"
+            }
+          },
+          {
+            "id": "930bac6e4e1b8cea",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "071db41610ffa7e0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b470a4d3d85e370e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "10_高可用集群架构 (High_Availability_Architecture)/01_单点故障问题 (Nginx 宕机导致整个服务不可用).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "01_单点故障问题 (Nginx 宕机导致整个服务不可用) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "f1d9f342811866db",
+  "lastOpenFiles": [
+    "09_日志管理与监控 (Logging_&_Monitoring)/05_进阶监控 (Prometheus + Nginx Exporter + Grafana 体系).md",
+    "09_日志管理与监控 (Logging_&_Monitoring)/01_访问日志与错误日志 (access_log, error_log).md",
+    "08_缓存机制与性能调优 (Caching_&_Tuning) = 【重点：性能天花板】/04_内核参数调优 (sysctl.conf：调大 SOMAXCONN, 优化 TCP TIME_WAIT 快速回收).md",
+    "09_日志管理与监控 (Logging_&_Monitoring)/02_自定义日志格式 (log_format 输出 JSON 格式对接 ELK&Filebeat).md",
+    "08_缓存机制与性能调优 (Caching_&_Tuning) = 【重点：性能天花板】/02_缓存清除 (第三方模块 proxy_cache_purge).md",
+    "08_缓存机制与性能调优 (Caching_&_Tuning) = 【重点：性能天花板】/01_代理缓存配置 (proxy_cache, proxy_cache_path, proxy_cache_key).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/07_限流防 CC 攻击 = 【重点：高并发自保机制】.md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/01_HTTPS 证书配置 (ssl_certificate, ssl_certificate_key).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/06_隐藏版本号 (server_tokens off 防护漏洞扫描).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/05_防盗链设计 (valid_referers 阻止其他网站盗用图片&视频带宽).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/04_基础认证 (auth_basic 结合 htpasswd 保护内部系统).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/03_访问控制 (allow, deny IP 黑白名单).md",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)/02_SSL 优化 (ssl_session_cache, 开启 HTTP2, 禁用不安全的 TLS1.0).md",
+    "08_缓存机制与性能调优 (Caching_&_Tuning) = 【重点：性能天花板】/03_系统层性能调优.md",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)/05_实战场景 (HTTP 强转 HTTPS、域名更换旧URL适配、伪静态配置).md",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)/04_Return 指令 (快速返回 HTTP 状态码或文本).md",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)/03_If 判断语句 (基于变量的条件判断，避免 ‘If is Evil’ 陷阱).md",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)/02_Rewrite Flags 解析 (last, break, redirect 302, permanent 301).md",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)/01_Rewrite 语法规则 (rewrite regex replacement [flag]).md",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/01_Upstream 模块 (定义后端服务池).md",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/05_四层负载均衡 (Stream 模块：实现 TCP&UDP 代理，如 MySQL&Redis 代理).md",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/04_健康检查机制 (自带的被动检查 vs 第三方模块 active health check).md",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/03_节点状态参数 (down, backup, max_fails, fail_timeout).md",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/02_负载均衡算法.md",
+    "04_反向代理与网关 (Reverse_Proxy) = 【重点：企业级应用】/06_网关跨域配置 (CORS：add_header Access-Control-Allow-Origin等).md",
+    "04_反向代理与网关 (Reverse_Proxy) = 【重点：企业级应用】/01_正向代理与反向代理的区别.md",
+    "11_进阶生态：OpenResty 与 Lua (Advanced_Ecosystem) = 【架构师_高阶玩法】",
+    "10_高可用集群架构 (High_Availability_Architecture)",
+    "09_日志管理与监控 (Logging_&_Monitoring)",
+    "08_缓存机制与性能调优 (Caching_&_Tuning) = 【重点：性能天花板】",
+    "07_HTTPS 与 安全防护 (HTTPS_&_Security)",
+    "06_Rewrite重写与路由控制 (Rewrite_&_Routing)",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】/02_负载均衡算法",
+    "05_负载均衡 (Load_Balancing) = 【重点：高可用基础】",
+    "04_反向代理与网关 (Reverse_Proxy) = 【重点：企业级应用】",
+    "03_Web服务器与静态资源 (Static_Web_Server)"
+  ]
+}

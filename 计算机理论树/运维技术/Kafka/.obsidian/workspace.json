@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "65df349b75cb0f6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "e56d31909ae7cdb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3dc44d92820b8b30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08_高级特性 (Advanced_Features)/01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2f047eb4f1c9cf93",
+    "type": "split",
+    "children": [
+      {
+        "id": "6efb92050b164b64",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbb71f60c413433c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "711ea3b6e5215874",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "e90f6cb82536e9f3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 288.5
+  },
+  "right": {
+    "id": "05e8fe06203a11f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d779fde610f938d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6a2a32f4081e91e1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "08_高级特性 (Advanced_Features)/01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现).md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现) 的反向链接列表"
+            }
+          },
+          {
+            "id": "814677fedfcd7c77",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "b835eb69d9cbb89e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "07595101bca6ad93",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "e44c719e437506f8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "08_高级特性 (Advanced_Features)/01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "3dc44d92820b8b30",
+  "lastOpenFiles": [
+    "09_Kafka 生态与流处理 (Ecosystem_&_Stream_Processing)/01_Kafka Connect (数据集成：将DB&ES&HDFS等异构数据快速接入Kafka).md",
+    "08_高级特性 (Advanced_Features)/04_安全机制 (SASL&Kerberos 身份认证、SSL 数据加密、ACL 权限控制).md",
+    "08_高级特性 (Advanced_Features)/03_Kafka Quotas (限流配额：基于网络带宽和请求速率控制).md",
+    "08_高级特性 (Advanced_Features)/02_拦截器机制 (ProducerInterceptor, ConsumerInterceptor 实战).md",
+    "08_高级特性 (Advanced_Features)/01_Kafka 事务 (Transactions：跨分区原子写入、Exactly-Once 语义实现).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/06_大消息处理 (message.max.bytes调优、或采用对象存储OSS+Kafka传链接的方式).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/05_延时队列&定时消息 (Kafka原生不支持，基于时间轮或外部组件的变通实现).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/04_消息顺序性保证 (全局有序 vs 局部有序、单Partition配置方案).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/03_消息积压 (报警发现、临时扩容Partition、消费者提速、死信队列DLQ降级).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/02_消息重复 (消费端接口幂等性设计：数据库唯一键、Redis防重).md",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/01_消息丢失 (Producer丢、Broker丢、Consumer丢及防范方案).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/07_日志清理策略 (Log Retention：基于时间&大小的删除、Log Compaction日志压缩).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/06_零拷贝技术 (Zero-Copy：mmap, sendfile底层系统调用).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/05_PageCache (OS页缓存：让Kafka极少直接操作物理磁盘).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/04_顺序写磁盘 (Sequential IO 远超随机写内存的性能).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/03_稀疏索引 (Sparse Index 加速消息查找).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/02_日志分段存储 (Log Segment：.log, .index, .timeindex).md",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】/01_文件目录结构 (Partition目录命名规则).md",
+    "05_高可用与数据一致性底层 (HA_&_Consistency) = 【重点：面试必问核心原理】/05_Unclean Leader Election (脏选举的开启与数据丢失权衡).md",
+    "05_高可用与数据一致性底层 (HA_&_Consistency) = 【重点：面试必问核心原理】/04_水位线与日志截断.md",
+    "05_高可用与数据一致性底层 (HA_&_Consistency) = 【重点：面试必问核心原理】/03_ISR 机制 (In-Sync Replicas 同步副本集合、OSR、AR).md",
+    "05_高可用与数据一致性底层 (HA_&_Consistency) = 【重点：面试必问核心原理】/02_Leader Election (分区Leader选举机制).md",
+    "05_高可用与数据一致性底层 (HA_&_Consistency) = 【重点：面试必问核心原理】/01_Controller 选举 (控制器机制、脑裂问题处理).md",
+    "04_消费者与消费组 (Consumer_&_ConsumerGroup) = 【重点：Rebalance机制】/06_多线程消费模型 (Kafka单线程拉取 + 线程池处理业务).md",
+    "04_消费者与消费组 (Consumer_&_ConsumerGroup) = 【重点：Rebalance机制】/05_Rebalance (重平衡机制).md",
+    "04_消费者与消费组 (Consumer_&_ConsumerGroup) = 【重点：Rebalance机制】/04_Offset (偏移量管理).md",
+    "10_运维、监控与客户端集成 (Operations_&_Integration)/03_Java-Spring Boot 集成",
+    "10_运维、监控与客户端集成 (Operations_&_Integration)/02_监控体系",
+    "10_运维、监控与客户端集成 (Operations_&_Integration)/01_集群运维",
+    "09_Kafka 生态与流处理 (Ecosystem_&_Stream_Processing)/未命名",
+    "未命名",
+    "10_运维、监控与客户端集成 (Operations_&_Integration)",
+    "09_Kafka 生态与流处理 (Ecosystem_&_Stream_Processing)",
+    "08_高级特性 (Advanced_Features)",
+    "07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】",
+    "06_高性能存储底层原理 (Storage_&_Performance) = 【重点：为什么Kafka这么快？】"
+  ]
+}

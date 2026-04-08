@@ -1,0 +1,93 @@
+Kafka_Learning_Roadmap/
+│
+├── 01_消息队列基础与初识 (Introduction_&_Basics)
+│   ├── 01_MQ核心概念 (解耦、异步、削峰填谷)
+│   ├── 02_主流MQ对比 (Kafka vs RabbitMQ vs RocketMQ vs Pulsar)
+│   ├── 03_Kafka简介 (高吞吐、分布式的发布订阅消息系统 / 流处理平台)
+│   ├── 04_环境搭建 (单机版部署、Docker/Docker-Compose快速搭建)
+│   └── 05_核心CLI工具 (kafka-topics.sh, kafka-console-producer.sh, kafka-console-consumer.sh)
+│
+├── 02_核心架构与基本组件 (Core_Architecture) => 【重点：全局概念图】
+│   ├── 01_Broker (代理节点/服务实例)
+│   ├── 02_Topic (主题：逻辑分类)
+│   ├── 03_Partition (分区：物理并行单元、Kafka高吞吐的基石)
+│   ├── 04_Replica (副本：高可用保障、Leader与Follower机制)
+│   ├── 05_Record/Message (消息体格式：Key, Value, Timestamp, Headers)
+│   └── 06_元数据管理 
+│       ├── ZooKeeper时代 (Kafka 2.8以前的核心依赖，负责选主、存储元数据)
+│       └── KRaft架构 (Kafka 2.8+引入，3.x+主推，去ZK化，基于Raft协议的内部共识机制)
+│
+├── 03_生产者进阶 (Producer_Mechanisms) => 【重点：参数调优与可靠性】
+│   ├── 01_整体工作流程 (拦截器 -> 序列化器 -> 分区器 -> 累加器 -> Sender线程)
+│   ├── 02_分区路由策略 (指定分区、按Key Hash、轮询/Sticky粘性分区)
+│   ├── 03_高吞吐参数调优 (batch.size, linger.ms, compression.type, buffer.memory)
+│   ├── 04_可靠性与Acks机制 (acks=0, acks=1, acks=-1/all 的区别与应用场景)
+│   ├── 05_重试机制 (retries参数、可能导致的消息乱序问题及解决)
+│   └── 06_幂等性生产者 (Idempotence: enable.idempotence=true, PID与Sequence Number)
+│
+├── 04_消费者与消费组 (Consumer_&_ConsumerGroup) => 【重点：Rebalance机制】
+│   ├── 01_Consumer Group (消费组概念：单播与多播的实现原理)
+│   ├── 02_消费模型 (Pull拉取模型 vs Push推模型机制对比)
+│   ├── 03_分区分配策略 (Range, RoundRobin, Sticky, CooperativeSticky)
+│   ├── 04_Offset (偏移量管理)
+│   │   ├── __consumer_offsets (内部Topic存储机制)
+│   │   └── 提交策略 (自动提交 auto.commit、手动同步提交 commitSync、手动异步提交)
+│   ├── 05_Rebalance (重平衡机制)
+│   │   ├── 触发条件 (组成员变更、订阅Topic变更、分区数变更)
+│   │   ├── Coordinator (协调者机制、GroupCoordinator的作用)
+│   │   └── 性能影响 (Stop The World问题及规避策略: session.timeout.ms, max.poll.interval.ms)
+│   └── 06_多线程消费模型 (Kafka单线程拉取 + 线程池处理业务)
+│
+├── 05_高可用与数据一致性底层 (HA_&_Consistency) => 【重点：面试必问核心原理】
+│   ├── 01_Controller 选举 (控制器机制、脑裂问题处理)
+│   ├── 02_Leader Election (分区Leader选举机制)
+│   ├── 03_ISR 机制 (In-Sync Replicas 同步副本集合、OSR、AR)
+│   ├── 04_水位线与日志截断
+│   │   ├── LEO (Log End Offset 日志末端位移)
+│   │   ├── HW (High Watermark 高水位线：消费者可见的最大位移)
+│   │   └── Leader Epoch (解决HW机制导致的数据丢失/不一致问题)
+│   └── 05_Unclean Leader Election (脏选举的开启与数据丢失权衡)
+│
+├── 06_高性能存储底层原理 (Storage_&_Performance) => 【重点：为什么Kafka这么快？】
+│   ├── 01_文件目录结构 (Partition目录命名规则)
+│   ├── 02_日志分段存储 (Log Segment: .log, .index, .timeindex)
+│   ├── 03_稀疏索引 (Sparse Index 加速消息查找)
+│   ├── 04_顺序写磁盘 (Sequential I/O 远超随机写内存的性能)
+│   ├── 05_PageCache (OS页缓存：让Kafka极少直接操作物理磁盘)
+│   ├── 06_零拷贝技术 (Zero-Copy: mmap, sendfile底层系统调用)
+│   └── 07_日志清理策略 (Log Retention: 基于时间/大小的删除、Log Compaction日志压缩)
+│
+├── 07_实战场景与经典问题排查 (Practical_Scenarios) => 【重点：架构师与实战经验】
+│   ├── 01_消息丢失 (Producer丢、Broker丢、Consumer丢及防范方案)
+│   ├── 02_消息重复 (消费端接口幂等性设计：数据库唯一键、Redis防重)
+│   ├── 03_消息积压 (报警发现、临时扩容Partition、消费者提速、死信队列DLQ降级)
+│   ├── 04_消息顺序性保证 (全局有序 vs 局部有序、单Partition配置方案)
+│   ├── 05_延时队列/定时消息 (Kafka原生不支持，基于时间轮或外部组件的变通实现)
+│   └── 06_大消息处理 (message.max.bytes调优、或采用对象存储OSS+Kafka传链接的方式)
+│
+├── 08_高级特性 (Advanced_Features)
+│   ├── 01_Kafka 事务 (Transactions: 跨分区原子写入、Exactly-Once 语义实现)
+│   ├── 02_拦截器机制 (ProducerInterceptor, ConsumerInterceptor 实战)
+│   ├── 03_Kafka Quotas (限流配额：基于网络带宽和请求速率控制)
+│   └── 04_安全机制 (SASL/Kerberos 身份认证、SSL 数据加密、ACL 权限控制)
+│
+├── 09_Kafka 生态与流处理 (Ecosystem_&_Stream_Processing)
+│   ├── 01_Kafka Connect (数据集成：将DB/ES/HDFS等异构数据快速接入Kafka)
+│   ├── 02_Kafka Streams (轻量级流处理库：KStream, KTable, 窗口聚合)
+│   ├── 03_KSQL (基于SQL的流式查询引擎)
+│   └── 04_第三方生态整合 (Flink + Kafka 经典大数据实时计算架构)
+│
+├── 10_运维、监控与客户端集成 (Operations_&_Integration)
+│   ├── 01_集群运维
+│   │   ├── 容量规划 (磁盘估算、网卡带宽规划、内存规划)
+│   │   ├── 扩缩容 (新增Broker后的数据重分配 kafka-reassign-partitions)
+│   │   └── 平滑升级 (Rolling Upgrade)
+│   ├── 02_监控体系
+│   │   ├── 核心JMX指标 (UnderReplicatedPartitions, MessagesInPerSec, BytesOutPerSec)
+│   │   ├── 主流监控面板 (Kafka Eagle, CMAK/Kafka Manager, UI for Apache Kafka)
+│   │   └── Prometheus + Grafana 集成
+│   └── 03_Java / Spring Boot 集成
+│       ├── 原生 Kafka-Clients API
+│       ├── Spring Kafka (@KafkaListener, KafkaTemplate)
+│       ├── 批量消费配置 (BatchListener)
+│       └── 自定义反序列化与异常处理 (ErrorHandlingDeserializer)

@@ -1,0 +1,97 @@
+Docker_Learning_Roadmap/
+│
+├── 01_初识与核心架构 (Introduction_&_Architecture)
+│   ├── 01_什么是Docker (解决"在我的机器上能跑"的问题、一次构建到处运行)
+│   ├── 02_Docker与虚拟机对比 (容器级虚拟化 vs 硬件级虚拟化、轻量与启动速度)
+│   ├── 03_核心架构 (C/S架构模式：Docker Client, Docker Daemon, REST API)
+│   ├── 04_三大核心概念 (Image 镜像、Container 容器、Repository 仓库)
+│   └── 05_OCI标准 (Open Container Initiative：runc, containerd 演进简史)
+│
+├── 02_环境安装与基础配置 (Setup_&_Configuration)
+│   ├── 01_多平台安装 (Linux 生产环境、Docker Desktop for Mac/Windows)
+│   ├── 02_加速器配置 (配置阿里云/腾讯云镜像加速器 daemon.json)
+│   ├── 03_引擎核心配置 (更改默认存储路径、调整日志驱动、配置私有仓库信任)
+│   └── 04_基础环境验证 (docker version, docker info, hello-world 运行流程剖析)
+│
+├── 03_镜像管理与操作 (Image_Management) => 【重点：镜像分层原理】
+│   ├── 01_获取与推送 (pull, push, search, login)
+│   ├── 02_查看与清理 (images, image ls, rmi, image prune - 虚悬镜像 dangling)
+│   ├── 03_镜像的导入导出 (save 与 load 的使用场景，与 export 的区别)
+│   ├── 04_UnionFS 联合文件系统 (Overlay2 存储驱动、只读层与可写层)
+│   └── 05_commit 提交镜像 (基于运行中的容器保存镜像 - 通常不推荐用于生产)
+│
+├── 04_容器生命周期与操作 (Container_Operations) => 【重点：日常高频命令】
+│   ├── 01_创建与运行 (run 命令核心参数: -d 后台, -it 交互, --name 命名, --rm 退出删除)
+│   ├── 02_端口映射 (-p 宿主机端口:容器端口、-P 随机映射)
+│   ├── 03_状态控制 (start, stop, restart, pause, unpause, kill)
+│   ├── 04_进入容器 (exec -it 推荐方式 vs attach 遗留方式)
+│   ├── 05_容器与宿主机交互 (cp 拷贝文件)
+│   ├── 06_日志与状态排查 (logs -f 查看日志、inspect 查看元数据、top 查看进程、stats 资源占用)
+│   └── 07_销毁与清理 (rm -f 强制删除、container prune 批量清理停止的容器)
+│
+├── 05_数据卷与持久化机制 (Storage_&_Volumes) => 【重点：防止数据丢失】
+│   ├── 01_为什么需要持久化？ (容器生命周期短暂，可写层随容器销毁而丢失)
+│   ├── 02_Bind Mounts (绑定挂载)
+│   │   ├── 特点与用法 (-v /host/path:/container/path)
+│   │   └── 适用场景 (开发环境代码热更新、配置文件挂载)
+│   ├── 03_Volumes (数据卷挂载 - 官方推荐)
+│   │   ├── 生命周期独立于容器 (docker volume create/ls/rm/prune)
+│   │   ├── 特点与用法 (-v vol_name:/container/path 或 --mount type=volume)
+│   │   └── 适用场景 (数据库持久化、多容器数据共享)
+│   └── 04_tmpfs Mounts (基于内存的临时挂载，适用于高安全性/非持久化敏感数据)
+│
+├── 06_网络模型与容器互联 (Networking) => 【重点：容器间通信】
+│   ├── 01_默认网络模式 (Bridge, Host, None)
+│   ├── 02_Bridge 网络 (默认网桥 docker0 的原理、veth pair 虚拟网卡对)
+│   ├── 03_Host 网络 (--network host，与宿主机共享网络栈，无端口冲突问题但隔离差)
+│   ├── 04_自定义网络 (docker network create)
+│   │   ├── 内置 DNS 解析 (为什么推荐自定义网络：可以通过容器名直接 ping 通)
+│   │   └── 跨网络通信 (network connect)
+│   └── 05_遗留的 Link 机制 (--link，目前已废弃，了解即可)
+│
+├── 07_Dockerfile 核心语法与最佳实践 (Dockerfile) => 【重点：面试必问与工程化】
+│   ├── 01_基础语法 (FROM, MAINTAINER/LABEL)
+│   ├── 02_环境与变量 (ENV 定义环境变量, ARG 构建时参数)
+│   ├── 03_执行命令 (RUN: apt-get 安装软件、多条命令 && 拼接以减少镜像层数)
+│   ├── 04_文件操作 (COPY 与 ADD 的核心区别：ADD 支持自动解压和远程URL)
+│   ├── 05_启动命令 (CMD 与 ENTRYPOINT 的核心区别与最佳配合方式)
+│   ├── 06_暴露端口与挂载 (EXPOSE, VOLUME - 仅为声明，非强制挂载)
+│   ├── 07_上下文环境 (理解 "docker build ." 中的 "."，以及 .dockerignore 的作用)
+│   └── 08_【进阶】多阶段构建 (Multi-stage builds) 
+│       └── 场景实战 (如：Go/Java 语言在一个 FROM 里编译，将产物 COPY 到体积极小的 Alpine 里运行，极大缩减镜像体积)
+│
+├── 08_Docker Compose 多容器编排 (Docker_Compose) => 【重点：本地/测试环境神器】
+│   ├── 01_Compose 简介 (定义和运行多容器 Docker 应用程序的工具)
+│   ├── 02_docker-compose.yml 语法解析
+│   │   ├── version (语法版本号)
+│   │   ├── services (服务定义：image, build, ports, volumes, environment)
+│   │   ├── networks (网络拓扑定义)
+│   │   └── volumes (全局数据卷定义)
+│   ├── 03_依赖与启动顺序 (depends_on、健康检查 healthcheck)
+│   ├── 04_常用命令 (up -d, down, logs, ps, exec, restart, build)
+│   └── 05_实战演练 (一键部署 SpringBoot + Redis + MySQL + Nginx 完整微服务)
+│
+├── 09_底层隔离原理剖析 (Under_The_Hood) => 【架构师/底层原理】
+│   ├── 01_Namespace (命名空间机制：实现视图隔离/环境隔离)
+│   │   └── 六大隔离 (PID进程, NET网络, IPC进程通信, MNT挂载点, UTS主机名, USER用户)
+│   ├── 02_Cgroups (控制组机制：实现资源限制)
+│   │   ├── CPU 限制 (--cpus, --cpu-shares)
+│   │   └── 内存 限制 (-m, --memory, --memory-swap 限制防止OOM)
+│   └── 03_UnionFS (联合文件系统，见 03_镜像管理 章节)
+│
+└── 10_企业级CI/CD实战与集群演进 (Enterprise_Real_World)
+    ├── 01_私有镜像仓库搭建
+    │   ├── 官方 Registry (轻量级，基础无界面)
+    │   └── Harbor (企业级，支持角色RBAC、LDAP接入、镜像安全扫描、主从同步)
+    ├── 02_安全与审计
+    │   ├── 镜像漏洞扫描 (Trivy)
+    │   ├── 容器特权与降权 (--privileged 慎用、User namespace remap)
+    │   └── 限制容器能力 (--cap-drop, --cap-add)
+    ├── 03_日志集中化处理
+    │   └── Logging Driver 配置 (将容器日志直接输出到 Fluentd, Syslog,或对接 ELK)
+    ├── 04_DevOps 持续集成流水线实战
+    │   ├── GitLab CI / Jenkins pipeline 整合 Docker
+    │   └── 自动化流程 (代码提交 -> 单元测试 -> Docker build -> 推送 Harbor -> 测试环境拉取启动)
+    └── 05_向云原生编排演进
+        ├── Docker Swarm (Docker原生集群编排，了解即可，市场占有率低)
+        └── Kubernetes (K8s) (容器编排的事实标准，Docker 学习的最终进阶目标)

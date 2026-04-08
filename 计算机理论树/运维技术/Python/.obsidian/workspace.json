@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "8114b44e9da4146f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b79117607583250b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "44077330fa17d0c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "09_应用方向一：Web 后端开发 (Web_Development)/04_FastAPI (现代异步框架 =》 强推学习).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04_FastAPI (现代异步框架 =》 强推学习)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d4232a95aa4db16",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bebb07385fdf09b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0c18359f753e608",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "44849299db81981c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "6f2cc04d2d554c0f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a9394ed3246f00b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd8be76886ef0639",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "77ca6734a4737d95",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "09_应用方向一：Web 后端开发 (Web_Development)/04_FastAPI (现代异步框架 =》 强推学习).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "04_FastAPI (现代异步框架 =》 强推学习) 的反向链接列表"
+            }
+          },
+          {
+            "id": "96e771141b9f9373",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "09_应用方向一：Web 后端开发 (Web_Development)/04_FastAPI (现代异步框架 =》 强推学习).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "04_FastAPI (现代异步框架 =》 强推学习) 的出链列表"
+            }
+          },
+          {
+            "id": "097b4481f16a226f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "2460730613e96586",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "621a6451dc791bcb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "09_应用方向一：Web 后端开发 (Web_Development)/04_FastAPI (现代异步框架 =》 强推学习).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "04_FastAPI (现代异步框架 =》 强推学习) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "44077330fa17d0c0",
+  "lastOpenFiles": [
+    "10_应用方向二：网络爬虫与自动化 (Web_Scraping_&_Automation)/01_基础请求抓取 (Requests 库, 应对 Cookie&Session、代理 IP、Headers 伪装).md",
+    "09_应用方向一：Web 后端开发 (Web_Development)/04_FastAPI (现代异步框架 =》 强推学习).md",
+    "09_应用方向一：Web 后端开发 (Web_Development)/02_Django (大而全的企业级框架).md",
+    "09_应用方向一：Web 后端开发 (Web_Development)/01_网络协议基础 (HTTP&TCP 简述, WSGI & ASGI 协议原理).md",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)/05_打包与发布 (setup.py, pyproject.toml, 打包 Wheel 并发布至 PyPI).md",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)/04_日志管理 (logging 模块配置：logger, handler, formatter, level).md",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)/03_单元测试 (unittest 官方库, pytest 现代测试框架及 fixture 机制, mock 测试).md",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)/02_现代包管理 (pipenv, poetry，彻底解决 requirements.txt 的依赖地狱).md",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)/01_代码规范 (PEP 8 规范, Flake8 & Black 代码格式化工具).md",
+    "07_并发编程与异步 (Concurrency_&_Async) =》 【重点：突破性能瓶颈】/04_异步编程 (asyncio) ==》 【现代 Python 必备】.md",
+    "07_并发编程与异步 (Concurrency_&_Async) =》 【重点：突破性能瓶颈】/03_多进程 (multiprocessing) (Process, Queue&Pipe 进程间通信, ProcessPoolExecutor).md",
+    "07_并发编程与异步 (Concurrency_&_Async) =》 【重点：突破性能瓶颈】/02_多线程 (threading) (Thread, Lock 互斥锁死锁问题, ThreadPoolExecutor 线程池).md",
+    "07_并发编程与异步 (Concurrency_&_Async) =》 【重点：突破性能瓶颈】/01_GIL 全局解释器锁 ==》 【面试必考大魔王】.md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/06_标准库巡礼 (os, sys, datetime, math, random, json, re 正则表达式, collections).md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/05_文件操作 (open, 读写模式 r&w&a&rb, 编码 encoding='utf-8').md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/04_抛出与自定义异常 (raise 关键字，继承 Exception 类).md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/03_异常处理 (try & except & else & finally 完整语法，捕获 Exception).md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/02_程序入口 (__name__ == '__main__' 的工程意义).md",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)/01_模块与包 (import, from...import, __init__.py 的作用, 绝对导入与相对导入).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/07_类型提示 (Type Hints, typing 模块, 让 Python 走向静态类型检查).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/06_垃圾回收机制 (GC：引用计数为主，标记-清除与分代回收为辅).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/05_上下文管理器 (Context Manager) (with 语句原理, __enter__ 与 __exit__, contextlib).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/04_生成器 (Generator) (yield 关键字实现按需生成，极大节省内存、yield from).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/03_迭代器 (Iterator) (可迭代对象 Iterable 与 Iterator 的区别, iter() 和 next()).md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/02_装饰器 (Decorator) =》 【面试超高频】.md",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】/01_闭包 (Closure 概念及延迟绑定陷阱).md",
+    "11_应用方向三：数据分析与 AI 基础 (Data_Science_&_AI_Basics)",
+    "10_应用方向二：网络爬虫与自动化 (Web_Scraping_&_Automation)",
+    "09_应用方向一：Web 后端开发 (Web_Development)",
+    "08_工程化、自动化测试与 CICD (Engineering_&_Best_Practices)",
+    "07_并发编程与异步 (Concurrency_&_Async) =》 【重点：突破性能瓶颈】",
+    "06_模块、包与异常处理 (Modules_Packages_&_Exceptions)",
+    "05_高阶特性与底层机制 (Advanced_Features) =》 【重点：高级开发&架构师必备】",
+    "04_面向对象编程 (OOP) =》 【重点：一切皆对象】",
+    "03_控制流程与函数 (Control_Flow_&_Functions)",
+    "02_核心数据结构 (Core_Data_Structures) =》 【重点：内置容器极其强大】"
+  ]
+}

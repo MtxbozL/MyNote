@@ -1,0 +1,1 @@
+六大隔离 (PID进程, NET网络, IPC进程通信, MNT挂载点, UTS主机名, USER用户)

@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "574386f594e363bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "5195d92e0de33f6e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8afe7ded17d283a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_初识与核心架构 (Introduction_&_Architecture)/02_与其他工具对比 (Ansible vs SaltStack vs Puppet vs Chef).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02_与其他工具对比 (Ansible vs SaltStack vs Puppet vs Chef)"
+            }
+          },
+          {
+            "id": "8aefb5a7b182901e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_初识与核心架构 (Introduction_&_Architecture)/05_安装与配置 (Yum&Apt 安装、Pip 安装、ansible.cfg 基础配置解析).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "05_安装与配置 (Yum&Apt 安装、Pip 安装、ansible.cfg 基础配置解析)"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "99c7efef3aaf6b55",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a27d121c429d6c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23d1f27d8fa0f1dd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "2cccd5a9d23a5936",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "b12cb28c0d733595",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0d469f8b00d432ae",
+    "type": "split",
+    "children": [
+      {
+        "id": "d98d4eda93341f6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be255abcf289cff3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "05_变量、事实与模板 (Variables_Facts_&_Jinja2) = 【重点：让脚本动起来】/01_变量作用域与优先级 (Extra vars 》 Task vars 》 Host&Group vars 》 Default vars).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "01_变量作用域与优先级 (Extra vars 》 Task vars 》 Host&Group vars 》 Default vars) 的反向链接列表"
+            }
+          },
+          {
+            "id": "d2c56372e10d52db",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "05_变量、事实与模板 (Variables_Facts_&_Jinja2) = 【重点：让脚本动起来】/01_变量作用域与优先级 (Extra vars 》 Task vars 》 Host&Group vars 》 Default vars).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "01_变量作用域与优先级 (Extra vars 》 Task vars 》 Host&Group vars 》 Default vars) 的出链列表"
+            }
+          },
+          {
+            "id": "e873097ec2c032c8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "26cffbae41f0e418",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "643c58b13f9c7b81",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01_初识与核心架构 (Introduction_&_Architecture)/05_安装与配置 (Yum&Apt 安装、Pip 安装、ansible.cfg 基础配置解析).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "05_安装与配置 (Yum&Apt 安装、Pip 安装、ansible.cfg 基础配置解析) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "8aefb5a7b182901e",
+  "lastOpenFiles": [
+    "01_初识与核心架构 (Introduction_&_Architecture)/04_Ansible 工作原理与核心架构 (Control Node 控制节点、Managed Node 被控节点、基于 SSH&WinRM).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/03_ Ansible 核心特性与技术原理 (Agentless 无代理架构、Push 推送模型、幂等性 Idempotency).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/02_与其他工具对比 (Ansible vs SaltStack vs Puppet vs Chef).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/01_什么是 Ansible (IT 自动化、配置管理、应用部署工具).md",
+    "03_核心模块与 Ad-Hoc 命令 (Modules_&_Ad-Hoc) = 【重点：日常敲打命令】/06_服务管理模块 (service, systemd).md",
+    "03_核心模块与 Ad-Hoc 命令 (Modules_&_Ad-Hoc) = 【重点：日常敲打命令】/05_系统与用户模块 (user, group, cron, hostname, sysctl).md",
+    "03_核心模块与 Ad-Hoc 命令 (Modules_&_Ad-Hoc) = 【重点：日常敲打命令】/03_文件与存储模块 (file, copy, fetch, template, synchronize).md",
+    "10_企业级生态与 CICD 演进 (Enterprise_Ecosystem_&_DevOps)/01_Ansible AWX & Red Hat Ansible Tower.md",
+    "09_自动化实战场景 (Practical_Scenarios)/05_公有云资源编排 (使用 AWS&Aliyun 模块通过 API 自动创建虚拟机并初始化).md",
+    "09_自动化实战场景 (Practical_Scenarios)/01_操作系统基线初始化 (批量修改内核参数、关闭 SElinux、同步时区、配置 Yum 源).md",
+    "09_自动化实战场景 (Practical_Scenarios)/04_数据灾备自动化 (定时拉取多台服务器的 DB 备份文件至本地中控机).md",
+    "09_自动化实战场景 (Practical_Scenarios)/03_安全加固与补丁批量下发 (针对特定漏洞批量升级 OpenSSH 版本).md",
+    "09_自动化实战场景 (Practical_Scenarios)/02_LAMP&LEMP 架构一键部署 (结合 Roles 完整搭建 Linux+Nginx+MySQL+PHP).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/06_插件开发初探 (自定义 Callback 回调插件输出自定义日志格式).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/05_并发与网络调优 (极大缩短执行时间).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/04_执行策略 (Strategy：默认的 Linear 线性执行 vs Free 自由并发执行).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/03_异步与轮询 (Async & Poll).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/02_任务委派与本地操作 (delegate_to, local_action，适用于 F5 负载均衡器下线操作).md",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】/01_安全与加密 (Ansible Vault 机制).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/06_依赖管理 (meta&main.yml 定义角色执行前置依赖).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/05_Ansible Galaxy 社区 (查找、下载、使用开源角色：如 Geerlingguy 的 MySQL&Nginx 角色).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/04_Include 与 Import 的核心区别 (静态加载 vs 动态加载的影响).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/03_创建与调用角色 (ansible-galaxy init, import_role, include_role).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/02_Roles 标准目录结构解析 (tasks, handlers, templates, files, vars, defaults, meta).md",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】/01_为什么需要 Roles？ (解决单个 yaml 文件过长、难以复用的痛点).md",
+    "06_流程控制与错误处理 (Control_Flow_&_Error_Handling) = 【重点：复杂业务逻辑】/06_暂停与交互 (pause 模块、wait_for 端口检测).md",
+    "10_企业级生态与 CICD 演进 (Enterprise_Ecosystem_&_DevOps)",
+    "09_自动化实战场景 (Practical_Scenarios)",
+    "08_高级特性与性能调优 (Advanced_Features_&_Tuning) = 【高级架构师必备】",
+    "07_Roles 角色与模块化 (Roles_&_Ansible_Galaxy) = 【重点：代码重用与工程化】",
+    "06_流程控制与错误处理 (Control_Flow_&_Error_Handling) = 【重点：复杂业务逻辑】",
+    "05_变量、事实与模板 (Variables_Facts_&_Jinja2) = 【重点：让脚本动起来】",
+    "04_Playbook 核心语法 (Playbook_Basics) = 【重点：自动化脚本基石】",
+    "03_核心模块与 Ad-Hoc 命令 (Modules_&_Ad-Hoc) = 【重点：日常敲打命令】",
+    "02_资产清单与主机连通 (Inventory_&_Connection) = 【重点：如何定义你的机器】",
+    "01_初识与核心架构 (Introduction_&_Architecture)"
+  ]
+}

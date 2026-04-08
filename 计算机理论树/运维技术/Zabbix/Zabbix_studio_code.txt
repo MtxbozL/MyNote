@@ -1,0 +1,109 @@
+Zabbix_Learning_Roadmap/
+│
+├── 01_初识与核心架构 (Introduction_&_Architecture)
+│   ├── 01_Zabbix 简介 (企业级监控定位、与 Prometheus/Nagios 的对比)
+│   ├── 02_监控体系原理 (数据采集 -> 存储 -> 分析展示 -> 告警)
+│   ├── 03_核心架构组件
+│   │   ├── Zabbix Server (核心服务端，C语言编写)
+│   │   ├── Zabbix Database (存储配置数据与历史/趋势监控数据，MySQL/PostgreSQL)
+│   │   ├── Zabbix Web Frontend (基于 PHP 的前端管理界面)
+│   │   ├── Zabbix Agent / Agent 2 (部署在被控端的客户端)
+│   │   └── Zabbix Proxy (分布式代理节点，分担 Server 压力)
+│   ├── 04_工作模式 (被动模式 Passive vs 主动模式 Active 的本质区别与适用场景)
+│   └── 05_核心术语映射 (Host主机, Item监控项, Trigger触发器, Action动作, Template模板)
+│
+├── 02_环境部署与初始配置 (Installation_&_Deployment)
+│   ├── 01_版本选择 (强烈推荐 LTS 长期支持版，如 6.0 LTS 或 7.0 LTS)
+│   ├── 02_LAMP/LNMP 环境准备 (Linux, Nginx/Apache, MySQL, PHP 编译与参数要求)
+│   ├── 03_包管理安装 (Yum/Apt 官方源安装、导入数据库 Schema)
+│   ├── 04_容器化部署 (Docker & Docker Compose 快速拉起 Zabbix 全家桶)
+│   ├── 05_乱码问题解决 (替换 Zabbix Web 前端的中文字体防乱码)
+│   └── 06_核心配置文件 (zabbix_server.conf, zabbix_agent2.conf)
+│
+├── 03_数据采集与监控项设计 (Data_Collection_&_Items) => 【重点：如何抓取数据】
+│   ├── 01_Zabbix Agent 监控
+│   │   ├── 内置 Key (system.cpu.util, vfs.fs.size, net.if.in)
+│   │   └── UserParameter (自定义参数：让 Agent 执行本地 Shell 脚本并将结果返回)
+│   ├── 02_无 Agent 监控方式
+│   │   ├── Simple Check (简单检查：icmpping 探测存活、net.tcp.port 探测端口)
+│   │   ├── SNMP 监控 (网络设备/交换机/路由器监控标准协议, MIB 与 OID)
+│   │   ├── JMX 监控 (Java 应用监控，依赖 Zabbix Java Gateway)
+│   │   └── IPMI 监控 (硬件级监控：物理机主板温度、风扇转速、电源状态)
+│   ├── 03_Zabbix Trapper (陷阱器)
+│   │   └── zabbix_sender 命令 (被监控端主动向 Server 推送数据，适合计划任务结果上报)
+│   ├── 04_Calculated Items (计算型监控项：基于已有多个监控项的数学运算结果)
+│   ├── 05_HTTP Agent (原生调用 RESTful API 获取数据，支持解析 JSON/XML)
+│   └── 06_命令行测试神器 (zabbix_get：在 Server 端手动拉取测试 Agent 数据)
+│
+├── 04_触发器与告警体系 (Triggers_&_Alerting) => 【重点：如何发现问题并通知】
+│   ├── 01_Trigger 触发器基础 (监控项达到什么阈值算作异常)
+│   ├── 02_触发器表达式函数 (last, avg, max, min, nodata, diff, change)
+│   ├── 03_告警依赖与事件关联 (依赖机制：机房核心交换机挂了，底下的服务器就不单独发告警了)
+│   ├── 04_Action 动作与告警升级 (Escalation)
+│   │   ├── 触发条件 (Condition)
+│   │   ├── 操作 (Operations：第1-10分钟发给运维，仍未解决第11分钟发给总监)
+│   │   ├── 恢复操作 (Recovery operations：故障解除通知)
+│   │   └── 远程命令 (Remote commands：告警后自动执行脚本尝试重启服务)
+│   ├── 05_Media Types 媒介类型 (邮件、短信、企业微信、钉钉机器人 Webhook 集成)
+│   └── 06_Maintenance 维护周期 (变更演练期间屏蔽告警)
+│
+├── 05_模板与宏机制 (Templates_&_Macros) => 【重点：大规模复用与动态化】
+│   ├── 01_Template 模板机制 (将 Items, Triggers, Graphs 打包，实现一键关联主机)
+│   ├── 02_模板的继承与嵌套 (父模板与子模板机制)
+│   ├── 03_Macro 宏 (Zabbix 中的变量体系)
+│   │   ├── 内置宏 ({HOST.NAME}, {ITEM.VALUE})
+│   │   ├── 用户自定义宏 ({$MACRO_NAME}，用于在模板中预留灵活的阈值配置，如 {$MEM_WARN}=80)
+│   │   └── LLD 宏 ({#FSNAME}，用于自动发现机制)
+│   └── 04_宏的作用域与优先级 (主机宏 > 模板宏 > 全局宏)
+│
+├── 06_自动化与高级发现机制 (Automation_&_Discovery) => 【架构师/高级运维核心】
+│   ├── 01_Network Discovery (网络发现：扫网段，自动添加主机并链接模板)
+│   ├── 02_Auto Registration (主动注册：云环境自动扩容的 Agent 启动后主动向 Server 报到)
+│   ├── 03_LLD (Low-Level Discovery 底层自动发现) => 【Zabbix 最强大的杀手锏】
+│   │   ├── 解决什么问题？ (自动发现每台机器上有几块硬盘、几个网卡、几个挂载目录，并自动生成对应的监控项和告警)
+│   │   ├── LLD 规则解析 (Item prototypes, Trigger prototypes, Graph prototypes)
+│   │   └── 自定义 LLD 脚本实战 (输出特定格式的 JSON 给 Zabbix 生成多实例监控)
+│   └── 04_Web Scenarios (Web 场景监控：模拟浏览器登录验证、多步骤点击、响应时间与状态码监控)
+│
+├── 07_可视化与 Grafana 集成 (Visualization)
+│   ├── 01_原生可视化组件 (Graphs 图形, Screens 聚合图形, Maps 拓扑图)
+│   ├── 02_Zabbix Dashboards (仪表盘定制、小部件 Widgets 拖拽)
+│   ├── 03_Grafana + Zabbix 完美方案 => 【现代企业标配】
+│   │   ├── 安装 Alexander Zobnin's Zabbix 插件
+│   │   ├── 配置 Zabbix API 数据源
+│   │   └── 利用 Grafana 的强大渲染能力展示 Zabbix 底层数据
+│   └── 04_SLA / IT 业务服务监控 (Services 模块：计算业务可用性百分比)
+│
+├── 08_分布式监控与高可用集群 (Distributed_&_HA) => 【突破性能瓶颈/跨机房】
+│   ├── 01_Zabbix Proxy 代理架构
+│   │   ├── 应用场景 (跨机房/跨云 VPC 监控，防火墙仅需开通单个 Proxy 端口，分担 Server I/O)
+│   │   ├── Active Proxy (主动代理：Proxy 连 Server) vs Passive Proxy (被动代理)
+│   │   └── 代理本地数据库缓存机制 (SQLite/MySQL，网络断开时不丢数据)
+│   ├── 02_Zabbix Server HA (高可用架构)
+│   │   ├── 传统方案 (Keepalived + 虚拟 VIP)
+│   │   └── Native HA (Zabbix 6.0+ 原生高可用模式，基于数据库实现主备切换，零外挂依赖)
+│   └── 03_Zabbix Agent 2 的进阶特性
+│       └── 基于 Golang 重写，支持高并发，内置并发调度与丰富的插件化支持 (原生支持监控 Docker/Redis/MySQL 等无需外部脚本)
+│
+├── 09_性能调优与底层存储优化 (Performance_Tuning_&_Database) => 【Zabbix 骨灰级痛点】
+│   ├── 01_核心指标 NVPS (New Values Per Second：每秒处理的数据量，衡量 Zabbix 性能的唯一标准)
+│   ├── 02_Zabbix Server 参数调优
+│   │   ├── 轮询器进程数调优 (StartPollers, StartPingers, StartTrappers)
+│   │   ├── 缓存大小调优 (CacheSize, HistoryCacheSize, TrendCacheSize)
+│   │   └── 分析内部图表 (Zabbix server internal process busy 监控大盘)
+│   ├── 03_History 与 Trends (历史数据与趋势数据)
+│   │   └── Housekeeper (管家进程) 的致命危害：定时删除旧数据导致的数据库 I/O 飙升问题
+│   ├── 04_数据库表分区技术 (Table Partitioning) => 【传统必备】
+│   │   └── 针对 history / trends 表按天/月分区，关闭原生 Housekeeper，用 DROP 分区表代替 DELETE 操作，性能提升百倍
+│   └── 05_TimescaleDB 整合 (时序数据库方案) => 【Zabbix 现代存储终极方案】
+│       └── 结合 PostgreSQL + TimescaleDB 插件，原生支持数据自动压缩与保留策略，彻底终结 Zabbix 存储性能瓶颈
+│
+└── 10_API 接口开发与云原生整合 (API_&_Cloud_Native)
+    ├── 01_Zabbix API (JSON-RPC 接口)
+    │   ├── 认证机制 (获取 Auth Token)
+    │   ├── 常用操作 (host.create, item.get, event.acknowledge)
+    │   └── 结合 Python 编写自动化运维平台 (批量拉群、批量绑定模板)
+    ├── 02_与 Prometheus 生态整合
+    │   └── Zabbix 读取 Prometheus Node Exporter 数据 (Zabbix 也可以抓取 /metrics 接口)
+    ├── 03_与 CMDB/运维中台 联动 (主机上线自动调用 API 加监控，下线自动删除)
+    └── 04_Zabbix 在 Kubernetes 中的应用 (通过 Helm 部署、监控 K8s 节点与 Pod)

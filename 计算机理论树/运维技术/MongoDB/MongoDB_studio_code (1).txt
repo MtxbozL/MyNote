@@ -1,0 +1,114 @@
+MongoDB_Learning_Roadmap/
+│
+├── 01_初识与基础环境 (Introduction_&_Setup)
+│   ├── 01_NoSQL 概览 (CAP定理、文档型 vs 键值型 vs 列族 vs 图数据库)
+│   ├── 02_MongoDB 简介 (C++编写、分布式文件存储、Schema-less 灵活模式)
+│   ├── 03_核心概念映射 (Database 数据库, Collection 集合, Document 文档, Field 字段)
+│   ├── 04_安装与启动 (本地运行、Docker 部署、MongoDB Atlas 官方云服务)
+│   └── 05_客户端工具 (现代 Shell: mongosh, 图形化: MongoDB Compass, Navicat)
+│
+├── 02_核心数据类型与模型设计 (Data_Model_&_Schema_Design) => 【重点：重塑数据建模思维】
+│   ├── 01_BSON 格式 (Binary JSON 的优势、相比传统 JSON 支持更丰富的数据类型)
+│   ├── 02_核心数据类型 (ObjectId 组成原理、ISODate、Array 数组、Embedded Document 内嵌文档)
+│   ├── 03_建模哲学：内嵌 vs 引用 (Embedding vs Referencing)
+│   │   ├── 内嵌模式 (一对一、一对少：高读取性能、原子性保障)
+│   │   └── 引用模式 (一对多、多对多：数据规范化、避免文档超 16MB 限制)
+│   └── 04_经典设计模式 (Schema Patterns)
+│       ├── 桶模式 (Bucket Pattern：物联网时序数据打包存储)
+│       ├── 多态模式 (Polymorphic Pattern：电商商品不同属性混合存储)
+│       └── 属性模式 (Attribute Pattern：应对大量动态键值的场景)
+│
+├── 03_基础 CRUD 操作 (Basic_CRUD)
+│   ├── 01_新增 (insertOne, insertMany, ordered 批量插入中断机制)
+│   ├── 02_查询 (find, findOne)
+│   │   ├── 比较操作符 ($eq, $gt, $gte, $lt, $lte, $ne, $in, $nin)
+│   │   ├── 逻辑操作符 ($and, $or, $not, $nor)
+│   │   ├── 元素操作符 ($exists, $type)
+│   │   └── 游标 (Cursor) 控制 (limit, skip, sort 分页三剑客)
+│   ├── 03_更新 (updateOne, updateMany, replaceOne)
+│   │   ├── 更新操作符 ($set 修改, $unset 删除字段, $inc 增减, $mul 乘法)
+│   │   ├── 数组更新 ($push 追加, $pull 移除, $addToSet 去重追加, $ 占位符修改)
+│   │   └── upsert 机制 (有则更新，无则插入)
+│   └── 04_删除 (deleteOne, deleteMany, drop 删集合)
+│
+├── 04_索引原理与性能调优 (Indexing_&_Performance) => 【重点：面试与真实调优】
+│   ├── 01_索引底层原理 (B-Tree 数据结构、与 MySQL B+Tree 的对比)
+│   ├── 02_单键索引 (Single Field Index, 默认 _id 索引)
+│   ├── 03_复合索引 (Compound Index)
+│   │   └── 最左前缀原则与 ESR 原则 => 【极度重要：Equality(等值) -> Sort(排序) -> Range(范围) 建库准则】
+│   ├── 04_多键索引 (Multikey Index，针对数组字段自动创建)
+│   ├── 05_特殊索引类型
+│   │   ├── TTL 索引 (自动过期删除，常用于验证码、日志、Session)
+│   │   ├── 唯一索引 (Unique Index，防止重复数据)
+│   │   ├── 文本索引 (Text Index，基础全文搜索支持)
+│   │   └── 地理空间索引 (2dsphere，支持 LBS 附近的人、多边形相交查询)
+│   ├── 06_执行计划分析 (explain("executionStats"))
+│   │   └── 关键指标解读 (COLLSCAN 全表扫描 vs IXSCAN 索引扫描、docsExamined 与 nReturned 比例)
+│   └── 07_覆盖查询 (Covered Query，查询字段和返回字段均在索引中，彻底避免回表)
+│
+├── 05_聚合管道框架 (Aggregation_Framework) => 【重点：MongoDB 的数据分析杀手锏】
+│   ├── 01_管道概念 (Pipeline：数据流经一系列处理阶段，上一个阶段的输出是下一个的输入)
+│   ├── 02_核心 Stage 阶段操作符
+│   │   ├── $match (过滤数据，尽量放在第一步以利用索引)
+│   │   ├── $group (分组聚合运算，搭配 $sum, $avg, $max, $push)
+│   │   ├── $project (投影，修改文档结构、添加计算新字段)
+│   │   ├── $sort / $limit / $skip (排序与分页)
+│   │   ├── $unwind (拆解数组：将包含数组的文档“拍平”为多条独立文档)
+│   │   ├── $lookup (左外连接：MongoDB 中的多表 Join 杀手锏)
+│   │   └── $addFields / $set (追加新字段)
+│   ├── 03_聚合表达式计算 ($cond 三元判断, $concat 字符串拼接, $dateToString 日期格式化)
+│   └── 04_聚合优化机制 (自动合并阶段、使用 $match 提前剪枝)
+│
+├── 06_并发、事务与存储引擎 (Concurrency_&_Storage)
+│   ├── 01_WiredTiger 存储引擎 (默认引擎)
+│   │   └── 核心特性 (文档级别锁 Document-level locking、内部缓存与文件系统缓存、Checkpoints 检查点)
+│   ├── 02_读写关注级别 (Write Concern & Read Preference)
+│   │   ├── Write Concern (w:1 写入单节点返回, w:majority 写入大多数节点返回, j:true 刷盘确认)
+│   │   └── Read Preference (Primary, PrimaryPreferred, Secondary, Nearest)
+│   └── 03_ACID 事务支持 (Transactions)
+│       ├── 单文档原子性 (默认保障)
+│       ├── 多文档事务 (自 v4.0 引入，语法类似关系型：startSession, startTransaction, commitTransaction)
+│       └── 隔离级别与分布式事务 (自 v4.2 支持分片集群事务)
+│
+├── 07_高可用架构：副本集 (Replica_Sets) => 【重点：生产环境基石】
+│   ├── 01_架构拓扑 (Primary 主节点、Secondary 从节点、Arbiter 仲裁节点)
+│   ├── 02_Oplog 操作日志 => 【面试必考】
+│   │   └── (Oplog 记录幂等操作，类似于 MySQL 的 Binlog，用于从节点数据异步增量同步)
+│   ├── 03_选举机制 (Election)
+│   │   └── (心跳机制 Heartbeat、Raft 一致性算法变种、多数派选举原则)
+│   ├── 04_故障转移与恢复 (Failover 与 Rollback 数据回滚机制)
+│   └── 05_读写分离实战 (应对高并发读场景)
+│
+├── 08_海量数据架构：分片集群 (Sharding_Cluster) => 【重点：无限水平扩展】
+│   ├── 01_分片架构三大组件
+│   │   ├── Mongos (路由节点：对外统一接口，负责请求分发与结果合并)
+│   │   ├── Config Servers (配置服务器：存储集群元数据与路由表，必须是副本集)
+│   │   └── Shards (分片节点：实际存储数据的副本集群)
+│   ├── 02_片键选择 (Shard Key) => 【架构师核心痛点：片键选错，集群重做】
+│   │   ├── 哈希分片 (Hashed：数据分布极度均匀，但不支持范围查询)
+│   │   ├── 范围分片 (Ranged：支持连续范围查询，但容易产生热点数据倾斜)
+│   │   └── 分区/标签分片 (Zones：将特定数据绑定到特定机房的分片上)
+│   └── 03_后台均衡器 (Balancer) 与 Chunks 块迁移机制
+│
+├── 09_高级特性与生态集成 (Advanced_Features_&_Ecosystem)
+│   ├── 01_Change Streams (变更流) => 【现代实时系统必备】
+│   │   └── (基于 Oplog 的发布订阅机制，实时监听数据库的增删改事件，无需轮询)
+│   ├── 02_GridFS (大文件存储系统，自动将超出 16MB 的音频/视频切分成 chunks 存储)
+│   ├── 03_全文检索整合 (通过 Connector 同步至 ElasticSearch，或使用 Atlas Search)
+│   └── 04_开发语言驱动对接
+│       ├── Node.js 环境 (Mongoose 对象文档映射库 ODM，Schema 定义)
+│       ├── Java/Spring 环境 (Spring Data MongoDB，MongoTemplate 常用 API)
+│       └── Python 环境 (PyMongo 库)
+│
+└── 10_安全管理、备份与运维 (Security_Backup_&_Ops)
+    ├── 01_安全与权限 (Security)
+    │   ├── 启用身份验证 (Auth)
+    │   ├── 基于角色的访问控制 (RBAC：内建角色 read, readWrite, dbAdmin, userAdmin)
+    │   └── 网络安全 (绑定的 IP bind_ip, TLS/SSL 加密传输)
+    ├── 02_备份与恢复 (Backup & Restore)
+    │   ├── 逻辑备份 (mongodump / mongorestore)
+    │   ├── 物理备份 (拷贝数据目录、文件系统快照)
+    │   └── Oplog 重放时间点恢复 (Point-in-Time Recovery)
+    └── 03_日常监控排查
+        ├── 慢查询日志追踪 (Profiler 设置阈值，分析 system.profile 集合)
+        └── 核心监控指标 (mongostat 和 mongotop 工具监控锁争用、缺页中断 Page Faults)

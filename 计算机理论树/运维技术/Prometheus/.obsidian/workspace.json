@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "13fa2c0c796b11cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ebab66f470b3993",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fb8cd561bef78a3b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_核心配置文件与机制 (Configuration)/04_热加载机制 (kill -HUP & curl -X POST &-&reload).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04_热加载机制 (kill -HUP & curl -X POST &-&reload)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "94e3ad1a061cf918",
+    "type": "split",
+    "children": [
+      {
+        "id": "f3dc3e599839d8c0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "506885e7afb2a8da",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e024d72a0a51c591",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "00bbc7b444f3148b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9852176209730f9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "cb33f35fbdc85fc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9557ae1fbef59711",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "08_Grafana 可视化与大盘设计 (Visualization)/01_接入 Prometheus 数据源 (Data Source 配置).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "01_接入 Prometheus 数据源 (Data Source 配置) 的反向链接列表"
+            }
+          },
+          {
+            "id": "fab844fdb787c8f3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "10_Kubernetes 云原生监控实战 (Cloud_Native_Monitoring) =》 【终极目标】/05_实战：自定义 Controller & 业务微服务的全链路监控部署.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "05_实战：自定义 Controller & 业务微服务的全链路监控部署 的出链列表"
+            }
+          },
+          {
+            "id": "acdaa53f44cf6402",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "7dbce6fc19ff4e6c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "a608078cd36c920f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02_核心配置文件与机制 (Configuration)/04_热加载机制 (kill -HUP & curl -X POST &-&reload).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "04_热加载机制 (kill -HUP & curl -X POST &-&reload) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "fb8cd561bef78a3b",
+  "lastOpenFiles": [
+    "01_初识与核心架构 (Introduction_&_Architecture)/01_监控基础理论 (白盒监控 vs 黑盒监控、USE原则、RED方法、四个黄金指标).md",
+    "07_Alertmanager 告警路由与通知 (Alerting)/01_架构设计 (Prometheus 评估规则 --》 发送告警 --》 Alertmanager 处理).md",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】/01_静态配置的局限性 (Static Config).md",
+    "08_Grafana 可视化与大盘设计 (Visualization)/01_接入 Prometheus 数据源 (Data Source 配置).md",
+    "09_高可用与集群长期存储方案 (HA_&_Long_Term_Storage) =》 【重点：突破单点瓶颈】/01_本地 TSDB 底层原理 (WAL 预写日志、Memory chunks、Block 压缩合并机制).md",
+    "10_Kubernetes 云原生监控实战 (Cloud_Native_Monitoring) =》 【终极目标】/01_K8s 监控痛点 (Pod IP 动态漂移、服务实例频繁销毁).md",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】/05_生命周期标签 (__address__, __metrics_path__, __meta_kubernetes_pod_ip).md",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】/04_Relabeling 重新打标机制 =》 (高级玩家必备).md",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】/03_主流动态服务发现 (Consul SD, Kubernetes SD, EC2 SD).md",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】/02_基于文件的服务发现 (File SD：结合外部自动化脚本动态更新).md",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)/05_cAdvisor (Docker 容器级别物理资源监控).md",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)/04_自定义业务埋点 (Client Libraries).md",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)/03_中间件&数据库监控 (MySQL Exporter, Redis Exporter, Kafka Exporter).md",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)/02_黑盒网络监控 (Blackbox Exporter：ICMP&TCP&HTTP&DNS 存活与耗时探测).md",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)/01_机器指标监控 (Node Exporter：CPU&内存&磁盘IO&网络&文件描述符).md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/05_向量匹配与集合运算 (一对一、一对多 Group Left & Group Right, and&or&unless).md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/04_核心函数应用.md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/03_时间位移操作 (offset 5m, @ modifier，用于环比&同比查询).md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/02_标签匹配器 (=, !=, =~, !~).md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/01_基础查询语法 (实时向量 Instant Vector, 区间向量 Range Vector [5m]).md",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】/05_Summary (摘要：客户端计算分位数，与 Histogram 的优缺点对比与选型).md",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】/04_Histogram (直方图：按区间划分的统计，用于计算 P99&P95 耗时、请求大小).md",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】/03_Gauge (仪表盘：可增可减，用于CPU使用率、内存占用、当前并发数).md",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】/02_Counter (计数器：只增不减，用于请求量、错误数、任务完成数).md",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】/01_时序数据概念 (Time Series：Metric Name + Label 键值对唯一确定).md",
+    "02_核心配置文件与机制 (Configuration)/05_Pushgateway (针对短生命周期&临时批处理任务的数据推送机制).md",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】/未命名",
+    "未命名",
+    "10_Kubernetes 云原生监控实战 (Cloud_Native_Monitoring) =》 【终极目标】",
+    "09_高可用与集群长期存储方案 (HA_&_Long_Term_Storage) =》 【重点：突破单点瓶颈】",
+    "08_Grafana 可视化与大盘设计 (Visualization)",
+    "07_Alertmanager 告警路由与通知 (Alerting)",
+    "06_服务发现与 Relabeling 机制 (Service_Discovery_&_Relabeling) =》 【重点：动态与自动化】",
+    "05_Exporters 生态与埋点监控 (Exporters_&_Instrumentation)",
+    "04_PromQL 查询语言 (PromQL) =》 【重点：日常工作与面试核心】",
+    "03_时序数据模型与指标类型 (Data_Model_&_Metrics_Types) =》 【重点：底层数据结构】"
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "8b8b3713409ba554",
+    "type": "split",
+    "children": [
+      {
+        "id": "06ed45b5e988b463",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73cbbd22c7ee1b22",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_初识与核心架构 (Introduction_&_Architecture)/01_什么是Docker (解决 '在我的机器上能跑' 的问题、一次构建到处运行).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_什么是Docker (解决 '在我的机器上能跑' 的问题、一次构建到处运行)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f26745a430703b73",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef089f5a68aa4e26",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "152c61bdc31c72c4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "67ad0d0689cd3f14",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "16c9855771be7ba1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 382.5
+  },
+  "right": {
+    "id": "118b421f75953858",
+    "type": "split",
+    "children": [
+      {
+        "id": "992c666ef7374533",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6741a449ae93e6e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/05_向云原生编排演进.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "05_向云原生编排演进 的反向链接列表"
+            }
+          },
+          {
+            "id": "973febea99df2988",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/05_向云原生编排演进.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "05_向云原生编排演进 的出链列表"
+            }
+          },
+          {
+            "id": "fb1673d709f26abb",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "48d89551c0883c91",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "c559c065d75527c0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/05_向云原生编排演进.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "05_向云原生编排演进 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "73cbbd22c7ee1b22",
+  "lastOpenFiles": [
+    "04_容器生命周期与操作 (Container_Operations) = 【重点：日常高频命令】/01_创建与运行 (run 命令核心参数：-d 后台, -it 交互, --name 命名, --rm 退出删除).md",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】/05_commit 提交镜像 (基于运行中的容器保存镜像 - 通常不推荐用于生产).md",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】/04_UnionFS 联合文件系统 (Overlay2 存储驱动、只读层与可写层).md",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】/03_镜像的导入导出 (save 与 load 的使用场景，与 export 的区别).md",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】/02_查看与清理 (images, image ls, rmi, image prune - 虚悬镜像 dangling).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/04_三大核心概念 (Image 镜像、Container 容器、Repository 仓库).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/03_核心架构 (CS架构模式：Docker Client, Docker Daemon, REST API).md",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】/01_获取与推送 (pull, push, search, login).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/05_OCI标准 (Open Container Initiative：runc, containerd 演进简史).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/02_Docker与虚拟机对比 (容器级虚拟化 vs 硬件级虚拟化、轻量与启动速度).md",
+    "01_初识与核心架构 (Introduction_&_Architecture)/01_什么是Docker (解决 '在我的机器上能跑' 的问题、一次构建到处运行).md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/05_向云原生编排演进.md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/04_DevOps 持续集成流水线实战.md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/03_日志集中化处理.md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/02_安全与审计.md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)/01_私有镜像仓库搭建.md",
+    "09_底层隔离原理剖析 (Under_The_Hood) = 【架构师&底层原理】/03_UnionFS (联合文件系统，见 03_镜像管理 章节).md",
+    "09_底层隔离原理剖析 (Under_The_Hood) = 【架构师&底层原理】/02_Cgroups (控制组机制：实现资源限制).md",
+    "09_底层隔离原理剖析 (Under_The_Hood) = 【架构师&底层原理】/01_Namespace (命名空间机制：实现视图隔离&环境隔离).md",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】/05_实战演练 (一键部署 SpringBoot + Redis + MySQL + Nginx 完整微服务).md",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】/04_常用命令 (up -d, down, logs, ps, exec, restart, build).md",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】/03_依赖与启动顺序 (depends_on、健康检查 healthcheck).md",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】/02_docker-compose.yml 语法解析.md",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】/01_Compose 简介 (定义和运行多容器 Docker 应用程序的工具).md",
+    "07_Dockerfile 核心语法与最佳实践 (Dockerfile) = 【重点：面试必问与工程化】/08_【进阶】多阶段构建 (Multi-stage builds).md",
+    "07_Dockerfile 核心语法与最佳实践 (Dockerfile) = 【重点：面试必问与工程化】/07_上下文环境 (理解 'docker build .' 中的 '.'，以及 .dockerignore 的作用).md",
+    "10_企业级CICD实战与集群演进 (Enterprise_Real_World)",
+    "09_底层隔离原理剖析 (Under_The_Hood) = 【架构师&底层原理】",
+    "08_Docker Compose 多容器编排 (Docker_Compose) = 【重点：本地&测试环境神器】",
+    "07_Dockerfile 核心语法与最佳实践 (Dockerfile) = 【重点：面试必问与工程化】",
+    "06_网络模型与容器互联 (Networking) = 【重点：容器间通信】",
+    "05_数据卷与持久化机制 (Storage_&_Volumes) = 【重点：防止数据丢失】",
+    "04_容器生命周期与操作 (Container_Operations) = 【重点：日常高频命令】",
+    "03_镜像管理与操作 (Image_Management) = 【重点：镜像分层原理】",
+    "02_环境安装与基础配置 (Setup_&_Configuration)",
+    "01_初识与核心架构 (Introduction_&_Architecture)"
+  ]
+}

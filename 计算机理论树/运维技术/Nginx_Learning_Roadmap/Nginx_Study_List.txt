@@ -1,0 +1,96 @@
+Nginx_Learning_Roadmap/
+│
+├── 01_初识与安装 (Introduction_&_Setup)
+│   ├── 01_Nginx简介 (高性能原理、与Apache的对比、主要应用场景)
+│   ├── 02_核心架构 (Master-Worker 多进程模型、事件驱动、异步非阻塞 epoll)
+│   ├── 03_环境安装 (Linux yum/apt安装、源码编译安装、Docker容器部署)
+│   ├── 04_源码编译模块 (常见编译参数: --with-http_ssl_module, --with-stream)
+│   └── 05_基础命令 (start, -s reload, -s stop, -s quit, -t 语法测试, -v/-V 版本与模块)
+│
+├── 02_核心配置语法 (Core_Configuration) => 【重点：目录结构与作用域】
+│   ├── 01_配置文件结构 (nginx.conf 层级: main全局 -> events -> http -> server -> location)
+│   ├── 02_全局块 (user, worker_processes, error_log, pid)
+│   ├── 03_Events块 (worker_connections, use epoll)
+│   ├── 04_Http块 (include mime.types, default_type, log_format)
+│   ├── 05_Server块 (虚拟主机配置: 监听端口 listen, 域名 server_name)
+│   └── 06_常用内置变量 ($host, $remote_addr, $request_uri, $http_user_agent)
+│
+├── 03_Web服务器与静态资源 (Static_Web_Server)
+│   ├── 01_根目录映射 (root 与 alias 的核心区别)
+│   ├── 02_首页与目录浏览 (index, autoindex 开启目录文件列表)
+│   ├── 03_Location 匹配规则 => 【必考：匹配优先级详解】
+│   │   ├── 精确匹配 (=)
+│   │   ├── 前缀匹配 (^~ / 无修饰符)
+│   │   ├── 正则匹配 (~ 区分大小写, ~* 不区分大小写)
+│   │   └── 通用匹配 (/)
+│   ├── 04_Gzip 压缩优化 (gzip on, 压缩级别, 压缩类型, 解决CPU消耗问题)
+│   └── 05_浏览器缓存控制 (expires 指令、Cache-Control 头配置)
+│
+├── 04_反向代理与网关 (Reverse_Proxy) => 【重点：企业级应用】
+│   ├── 01_正向代理与反向代理的区别
+│   ├── 02_基础反向代理 (proxy_pass 配置与 URL 尾部斜杠 "/" 的拼接细节)
+│   ├── 03_透传客户端真实IP (proxy_set_header X-Real-IP / X-Forwarded-For)
+│   ├── 04_代理配置优化 (proxy_connect_timeout, proxy_read_timeout)
+│   ├── 05_WebSocket 代理 (支持 ws/wss 协议升级请求头透传)
+│   └── 06_网关跨域配置 (CORS: add_header Access-Control-Allow-Origin等)
+│
+├── 05_负载均衡 (Load_Balancing) => 【重点：高可用基础】
+│   ├── 01_Upstream 模块 (定义后端服务池)
+│   ├── 02_负载均衡算法
+│   │   ├── 轮询 (Round Robin - 默认)
+│   │   ├── 权重 (weight - 适合后端服务器性能不一)
+│   │   ├── IP哈希 (ip_hash - 解决Session共享问题)
+│   │   ├── 最少连接 (least_conn)
+│   │   └── URL哈希 (hash $request_uri)
+│   ├── 03_节点状态参数 (down, backup, max_fails, fail_timeout)
+│   ├── 04_健康检查机制 (自带的被动检查 vs 第三方模块 active health check)
+│   └── 05_四层负载均衡 (Stream 模块: 实现 TCP/UDP 代理，如 MySQL/Redis 代理)
+│
+├── 06_Rewrite重写与路由控制 (Rewrite_&_Routing)
+│   ├── 01_Rewrite 语法规则 (rewrite regex replacement [flag])
+│   ├── 02_Rewrite Flags 解析 (last, break, redirect 302, permanent 301)
+│   ├── 03_If 判断语句 (基于变量的条件判断，避免"If is Evil"陷阱)
+│   ├── 04_Return 指令 (快速返回 HTTP 状态码或文本)
+│   └── 05_实战场景 (HTTP 强转 HTTPS、域名更换旧URL适配、伪静态配置)
+│
+├── 07_HTTPS 与 安全防护 (HTTPS_&_Security)
+│   ├── 01_HTTPS 证书配置 (ssl_certificate, ssl_certificate_key)
+│   ├── 02_SSL 优化 (ssl_session_cache, 开启 HTTP/2, 禁用不安全的 TLS1.0)
+│   ├── 03_访问控制 (allow, deny IP 黑白名单)
+│   ├── 04_基础认证 (auth_basic 结合 htpasswd 保护内部系统)
+│   ├── 05_防盗链设计 (valid_referers 阻止其他网站盗用图片/视频带宽)
+│   ├── 06_隐藏版本号 (server_tokens off 防护漏洞扫描)
+│   └── 07_限流防 CC 攻击 => 【重点：高并发自保机制】
+│       ├── 限制请求速率 (limit_req_zone, 漏桶算法)
+│       └── 限制并发连接数 (limit_conn_zone)
+│
+├── 08_缓存机制与性能调优 (Caching_&_Tuning) => 【重点：性能天花板】
+│   ├── 01_代理缓存配置 (proxy_cache, proxy_cache_path, proxy_cache_key)
+│   ├── 02_缓存清除 (第三方模块 proxy_cache_purge)
+│   ├── 03_系统层性能调优
+│   │   ├── 零拷贝技术 (sendfile on, tcp_nopush, tcp_nodelay)
+│   │   ├── 文件描述符限制调整 (worker_rlimit_nofile)
+│   │   └── CPU亲和性 (worker_cpu_affinity 绑定 CPU 核心，减少上下文切换)
+│   └── 04_内核参数调优 (sysctl.conf: 调大 SOMAXCONN, 优化 TCP TIME_WAIT 快速回收)
+│
+├── 09_日志管理与监控 (Logging_&_Monitoring)
+│   ├── 01_访问日志与错误日志 (access_log, error_log)
+│   ├── 02_自定义日志格式 (log_format 输出 JSON 格式对接 ELK/Filebeat)
+│   ├── 03_日志切割/归档 (logrotate 结合 Linux 定时任务)
+│   ├── 04_基础监控看板 (stub_status 模块查看 Active connections 等指标)
+│   └── 05_进阶监控 (Prometheus + Nginx Exporter + Grafana 体系)
+│
+├── 10_高可用集群架构 (High_Availability_Architecture)
+│   ├── 01_单点故障问题 (Nginx 宕机导致整个服务不可用)
+│   ├── 02_Keepalived 介绍 (基于 VRRP 虚拟路由冗余协议)
+│   ├── 03_Nginx + Keepalived 双机热备 (主备模式 Master-Backup、VIP漂移)
+│   ├── 04_Nginx + Keepalived 双主模式 (互为主备、DNS轮询解析分流)
+│   └── 05_高可用健康检查脚本 (定时检测 Nginx 进程，挂掉自动尝试重启或降级VIP)
+│
+└── 11_进阶生态：OpenResty 与 Lua (Advanced_Ecosystem) => 【架构师/高阶玩法】
+    ├── 01_OpenResty 简介 (Nginx + LuaJIT 的超高性能 Web 平台)
+    ├── 02_Lua 语言基础语法速成
+    ├── 03_Nginx Lua API 核心指令 (content_by_lua, access_by_lua, rewrite_by_lua)
+    ├── 04_实战：动态路由 (基于请求参数/Header 将流量打到不同环境的灰度发布)
+    ├── 05_实战：访问Redis/MySQL (基于 OpenResty 直接读写 Redis 构建多级缓存)
+    └── 06_实战：自定义 WAF (Web应用防火墙，动态封禁恶意 IP，SQL注入拦截)

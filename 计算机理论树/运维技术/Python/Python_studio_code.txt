@@ -1,0 +1,101 @@
+Python_Learning_Roadmap/
+│
+├── 01_初识与基础语法 (Introduction_&_Basics)
+│   ├── 01_Python简介 (解释型语言特性、动态类型、应用领域)
+│   ├── 02_环境搭建 (Python3 安装、环境变量配置、IDLE/PyCharm/VSCode 介绍)
+│   ├── 03_包与虚拟环境 (pip, venv, Anaconda/Miniconda，理解环境隔离的必要性)
+│   ├── 04_基础数据类型 (int, float, bool, complex)
+│   ├── 05_字符串基础 (str, 转义字符, 格式化输出: % / format / f-string)
+│   ├── 06_运算符 (算术、比较、逻辑、赋值、成员运算符 in, 身份运算符 is/== 区别)
+│   └── 07_输入与输出 (print(), input())
+│
+├── 02_核心数据结构 (Core_Data_Structures) => 【重点：内置容器极其强大】
+│   ├── 01_列表 (List: 增删改查、切片 [start:stop:step]、排序)
+│   ├── 02_元组 (Tuple: 不可变特性、解包 Unpacking、与 List 的内存差异)
+│   ├── 03_字典 (Dict: 键值对、哈希特性、get(), keys(), values(), items())
+│   ├── 04_集合 (Set: 去重、交集、并集、差集运算)
+│   ├── 05_推导式 (Comprehensions: 极具 Pythonic 风格的 List/Dict/Set 推导式写法)
+│   └── 06_深浅拷贝 (copy() 与 copy.deepcopy() 的内存指针原理)
+│
+├── 03_控制流程与函数 (Control_Flow_&_Functions)
+│   ├── 01_条件判断 (if / elif / else, 三元表达式)
+│   ├── 02_循环控制 (for, while, break, continue, 独特的 for...else 语法)
+│   ├── 03_函数基础 (def 定义, 返回值 return, 多个返回值)
+│   ├── 04_参数类型 => 【必考坑点】
+│   │   ├── 位置参数、默认参数 (默认参数绝对不能使用可变对象如 [])
+│   │   ├── 动态参数 (*args 接收元组, **kwargs 接收字典)
+│   │   └── 仅限关键字参数 (Keyword-only arguments)
+│   ├── 05_匿名函数 (lambda 表达式及结合 map/filter/reduce 的使用)
+│   └── 06_作用域规则 (LEGB 规则: Local, Enclosing, Global, Built-in, global/nonlocal 关键字)
+│
+├── 04_面向对象编程 (OOP) => 【重点：一切皆对象】
+│   ├── 01_类与实例 (class 定义, self 的本质, __init__ 构造方法)
+│   ├── 02_实例属性与类属性 (内存存储差异、动态绑定)
+│   ├── 03_三大特性
+│   │   ├── 封装 (私有属性/方法 __var, property 装饰器实现 Getter/Setter)
+│   │   ├── 继承 (单继承、多继承、super() 函数、MRO 方法解析顺序与 C3 算法)
+│   │   └── 多态 (鸭子类型 Duck Typing 的核心思想)
+│   ├── 04_类方法与静态方法 (@classmethod, @staticmethod)
+│   └── 05_魔术方法 (Dunder Methods: __str__, __repr__, __call__, __new__ 实现单例模式)
+│
+├── 05_高阶特性与底层机制 (Advanced_Features) => 【重点：高级开发/架构师必备】
+│   ├── 01_闭包 (Closure 概念及延迟绑定陷阱)
+│   ├── 02_装饰器 (Decorator) => 【面试超高频】
+│   │   ├── 基础函数装饰器、带参数的装饰器、类装饰器
+│   │   └── functools.wraps 的作用 (保留原函数元信息)
+│   ├── 03_迭代器 (Iterator) (可迭代对象 Iterable 与 Iterator 的区别, iter() 和 next())
+│   ├── 04_生成器 (Generator) (yield 关键字实现按需生成，极大节省内存、yield from)
+│   ├── 05_上下文管理器 (Context Manager) (with 语句原理, __enter__ 与 __exit__, contextlib)
+│   ├── 06_垃圾回收机制 (GC: 引用计数为主，标记-清除与分代回收为辅)
+│   └── 07_类型提示 (Type Hints, typing 模块, 让 Python 走向静态类型检查)
+│
+├── 06_模块、包与异常处理 (Modules_Packages_&_Exceptions)
+│   ├── 01_模块与包 (import, from...import, __init__.py 的作用, 绝对导入与相对导入)
+│   ├── 02_程序入口 (__name__ == '__main__' 的工程意义)
+│   ├── 03_异常处理 (try / except / else / finally 完整语法，捕获 Exception)
+│   ├── 04_抛出与自定义异常 (raise 关键字，继承 Exception 类)
+│   ├── 05_文件操作 (open, 读写模式 r/w/a/rb, 编码 encoding='utf-8')
+│   └── 06_标准库巡礼 (os, sys, datetime, math, random, json, re 正则表达式, collections)
+│
+├── 07_并发编程与异步 (Concurrency_&_Async) => 【重点：突破性能瓶颈】
+│   ├── 01_GIL 全局解释器锁 => 【面试必考大魔王】
+│   │   └── 什么是 GIL？为什么 Python 多线程是“伪多线程”？CPU 密集型 vs IO 密集型的选型权衡
+│   ├── 02_多线程 (threading) (Thread, Lock 互斥锁死锁问题, ThreadPoolExecutor 线程池)
+│   ├── 03_多进程 (multiprocessing) (Process, Queue/Pipe 进程间通信, ProcessPoolExecutor)
+│   └── 04_异步编程 (asyncio) => 【现代 Python 必备】
+│       ├── 协程的概念 (Coroutine，基于单线程的并发实现)
+│       ├── 核心语法 (async def, await)
+│       ├── 事件循环 (Event Loop 机制)
+│       └── 异步生态 (aiohttp, asyncpg 等异步第三方库)
+│
+├── 08_工程化、自动化测试与 CI/CD (Engineering_&_Best_Practices)
+│   ├── 01_代码规范 (PEP 8 规范, Flake8 / Black 代码格式化工具)
+│   ├── 02_现代包管理 (pipenv, poetry，彻底解决 requirements.txt 的依赖地狱)
+│   ├── 03_单元测试 (unittest 官方库, pytest 现代测试框架及 fixture 机制, mock 测试)
+│   ├── 04_日志管理 (logging 模块配置：logger, handler, formatter, level)
+│   └── 05_打包与发布 (setup.py, pyproject.toml, 打包 Wheel 并发布至 PyPI)
+│
+├── 09_应用方向一：Web 后端开发 (Web_Development)
+│   ├── 01_网络协议基础 (HTTP/TCP 简述, WSGI / ASGI 协议原理)
+│   ├── 02_Django (大而全的企业级框架)
+│   │   ├── MVT 架构模型、ORM 数据库映射、Admin 后台、Form 表单
+│   │   └── Django REST Framework (DRF: 序列化器, 视图集, JWT 认证)
+│   ├── 03_Flask (轻量级微框架)
+│   │   ├── 路由机制、Jinja2 模板、请求上下文 (Context) 与 ThreadLocal 原理
+│   │   └── SQLAlchemy (最强大的第三方 ORM)、Alembic 数据库迁移
+│   └── 04_FastAPI (现代异步框架 => 强推学习)
+│       └── 纯异步原生支持、基于 Pydantic 的数据验证、自动生成 Swagger/OpenAPI 文档
+│
+├── 10_应用方向二：网络爬虫与自动化 (Web_Scraping_&_Automation)
+│   ├── 01_基础请求抓取 (Requests 库, 应对 Cookie/Session、代理 IP、Headers 伪装)
+│   ├── 02_数据提取解析 (BeautifulSoup4, lxml / XPath, 正则提取)
+│   ├── 03_动态网页与自动化 (Selenium, Playwright 框架操作无头浏览器, 规避反爬)
+│   ├── 04_App 抓取 (Appium, 抓包工具 Charles/Fiddler/Mitmproxy)
+│   └── 05_Scrapy 爬虫框架 (架构解析: Engine, Spider, Pipeline, Downloader Middleware)
+│
+└── 11_应用方向三：数据分析与 AI 基础 (Data_Science_&_AI_Basics)
+    ├── 01_Jupyter 交互式开发 (Jupyter Notebook / Lab 的使用)
+    ├── 02_NumPy (高性能多维数组与矩阵计算、广播机制 Broadcasting)
+    ├── 03_Pandas (数据清洗神器：Series, DataFrame, 缺失值处理, groupby 分组聚合, merge 关联)
+    ├── 04_数据可视化 (Matplotlib, Seaborn, Pyecharts)
+    └── 05_机器学习基础生态科普 (Scikit-learn, PyTorch/TensorFlow 深度学习框架简介)

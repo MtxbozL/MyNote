@@ -1,0 +1,93 @@
+RabbitMQ_Learning_Roadmap/
+│
+├── 01_初识与核心架构原理 (Introduction_&_Architecture)
+│   ├── 01_消息中间件概览 (异步解耦、削峰填谷、与 Kafka/RocketMQ 选型对比)
+│   ├── 02_AMQP 协议简介 (高级消息队列协议标准，RabbitMQ 是其最经典实现)
+│   ├── 03_Erlang 语言特性 (天生支持高并发、分布式、热更新的底层基石)
+│   ├── 04_安装与启动 (Docker 部署带 Management UI 插件的管理版)
+│   ├── 05_核心架构组件 => 【重点：全局概念图】
+│   │   ├── Broker (RabbitMQ 服务节点)
+│   │   ├── Virtual Host (虚拟主机：逻辑隔离，类似 MySQL 的 Database)
+│   │   ├── Connection (TCP 物理连接)
+│   │   └── Channel (信道：多路复用技术，避免频繁建立 TCP 连接带来的开销)
+│   └── 06_消息流转模型 (Producer -> Exchange -> Binding -> Queue -> Consumer)
+│
+├── 02_核心交换机与路由模型 (Exchange_&_Routing) => 【重点：灵活分发的基础】
+│   ├── 01_Simple & Work Queues (基本与工作队列模型，直接投递到队列)
+│   ├── 02_Fanout Exchange (广播模式：发布/订阅，忽略 RoutingKey，路由到所有绑定队列)
+│   ├── 03_Direct Exchange (直连模式：RoutingKey 与 BindingKey 必须完全精确匹配)
+│   ├── 04_Topic Exchange (主题模式) => 【最常用】
+│   │   └── 通配符匹配规则 (`*` 匹配一个单词，`#` 匹配零个或多个单词，如 `order.#`)
+│   ├── 05_Headers Exchange (头模式：基于 Message Headers 匹配，极少使用)
+│   └── 06_RPC 模式 (基于 Reply-To 队列实现远程过程调用同步等待)
+│
+├── 03_消息可靠性投递与防丢方案 (Reliability) => 【极度重点：面试重灾区】
+│   ├── 01_生产端防丢 (Producer -> Broker)
+│   │   ├── 事务机制 (txSelect, txCommit, txRollback - 性能极差，被淘汰)
+│   │   ├── Publisher Confirms (发送方确认机制：ack/nack 异步回调)
+│   │   └── Return Listener (退回机制：消息到达 Exchange 但未能路由到 Queue 时触发)
+│   ├── 02_服务端防丢 (Broker 内部存储)
+│   │   ├── 交换机持久化 (durable=true)
+│   │   ├── 队列持久化 (durable=true)
+│   │   └── 消息持久化 (delivery_mode=2，写入磁盘)
+│   └── 03_消费端防丢 (Broker -> Consumer)
+│       ├── Auto Ack 的危害 (消息一旦推给消费者立刻在 Broker 删除，如果消费者宕机则消息丢失)
+│       ├── Manual Ack (手动确认机制：basicAck, basicNack, basicReject)
+│       └── 重回队列 (requeue 参数：消费失败后将消息重新放回队列头部/尾部)
+│
+├── 04_高级特性与死信队列 (Advanced_Features_&_DLX) => 【架构师必备】
+│   ├── 01_TTL (Time To Live 存活时间)
+│   │   └── 队列级别 TTL vs 单条消息级别 TTL 的区别与清除机制
+│   ├── 02_DLX 死信交换机 (Dead Letter Exchange) => 【必考】
+│   │   ├── 产生死信的三个条件 (消息被拒且不重回队列、消息 TTL 过期、队列达到最大长度)
+│   │   └── 配置路由绑定 (x-dead-letter-exchange, x-dead-letter-routing-key)
+│   ├── 03_延迟队列实战 (Delayed Queue)
+│   │   ├── 方案一：基于 TTL + DLX 实现 (存在队列头部阻塞/时序问题)
+│   │   └── 方案二：基于 rabbitmq-delayed-message-exchange 插件实现 (官方推荐)
+│   ├── 04_Alternate Exchange (备份交换机，处理无法路由的消息，优先级高于 Return 机制)
+│   └── 05_Lazy Queues (惰性队列)
+│       └── 应对海量消息积压，消息直接存入磁盘，仅在消费时加载到内存，防止 OOM
+│
+├── 05_企业级实战场景与经典痛点 (Practical_Scenarios) => 【重点：业务解决方案】
+│   ├── 01_消息幂等性 (防重复消费)
+│   │   ├── 产生原因 (网络闪断导致 Ack 丢失，Broker 超时重发)
+│   │   └── 解决方案 (全局唯一 MessageID + 数据库唯一索引 / Redis SETNX 防重表)
+│   ├── 02_消息顺序性保证
+│   │   ├── 错乱原因 (多个 Consumer 消费同一个队列并发处理)
+│   │   └── 解决方案 (单 Queue 对应单 Consumer，内部通过内存队列分发，或 Hash 路由到多 Queue)
+│   ├── 03_消息极度积压处理
+│   │   └── 紧急预案 (临时扩容十倍 Queue 数量，原 Consumer 只负责快速转发不处理业务)
+│   └── 04_分布式事务 (可靠消息最终一致性)
+│       └── 本地消息表 + 定时任务补偿 + RabbitMQ 可靠投递
+│
+├── 06_高可用集群与架构演进 (High_Availability_Cluster)
+│   ├── 01_普通集群架构 (Standard Cluster)
+│   │   └── 原理 (仅同步元数据/队列结构，不同步消息体。节点宕机该节点数据不可用，并非真正 HA)
+│   ├── 02_镜像队列集群 (Mirrored Queues) => 【经典方案，但在 3.x 逐渐被淘汰】
+│   │   └── 原理 (通过同步策略，在节点间复制消息实体，性能损耗较大，易产生网络风暴)
+│   ├── 03_仲裁队列 (Quorum Queues) => 【现代推荐方案 (v3.8+)】
+│   │   └── 原理 (基于 Raft 共识算法，替代镜像队列，提供更高的数据一致性与更可控的性能)
+│   ├── 04_流式队列 (Stream Queues) => 【对标 Kafka (v3.9+)】
+│   │   └── 原理 (Append-only 日志模型，支持消息持久化回放、极高吞吐量)
+│   └── 05_负载均衡组件整合
+│       └── HAProxy / Nginx (TCP 四层代理) + Keepalived 实现集群入口的高可用 VIP
+│
+├── 07_客户端整合与 Spring Boot 生态 (Spring_Boot_Integration)
+│   ├── 01_基础整合 (spring-boot-starter-amqp)
+│   ├── 02_RabbitTemplate (消息发送的核心 API 封装，配置 ConfirmCallback)
+│   ├── 03_@RabbitListener 与 @RabbitHandler (消息消费注解，支持方法重载)
+│   ├── 04_MessageConverter (序列化转换器)
+│   │   └── 坑点 (默认使用 JDK 序列化，乱码且体积大，强烈建议改为 Jackson2JsonMessageConverter)
+│   └── 05_声明式配置 (通过 @Bean 定义 Queue, DirectExchange, Binding)
+│
+└── 08_性能调优、监控与安全 (Tuning_Ops_&_Security)
+    ├── 01_QoS 预取数量调优 (Prefetch Count / basic.qos)
+    │   └── (防止 Broker 一次性推送海量消息压垮 Consumer，实现能者多劳机制)
+    ├── 02_资源告警阈值 (Alarms)
+    │   └── 内存阈值 (vm_memory_high_watermark) 与磁盘可用空间报警 (触发时会阻塞生产者连接)
+    ├── 03_监控与可视化
+    │   ├── Web UI 核心指标查看 (Connections, Channels, Queues Unacked/Ready 状态)
+    │   └── Prometheus + Grafana 集成 (rabbitmq_prometheus 插件)
+    └── 04_安全与权限管理
+        ├── 默认 guest 用户的限制 (只能通过 localhost 登录)
+        └── 基于 VHost 的细粒度权限控制 (配置、读、写权限分离)
