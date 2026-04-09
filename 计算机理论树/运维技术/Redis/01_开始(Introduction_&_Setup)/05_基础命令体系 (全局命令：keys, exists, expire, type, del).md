@@ -65,15 +65,14 @@
     
 3. **核心衍生命令（基础体系必学）** 为覆盖不同精度与场景，Redis 提供完整的过期时间管理命令体系，与 EXPIRE 为同一功能集合：
     
-|           |                                             |                                                           |     |      |                       |
-| --------- | ------------------------------------------- | --------------------------------------------------------- | --- | ---- | --------------------- |
-| 命令        | 语法                                          | 核心功能                                                      |     |      |                       |
-| PEXPIRE   | `PEXPIRE key milliseconds [NX               | XX                                                        | GT  | LT]` | 设置生存时间，单位为毫秒，提供更高时间精度 |
-| EXPIREAT  | `EXPIREAT key unix-timestamp-seconds`       | 设置 Key 的过期时间为指定的 Unix 时间戳，单位秒                             |     |      |                       |
-| PEXPIREAT | `PEXPIREAT key unix-timestamp-milliseconds` | 设置过期时间为指定的 Unix 时间戳，单位毫秒                                  |     |      |                       |
-| TTL       | `TTL key`                                   | 查询 Key 剩余生存时间，单位秒；返回 - 1=Key 存在无过期时间，-2=Key 不存在，≥0 = 剩余秒数 |     |      |                       |
-| PTTL      | `PTTL key`                                  | 查询 Key 剩余生存时间，单位毫秒，返回值规则同 TTL                             |     |      |                       |
-| PERSIST   | `PERSIST key`                               | 移除 Key 的过期时间，将 Key 转为永久有效，时间复杂度 O (1)                     |     |      |                       |
+|命令|语法|核心功能|关键说明（参数 / 返回值 / 复杂度）|
+|---|---|---|---|
+|`PEXPIRE`|`PEXPIRE key milliseconds [NX \| XX \| GT \| LT]`|为指定 key 设置**相对生存时间**，单位为**毫秒**，提供更高时间精度|<ul><li>可选参数：<br><br>• `NX`：仅当 key 当前无过期时间时，才设置<br><br>• `XX`：仅当 key 已存在过期时间时，才更新<br><br>• `GT`：仅当新过期时间 > 当前剩余时间时，才更新<br><br>• `LT`：仅当新过期时间 < 当前剩余时间时，才更新</li><li>时间复杂度：O (1)</li></ul>|
+|`EXPIREAT`|`EXPIREAT key unix-timestamp-seconds [NX \| XX \| GT \| LT]`|将 key 的过期时间设置为指定的 **Unix 绝对时间戳（秒级）**，key 在该时间点自动过期|<ul><li>可选参数同 `PEXPIRE`</li><li>时间复杂度：O (1)</li></ul>|
+|`PEXPIREAT`|`PEXPIREAT key unix-timestamp-milliseconds [NX \| XX \| GT \| LT]`|将 key 的过期时间设置为指定的 **Unix 绝对时间戳（毫秒级）**，提供更高精度的过期时间点|<ul><li>可选参数同 `PEXPIRE`</li><li>时间复杂度：O (1)</li></ul>|
+|`TTL`|`TTL key`|查询指定 key 的**剩余生存时间**，单位为**秒**|<ul><li>返回值规则：<br><br>• `≥0`：key 存在且有过期时间，返回剩余秒数<br><br>• `-1`：key 存在，但无过期时间（永久有效）<br><br>• `-2`：key 不存在</li><li>时间复杂度：O (1)</li></ul>|
+|`PTTL`|`PTTL key`|查询指定 key 的**剩余生存时间**，单位为**毫秒**|<ul><li>返回值规则与 `TTL` 完全一致，仅单位不同</li><li>时间复杂度：O (1)</li></ul>|
+|`PERSIST`|`PERSIST key`|移除指定 key 的过期时间，将其转为**永久有效**的 key|<ul><li>时间复杂度：O (1)</li><li>仅对有过期时间的 key 生效，对永久 key 执行返回 0</li></ul>|
     
 4. **参数说明**
     
@@ -124,16 +123,15 @@
     
 4. **返回值**：字符串类型，返回对应的数据类型标识，可选值如下：
     
-    |   |   |
-    |---|---|
-    |返回值|对应数据类型|
-    |`string`|字符串类型|
-    |`list`|列表类型|
-    |`hash`|哈希类型|
-    |`set`|集合类型|
-    |`zset`|有序集合类型|
-    |`stream`|流数据类型|
-    |`none`|Key 不存在|
+| 返回值      | 对应数据类型  |
+| -------- | ------- |
+| `string` | 字符串类型   |
+| `list`   | 列表类型    |
+| `hash`   | 哈希类型    |
+| `set`    | 集合类型    |
+| `zset`   | 有序集合类型  |
+| `stream` | 流数据类型   |
+| `none`   | Key 不存在 |
     
 5. **核心特性与使用规范**
     
