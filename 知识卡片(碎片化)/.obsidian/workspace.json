@@ -1,0 +1,1043 @@
+{
+  "main": {
+    "id": "d4e51e757321ce6a",
+    "type": "split",
+    "children": [
+      {
+        "id": "d79f3f09ee196061",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e303772beb62ae2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Python/41. 请解释 Python 代码的执行过程？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "41. 请解释 Python 代码的执行过程？"
+            }
+          },
+          {
+            "id": "d32d9af6b2dd8209",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "42. Python 有哪些内置数据结构？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "42. Python 有哪些内置数据结构？"
+            }
+          },
+          {
+            "id": "57088e0a1b7c60c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "43. Python 中单引号和双引号有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "43. Python 中单引号和双引号有什么区别？"
+            }
+          },
+          {
+            "id": "0f6e319dd0285b69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "44. Python 中 append、insert 和 extend 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "44. Python 中 append、insert 和 extend 有什么区别？"
+            }
+          },
+          {
+            "id": "6ff38f8a50762bc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "44. Python 中 append、insert 和 extend 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "44. Python 中 append、insert 和 extend 有什么区别？"
+            }
+          },
+          {
+            "id": "85b181190a266f5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "45. Python 中 break、continue、pass 有什么作用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "45. Python 中 break、continue、pass 有什么作用？"
+            }
+          },
+          {
+            "id": "34a467413cedd6c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.计算机网络/37. TCP 滑动窗口的作用是什么？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "37. TCP 滑动窗口的作用是什么？"
+            }
+          },
+          {
+            "id": "3911a3040258d502",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "46. Python 中 remove、del 和 pop 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "46. Python 中 remove、del 和 pop 有什么区别？"
+            }
+          },
+          {
+            "id": "c797dd88c2447479",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "46. Python 中 remove、del 和 pop 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "46. Python 中 remove、del 和 pop 有什么区别？"
+            }
+          },
+          {
+            "id": "baaa3a31378761c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "47. Python 中如何实现 switch 语句？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "47. Python 中如何实现 switch 语句？"
+            }
+          },
+          {
+            "id": "5efda2f3b2b2a8df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "48. Python 的 range 函数如何运用？请举例说明.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "48. Python 的 range 函数如何运用？请举例说明"
+            }
+          },
+          {
+            "id": "388e4c5f39576c46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "49. 如何更改 Python 列表的数据类型？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "49. 如何更改 Python 列表的数据类型？"
+            }
+          },
+          {
+            "id": "4412811cd87fe7c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "50. Python 中怎么注释代码？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "50. Python 中怎么注释代码？"
+            }
+          },
+          {
+            "id": "d77c6eed8279e0fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "51. Python 中的 != 和 is not 运算符有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "51. Python 中的 != 和 is not 运算符有什么区别？"
+            }
+          },
+          {
+            "id": "9cc759d74473341f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "52. Python 是否有 main 函数？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "52. Python 是否有 main 函数？"
+            }
+          },
+          {
+            "id": "029baf4111e17a45",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "53. Python 的 iterables 和 iterators 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "53. Python 的 iterables 和 iterators 有什么区别？"
+            }
+          },
+          {
+            "id": "952f6d326a81676c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "54. Python 中的 Map 函数有什么作用？怎么使用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "54. Python 中的 Map 函数有什么作用？怎么使用？"
+            }
+          },
+          {
+            "id": "4e655a4a946e7a11",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "55. Python 中的 Filter 函数有什么作用？怎么使用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "55. Python 中的 Filter 函数有什么作用？怎么使用？"
+            }
+          },
+          {
+            "id": "27b30d0e64e585bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "56. Python 中 reduce 函数有什么作用？怎么使用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "56. Python 中 reduce 函数有什么作用？怎么使用？"
+            }
+          },
+          {
+            "id": "b1b6386bd752441c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "57. 什么是 Python 的 pickling 和 unpickling？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "57. 什么是 Python 的 pickling 和 unpickling？"
+            }
+          },
+          {
+            "id": "52b4d9ee90008eb3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "58. 什么是 Python 的生成器？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "58. 什么是 Python 的生成器？"
+            }
+          },
+          {
+            "id": "2f3b5083b7d5c2e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "59. Python 中如何使用索引反转字符串？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "59. Python 中如何使用索引反转字符串？"
+            }
+          },
+          {
+            "id": "a2762752654f4b55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "60. 什么是 Python 的 Lambda 函数，有哪些应用场景？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "60. 什么是 Python 的 Lambda 函数，有哪些应用场景？"
+            }
+          },
+          {
+            "id": "9ed3606659708f5c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "61. Python 的迭代器和生成器有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "61. Python 的迭代器和生成器有什么区别？"
+            }
+          },
+          {
+            "id": "419a9f77ce9316d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "62. Python 正则表达式中 match 和 search 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "62. Python 正则表达式中 match 和 search 有什么区别？"
+            }
+          },
+          {
+            "id": "5df7340d70a56f28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "63. 为什么 Python 中没有函数重载？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "63. 为什么 Python 中没有函数重载？"
+            }
+          },
+          {
+            "id": "9391ae12a336a0e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "64. Python 的 __init__ 和 __new__ 方法有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "64. Python 的 __init__ 和 __new__ 方法有什么区别？"
+            }
+          },
+          {
+            "id": "cb53b890c9e5131d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "65. 你知道哪些 Python 魔术方法？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "65. 你知道哪些 Python 魔术方法？"
+            }
+          },
+          {
+            "id": "2f672ee0f7a065e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "66. Python 函数参数 arg 和 kwargs 有什么区别？怎么使用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "66. Python 函数参数 arg 和 kwargs 有什么区别？怎么使用？"
+            }
+          },
+          {
+            "id": "c81ee7fd910b76c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "67. 请介绍 Python 中变量的作用域？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "67. 请介绍 Python 中变量的作用域？"
+            }
+          },
+          {
+            "id": "1896e5f8a9a3893f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "68. Python 2 和 Python 3 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "68. Python 2 和 Python 3 有什么区别？"
+            }
+          },
+          {
+            "id": "fb798a5460113cae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "69. 什么是 “猴子补丁”（monkey patching）？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "69. 什么是 “猴子补丁”（monkey patching）？"
+            }
+          },
+          {
+            "id": "c755b21e9bab0705",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "70. 如何在 Python 中实现字符串替换操作？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "70. 如何在 Python 中实现字符串替换操作？"
+            }
+          },
+          {
+            "id": "cf03e511d73f7b03",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "71. Python 在什么情况下会出现 KeyError、TypeError、ValueError？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "71. Python 在什么情况下会出现 KeyError、TypeError、ValueError？"
+            }
+          },
+          {
+            "id": "c8d85ea60602905e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "72. 什么是 Python 中的模块和包？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "72. 什么是 Python 中的模块和包？"
+            }
+          },
+          {
+            "id": "f43313f4658c6c3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "73. 你知道哪些 Python 的编码规范？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "73. 你知道哪些 Python 的编码规范？"
+            }
+          },
+          {
+            "id": "be45aa38630607ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "74. Python 的类和对象有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "74. Python 的类和对象有什么区别？"
+            }
+          },
+          {
+            "id": "c1d52f004a763491",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "75. 什么是 Python 类中的 self？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "75. 什么是 Python 类中的 self？"
+            }
+          },
+          {
+            "id": "9e3de3f0634d6558",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "76. init 方法在 Python 中有什么作用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "76. init 方法在 Python 中有什么作用？"
+            }
+          },
+          {
+            "id": "6f5efd7e3001b8c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "77. 什么是 Python 的 OOPS（面向对象编程）？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "77. 什么是 Python 的 OOPS（面向对象编程）？"
+            }
+          },
+          {
+            "id": "dc1011576ffe4c66",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "78. 什么是 Python 面向对象的抽象特性？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "78. 什么是 Python 面向对象的抽象特性？"
+            }
+          },
+          {
+            "id": "fa238c77ff402078",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "79. 什么是 Python 面向对象的封装特性？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "79. 什么是 Python 面向对象的封装特性？"
+            }
+          },
+          {
+            "id": "19ab8062c3963457",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "80. 什么是 Python 面向对象的多态特性？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "80. 什么是 Python 面向对象的多态特性？"
+            }
+          },
+          {
+            "id": "915e69784bd91104",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "81. Python 是否支持多重继承？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "81. Python 是否支持多重继承？"
+            }
+          },
+          {
+            "id": "88c0c0626e26632a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "82. 什么是鸭子类型（duck typing）？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "82. 什么是鸭子类型（duck typing）？"
+            }
+          },
+          {
+            "id": "8bc17154b6f14eb5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "83. 为什么 Python 执行速度慢，如何改进？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "83. 为什么 Python 执行速度慢，如何改进？"
+            }
+          },
+          {
+            "id": "f7b92042f05ea121",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "84. 如何分析 Python 代码的执行性能？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "84. 如何分析 Python 代码的执行性能？"
+            }
+          },
+          {
+            "id": "4f7b035532b88a37",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "84. 如何分析 Python 代码的执行性能？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "84. 如何分析 Python 代码的执行性能？"
+            }
+          },
+          {
+            "id": "6b91bbca52c7d36b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "85. Python 中如何读取大文件，例如内存只有 4G，如何读取一个大小为 8G 的文件.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "85. Python 中如何读取大文件，例如内存只有 4G，如何读取一个大小为 8G 的文件"
+            }
+          },
+          {
+            "id": "afbb1f125f5c78fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "85. Python 中如何读取大文件，例如内存只有 4G，如何读取一个大小为 8G 的文件.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "85. Python 中如何读取大文件，例如内存只有 4G，如何读取一个大小为 8G 的文件"
+            }
+          },
+          {
+            "id": "d1c9b4f97ab45f68",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "86. 你使用过哪些 Python 标准库模块？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "86. 你使用过哪些 Python 标准库模块？"
+            }
+          },
+          {
+            "id": "99ec9769f10727f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "87. Python 的 re 模块中 split()、sub()、subn() 方法有什么作用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "87. Python 的 re 模块中 split()、sub()、subn() 方法有什么作用？"
+            }
+          },
+          {
+            "id": "556f3829af2cce58",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "88. Python 的 namedtuple 有什么作用？怎么使用？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "88. Python 的 namedtuple 有什么作用？怎么使用？"
+            }
+          },
+          {
+            "id": "30223ee46717e800",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "89. 说明 Python 中的 zip 函数.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "89. 说明 Python 中的 zip 函数"
+            }
+          },
+          {
+            "id": "b93b85e8b806fbb2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "90. 如何使用 Python 的 random 模块生成随机数、实现随机乱序和随机抽样？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "90. 如何使用 Python 的 random 模块生成随机数、实现随机乱序和随机抽样？"
+            }
+          },
+          {
+            "id": "f160d5c4b4614a80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "91. Python 中如何实现多线程？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "91. Python 中如何实现多线程？"
+            }
+          },
+          {
+            "id": "11b35e83fc10e7a3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "92. 请介绍 Python 中多线程和多进程的应用场景，以及优缺点？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "92. 请介绍 Python 中多线程和多进程的应用场景，以及优缺点？"
+            }
+          },
+          {
+            "id": "a25d3fa19c05fbe4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "93. 请解释 Python 线程池的工作原理？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "93. 请解释 Python 线程池的工作原理？"
+            }
+          },
+          {
+            "id": "e88e2d18b1ad62de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "未命名 6.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "未命名 6"
+            }
+          },
+          {
+            "id": "64d3bfb157dc2f7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.计算机网络/17. WebSocket 与 HTTP 有什么区别？.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "17. WebSocket 与 HTTP 有什么区别？"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "03c67a7d5c6a376f",
+    "type": "split",
+    "children": [
+      {
+        "id": "1b0fe8ac77054154",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1bbfb1b2e7aa2f9b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "d19a5490eb19d9bf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "72e41f902081d724",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "abd8186b3968be45",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f90da66c588c1c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4b5ca6284ed91570",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2.计算机网络/17. WebSocket 与 HTTP 有什么区别？.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "17. WebSocket 与 HTTP 有什么区别？ 的反向链接列表"
+            }
+          },
+          {
+            "id": "be58964419b38120",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2.计算机网络/17. WebSocket 与 HTTP 有什么区别？.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "17. WebSocket 与 HTTP 有什么区别？ 的出链列表"
+            }
+          },
+          {
+            "id": "53d87bbedc0fc5a3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "53d56a74db1eadd1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "ac47aeef06707b6e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2.计算机网络/17. WebSocket 与 HTTP 有什么区别？.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "17. WebSocket 与 HTTP 有什么区别？ 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "34a467413cedd6c0",
+  "lastOpenFiles": [
+    "2.计算机网络/36. TCP 的 SACK 的引入是为了解决什么问题？.md",
+    "2.计算机网络/35. TCP 有超时重传为什么还需要快速重传机制？.md",
+    "2.计算机网络/34. TCP 中何时会出现 RST（reset）报文？.md",
+    "2.计算机网络/33. TCP 超时重传机制是为了解决什么问题？.md",
+    "2.计算机网络/32. 除了四次挥手，还有什么方法断开连接？.md",
+    "2.计算机网络/31. 为什么 TCP 挥手需要有 TIME_WAIT 状态？.md",
+    "2.计算机网络/30. 说说 TCP 的四次挥手？.md",
+    "2.计算机网络/29. TCP 协议是如何保证可靠传输的？.md",
+    "2.计算机网络/28. 什么是 SYN Flood 攻击？.md",
+    "2.计算机网络/27. TCP 三次握手时，发送 SYN 之后就宕机了会怎么样？.md",
+    "2.计算机网络/26. TCP 初始序列号 ISN 怎么取值的？.md",
+    "2.计算机网络/25. 说说 TCP 的三次握手？.md",
+    "2.计算机网络/24. TCP 的粘包和拆包能说说吗？.md",
+    "2.计算机网络/23. 为什么要 TCP，IP 层实现控制不行么？.md",
+    "2.计算机网络/22. TCP 和 UDP 有什么区别？.md",
+    "2.计算机网络/20. TCP 是用来解决什么问题？.md",
+    "2.计算机网络/21. 一台服务器，最多能建立多少 TCP 连接？.md",
+    "2.计算机网络/19. 到底什么是 TCP 连接？.md",
+    "2.计算机网络/18. 服务端是如何解析 HTTP 请求的数据？（考察 HTTP 请求格式的了解程度）.md",
+    "45. Python 中 break、continue、pass 有什么作用？.md",
+    "2.计算机网络/17. WebSocket 与 HTTP 有什么区别？.md",
+    "2.计算机网络/16. HTTP 中 GET 和 POST 的区别是什么？.md",
+    "2.计算机网络/15. HTTP 和 HTTPS 有什么区别？.md",
+    "93. 请解释 Python 线程池的工作原理？.md",
+    "92. 请介绍 Python 中多线程和多进程的应用场景，以及优缺点？.md",
+    "91. Python 中如何实现多线程？.md",
+    "Python"
+  ]
+}
