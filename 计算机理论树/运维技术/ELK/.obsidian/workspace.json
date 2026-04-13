@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "0bf5827cd5427505",
+    "type": "split",
+    "children": [
+      {
+        "id": "e83b25e18963bd50",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fd75733dd127300c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08_可视化与大盘：Kibana (Visualization)/01_Data Views & Index Patterns (索引模式匹配，关联 ES 数据).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_Data Views & Index Patterns (索引模式匹配，关联 ES 数据)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1d74cee008c0e36e",
+    "type": "split",
+    "children": [
+      {
+        "id": "ac46ba9010feb1f3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c309cfe2f6bddf04",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "a19bf8c0cc8922b9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "ef4717468c8c9837",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7871791e2c936e45",
+    "type": "split",
+    "children": [
+      {
+        "id": "64c4b9ab1d1f7189",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "209610952cc48974",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "07_数据清洗管道：Logstash (ETL_Pipeline)/05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失) 的反向链接列表"
+            }
+          },
+          {
+            "id": "6209a1bc51b9a735",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "07_数据清洗管道：Logstash (ETL_Pipeline)/05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失) 的出链列表"
+            }
+          },
+          {
+            "id": "55ad346bf927da82",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "dc9fc73f86fdd133",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "d4cf3b57eaa4d861",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "08_可视化与大盘：Kibana (Visualization)/01_Data Views & Index Patterns (索引模式匹配，关联 ES 数据).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "01_Data Views & Index Patterns (索引模式匹配，关联 ES 数据) 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "fd75733dd127300c",
+  "lastOpenFiles": [
+    "07_数据清洗管道：Logstash (ETL_Pipeline)/05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失).md",
+    "08_可视化与大盘：Kibana (Visualization)/01_Data Views & Index Patterns (索引模式匹配，关联 ES 数据).md",
+    "07_数据清洗管道：Logstash (ETL_Pipeline)/04_Output 插件 (elasticsearch 动态索引路由、file 备份).md",
+    "07_数据清洗管道：Logstash (ETL_Pipeline)/03_Filter 插件 =》 【Logstash 的灵魂】.md",
+    "07_数据清洗管道：Logstash (ETL_Pipeline)/02_Input 插件 (beats, kafka, file).md",
+    "07_数据清洗管道：Logstash (ETL_Pipeline)/01_Logstash 核心处理流 (Input -》 Filter -》 Output).md",
+    "06_数据采集探针：Beats 家族 (Data_Shippers)/03_Metricbeat 系统指标采集 (CPU、内存、网络、以及 Nginx&MySQL 服务监控).md",
+    "06_数据采集探针：Beats 家族 (Data_Shippers)/02_Filebeat 日志采集实战 =》 【最核心组件】.md",
+    "06_数据采集探针：Beats 家族 (Data_Shippers)/01_为什么引入 Beats？ (解决 Logstash 跑在每台业务机上太吃 JVM 内存的痛点).md",
+    "05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/04_Pipeline Aggregations (管道聚合：对聚合结果再次聚合，如计算导数、移动平均值).md",
+    "05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/03_Metric Aggregations (指标聚合：类似 SQL 的 count, sum, max).md",
+    "05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/02_Bucket Aggregations (分桶聚合：类似 SQL 的 Group By).md",
+    "05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/01_聚合的概念 (在百万级日志中计算平均响应时间、错误状态码占比).md",
+    "04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/04_Bool 复合查询 (Boolean Query) =》 【极其重要】.md",
+    "04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/03_精确查询 (Term-level queries).md",
+    "04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/02_全文搜索 (Full text queries).md",
+    "04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/01_查询上下文 vs 过滤上下文 (Query vs Filter =》 Filter 走缓存且不计分，性能极高).md",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】/05_中文分词器 IK Analyzer =》 【国内必用】.md",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】/04_内置分词器 (Standard, Simple, Whitespace).md",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】/03_Analysis 分词器架构 (Character Filter -》 Tokenizer -》 Token Filter).md",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】/02_核心数据类型.md",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】/01_Mapping 映射机制 (Dynamic Mapping 动态推导 vs Explicit Mapping 显式定义).md",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/05_并发控制 (基于 _seq_no 和 _primary_term 的乐观锁机制).md",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/04_文档的 CRUD 核心操作.md",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/03_RESTful API 交互 (Kibana Dev Tools 控制台使用).md",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/02_Type 的消亡史 (为什么 ES 7.x 默认单 Type，8.x 彻底废除 Type).md",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/未命名",
+    "10_企业级架构演进与生产调优 (Enterprise_Architecture_&_Tuning)",
+    "09_ES 分布式集群架构与底层机制 (Cluster_&_Internals) =》 【架构师&面试必考】",
+    "08_可视化与大盘：Kibana (Visualization)",
+    "07_数据清洗管道：Logstash (ETL_Pipeline)",
+    "06_数据采集探针：Beats 家族 (Data_Shippers)",
+    "05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】",
+    "04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】",
+    "03_映射与文本分析 (Mapping_&_Text_Analysis) =》 【重点：数据类型设计】",
+    "02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)"
+  ]
+}

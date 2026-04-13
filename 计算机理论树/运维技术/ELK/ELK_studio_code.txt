@@ -1,0 +1,111 @@
+ELK_ElasticStack_Learning_Roadmap/
+│
+├── 01_初识与核心架构原理 (Introduction_&_Architecture)
+│   ├── 01_什么是 Elastic Stack (传统 ELK vs 现代引入 Beats 家族)
+│   ├── 02_各组件定位
+│   │   ├── Elasticsearch (核心：分布式搜索与分析引擎)
+│   │   ├── Logstash (ETL 管道：沉重的数据清洗与路由)
+│   │   ├── Kibana (前端界面：数据可视化与管理大盘)
+│   │   └── Beats (边缘节点：轻量级数据采集探针，如 Filebeat)
+│   ├── 03_Lucene 底层原理 => 【重点：搜索引擎基石】
+│   │   ├── 倒排索引 (Inverted Index：Term Dictionary -> Term Index -> Posting List)
+│   │   └── 正排索引与 Doc Values (列式存储，用于高效排序和聚合)
+│   └── 04_环境部署 (Docker/Docker-Compose 一键拉起 ES + Kibana 集群)
+│
+├── 02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)
+│   ├── 01_核心名词映射 (Index 索引 ~ DB, Document 文档 ~ Row, Field 字段 ~ Column)
+│   ├── 02_Type 的消亡史 (为什么 ES 7.x 默认单 Type，8.x 彻底废除 Type)
+│   ├── 03_RESTful API 交互 (Kibana Dev Tools 控制台使用)
+│   ├── 04_文档的 CRUD
+│   │   ├── 创建与全量替换 (PUT /index/_doc/id)
+│   │   ├── 局部更新 (POST /index/_update/id)
+│   │   ├── 查询 (GET /index/_doc/id)
+│   │   └── 批量操作 (_bulk API，极其重要，大幅提升写入吞吐量)
+│   └── 05_并发控制 (基于 _seq_no 和 _primary_term 的乐观锁机制)
+│
+├── 03_映射与文本分析 (Mapping_&_Text_Analysis) => 【重点：数据类型设计】
+│   ├── 01_Mapping 映射机制 (Dynamic Mapping 动态推导 vs Explicit Mapping 显式定义)
+│   ├── 02_核心数据类型
+│   │   ├── text 与 keyword 的本质区别 => 【面试必考：分词 vs 绝对匹配】
+│   │   ├── 数值类型 (integer, long, double)
+│   │   ├── 日期类型 (date 及 format 格式化)
+│   │   └── 复杂类型 (object, nested 嵌套数组处理)
+│   ├── 03_Analysis 分词器架构 (Character Filter -> Tokenizer -> Token Filter)
+│   ├── 04_内置分词器 (Standard, Simple, Whitespace)
+│   └── 05_中文分词器 IK Analyzer => 【国内必用】
+│       ├── ik_smart (最少切分) vs ik_max_word (最细粒度划分)
+│       └── 自定义词库与热更新 (结合 Nginx 提供外部词典)
+│
+├── 04_Query DSL 高级查询语法 (Query_DSL) => 【重点：日常开发高频核心】
+│   ├── 01_查询上下文 vs 过滤上下文 (Query vs Filter => Filter 走缓存且不计分，性能极高)
+│   ├── 02_全文搜索 (Full text queries)
+│   │   ├── match (基础分词查询)
+│   │   ├── match_phrase (短语查询，要求词条顺序一致，slop 容错)
+│   │   └── multi_match (多字段匹配)
+│   ├── 03_精确查询 (Term-level queries)
+│   │   ├── term / terms (不分词，精确匹配 keyword 或数字)
+│   │   ├── range (范围查询：gte, lte)
+│   │   └── exists (判断字段是否存在)
+│   └── 04_Bool 复合查询 (Boolean Query) => 【极其重要】
+│       └── (must 必须匹配, should 满足其一, must_not 必须不匹配, filter 过滤)
+│
+├── 05_聚合分析 (Aggregations) => 【重点：数据统计大屏支撑】
+│   ├── 01_聚合的概念 (在百万级日志中计算平均响应时间、错误状态码占比)
+│   ├── 02_Bucket Aggregations (分桶聚合：类似 SQL 的 Group By)
+│   │   ├── terms (按字段值分桶)
+│   │   ├── date_histogram (按时间间隔分桶，如每天、每小时)
+│   │   └── range (按自定义数值范围分桶)
+│   ├── 03_Metric Aggregations (指标聚合：类似 SQL 的 count, sum, max)
+│   │   └── (avg, max, min, sum, stats, cardinality 基数去重统计)
+│   └── 04_Pipeline Aggregations (管道聚合：对聚合结果再次聚合，如计算导数、移动平均值)
+│
+├── 06_数据采集探针：Beats 家族 (Data_Shippers)
+│   ├── 01_为什么引入 Beats？ (解决 Logstash 跑在每台业务机上太吃 JVM 内存的痛点)
+│   ├── 02_Filebeat 日志采集实战 => 【最核心组件】
+│   │   ├── inputs 配置 (指定 /var/log/*.log 路径)
+│   │   ├── multiline 多行合并 => 【重点：如何把 Java Exception 堆栈合并为一条日志】
+│   │   ├── fields 自定义字段 (给日志打上属于哪个微服务、哪个环境的标签)
+│   │   └── output (直接输出到 ES，或输出到 Logstash/Kafka)
+│   └── 03_Metricbeat 系统指标采集 (CPU、内存、网络、以及 Nginx/MySQL 服务监控)
+│
+├── 07_数据清洗管道：Logstash (ETL_Pipeline)
+│   ├── 01_Logstash 核心处理流 (Input -> Filter -> Output)
+│   ├── 02_Input 插件 (beats, kafka, file)
+│   ├── 03_Filter 插件 => 【Logstash 的灵魂】
+│   │   ├── Grok => 【必学：利用正则将非结构化文本日志抽取为 JSON 结构化字段】
+│   │   ├── Date (将日志字符串时间解析为 ES 的 @timestamp 绝对时间)
+│   │   ├── Mutate (重命名、删除无用字段、类型转换)
+│   │   └── GeoIP (根据 IP 自动解析出经纬度和城市，用于在 Kibana 画世界地图)
+│   ├── 04_Output 插件 (elasticsearch 动态索引路由、file 备份)
+│   └── 05_性能痛点与持久化队列 (PQ：防止 Logstash 宕机导致内存中的数据丢失)
+│
+├── 08_可视化与大盘：Kibana (Visualization)
+│   ├── 01_Data Views / Index Patterns (索引模式匹配，关联 ES 数据)
+│   ├── 02_Discover (日志检索中心：KQL 语法、按时间过滤、保存常用查询)
+│   ├── 03_Dashboard (仪表盘搭建)
+│   │   ├── 基于 Lens 快速拖拽生成图表 (柱状图、饼图、折线图)
+│   │   ├── TSVB (时间序列数据高级可视化)
+│   │   └── Maps (基于 GeoIP 的地图访问量展示)
+│   └── 04_Stack Management (在前端 UI 管理 ES 的索引生命周期、用户权限等)
+│
+├── 09_ES 分布式集群架构与底层机制 (Cluster_&_Internals) => 【架构师/面试必考】
+│   ├── 01_节点角色定义 (Master-eligible, Data node, Ingest node, Coordinating node)
+│   ├── 02_分片与副本机制 (Shard & Replica)
+│   │   ├── 路由算法 (shard = hash(routing) % number_of_primary_shards)
+│   │   └── 为什么主分片数量一旦设定就不允许修改？(影响路由计算)
+│   ├── 03_集群选主机制 (Zen Discovery / 7.x 后的全新选主机制，避免脑裂 Split-Brain)
+│   ├── 04_写入底层原理 (Write Process) => 【重点】
+│   │   └── (Index Buffer -> Refresh -> OS Cache(可被搜索) -> Translog -> Flush -> Disk Segment)
+│   └── 05_搜索底层原理 (Query, Fetch 两个阶段，分布式 Scatter-Gather 机制)
+│
+└── 10_企业级架构演进与生产调优 (Enterprise_Architecture_&_Tuning)
+    ├── 01_架构演进路线
+    │   ├── 极简版: Filebeat -> ES -> Kibana (适合极其微小项目)
+    │   ├── 经典版: Filebeat -> Logstash -> ES -> Kibana (支持复杂清洗)
+    │   └── 企业高可用版: Filebeat -> Kafka -> Logstash -> ES -> Kibana (加入 Kafka 扛住大促洪峰)
+    ├── 02_索引生命周期管理 (ILM - Index Lifecycle Management) => 【降低存储成本的神器】
+    │   └── (Hot 节点存新日志/SSD -> Warm 节点存旧日志/HDD -> Cold 节点只读冻结 -> Delete 定期删除)
+    ├── 03_Rollover 滚动索引机制 (当日志索引达到 50GB 或 30天 时自动建立新索引)
+    ├── 04_JVM 调优 (堆内存配置不得超过 32GB 的原因：对象指针压缩失效)
+    ├── 05_深度分页问题限制 (From/Size 超过 10000 报错，改用 Search After 方案)
+    └── 06_ES 写入性能极限压榨 (调大 Refresh 间隔、调大 Translog 刷盘周期、Bulk 批量写)

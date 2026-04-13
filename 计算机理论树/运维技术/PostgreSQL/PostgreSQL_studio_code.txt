@@ -1,0 +1,93 @@
+PostgreSQL_Learning_Roadmap/
+│
+├── 01_初识与基础环境 (Introduction_&_Setup)
+│   ├── 01_PostgreSQL 概览 (与 MySQL 的核心对比：重构严谨 vs 轻量灵活、BSD开源协议)
+│   ├── 02_环境安装 (源码编译、包管理器、Docker 官方镜像部署)
+│   ├── 03_核心命令行工具 (psql：极其强大的原生 CLI 控制台，\d, \l, \x 常用元命令)
+│   ├── 04_图形化客户端 (pgAdmin4, DBeaver, DataGrip)
+│   └── 05_核心配置文件
+│       ├── postgresql.conf (内存、并发、WAL 日志等核心参数)
+│       └── pg_hba.conf (基于主机/用户的访问控制权限验证体系)
+│
+├── 02_PG的杀手锏：超级数据类型 (Super_Data_Types) => 【重点：超越传统关系型DB】
+│   ├── 01_数值与字符 (Numeric, VARCHAR/TEXT - PG 中 VARCHAR 和 TEXT 性能几乎无差异)
+│   ├── 02_时间与日期 (TIMESTAMP WITH TIME ZONE 跨时区处理的优雅实现)
+│   ├── 03_枚举类型 (ENUM)
+│   ├── 04_UUID 类型 (原生支持 uuid，常用于分布式系统主键)
+│   ├── 05_数组类型 (Array：一维/多维数组存储与 ANY/ALL 数组查询)
+│   ├── 06_JSON 与 JSONB => 【极其重点：取代 MongoDB 的利器】
+│   │   ├── JSON (纯文本存储) vs JSONB (二进制解析存储，支持索引)
+│   │   ├── JSONB 查询语法 (->, ->>, #>, @> 包含操作符)
+│   │   └── 修改 JSONB 节点 (jsonb_set, - 移除键值)
+│   └── 07_范围类型 (Range Types：int4range, daterange，极大简化会议室预订、价格区间等业务)
+│
+├── 03_高级 SQL 与查询艺术 (Advanced_SQL) => 【重点：数据分析利器】
+│   ├── 01_基础 DDL/DML/DQL (与标准 SQL 高度一致，严谨的数据类型检查)
+│   ├── 02_RETURNING 语句 => 【PG 特色神技】
+│   │   └── (INSERT/UPDATE/DELETE 后直接返回被影响的行数据，省去一次 SELECT 查询)
+│   ├── 03_UPSERT 机制 (INSERT ... ON CONFLICT DO UPDATE)
+│   ├── 04_CTE 通用表表达式 (WITH 子句：构建复杂报表，WITH RECURSIVE 处理树状/层级关系)
+│   ├── 05_窗口函数 (Window Functions: OVER, PARTITION BY, LEAD, LAG)
+│   ├── 06_集合操作 (UNION, INTERSECT 交集, EXCEPT 差集)
+│   └── 07_全文检索 (Full Text Search: tsvector, tsquery，中小项目中无需引入 ES)
+│
+├── 04_底层架构与内存模型 (Architecture_&_Memory)
+│   ├── 01_多进程架构模型 (Postmaster 守护进程、各个 Backend 独立进程)
+│   │   └── 【痛点警告】PG 是多进程而非多线程，每个连接吃资源多，必须引入 PgBouncer！
+│   ├── 02_内存架构 (Shared Buffers 共享缓冲区，Work_mem 排序/Hash工作内存)
+│   ├── 03_存储结构 (Page 页面 8KB、Tuple 行记录)
+│   ├── 04_TOAST 机制 (超大字段压缩与线外存储技术：PG 怎么存十几 MB 的文本)
+│   └── 05_WAL 日志 (Write-Ahead Logging：类似于 MySQL Redo Log，保障 Crash-Safe)
+│
+├── 05_索引技术与性能调优 (Indexing_&_Optimization) => 【重点：极其丰富的索引类型】
+│   ├── 01_B-Tree 索引 (默认索引，处理等值和范围查询)
+│   ├── 02_GIN 倒排索引 (Generalized Inverted Index) => 【重点：加速 JSONB 和 Array 的核武器】
+│   ├── 03_GiST 索引 (空间地理位置、全文搜索、范围类型加速)
+│   ├── 04_BRIN 块范围索引 (针对 TB 级时序日志表，极小空间占用提升极大性能)
+│   ├── 05_高级索引技巧
+│   │   ├── 表达式索引 (Expression Index: 针对 lower(email) 建立索引)
+│   │   └── 部分索引 (Partial Index: CREATE INDEX ... WHERE is_deleted = false)
+│   ├── 06_执行计划分析 (EXPLAIN ANALYZE) (Seq Scan, Index Scan, Bitmap Heap Scan 解析)
+│   └── 07_统计信息采集 (ANALYZE 机制，帮助查询优化器 CBO 制定正确计划)
+│
+├── 06_事务并发与特有 MVCC 机制 (Transactions_&_MVCC) => 【架构师核心/面试深水区】
+│   ├── 01_事务 ACID 与隔离级别 (Read Committed 默认, Serializable 真正严格可串行化)
+│   ├── 02_PG 特有的 MVCC 实现机制 => 【与 MySQL 截然不同！】
+│   │   ├── (MySQL 的旧版本放在单独的 Undo Log 中)
+│   │   ├── (PG 没有 Undo Log！旧版本和新版本的数据元组全部堆积在同一个表文件里)
+│   │   └── xmin, xmax 隐藏系统列与可见性判断算法。
+│   ├── 03_表膨胀 (Table Bloat) 痛点
+│   │   └── (频繁 UPDATE/DELETE 导致旧版本数据成堆，文件无限变大)
+│   ├── 04_VACUUM 垃圾回收机制 => 【PG 运维最最最核心】
+│   │   ├── VACUUM (标记死亡元组为空闲空间供后续重用，但不释放给操作系统)
+│   │   ├── VACUUM FULL (锁表，重建整个物理表文件，彻底释放磁盘空间，慎用！)
+│   │   └── Autovacuum (后台自动清理守护进程，配置调优极度重要)
+│   └── 05_锁机制 (Row-level Locks, Table-level Locks, Advisory Locks 业务级咨询锁)
+│
+├── 07_开发者高级特性 (Advanced_Developer_Features)
+│   ├── 01_视图 (Views) 与 物化视图 (Materialized Views: 缓存复杂查询结果，支持 REFRESH)
+│   ├── 02_触发器 (Triggers) 与 规则系统 (Rules)
+│   ├── 03_服务端编程 (PL/pgSQL：编写复杂的存储过程与自定义函数)
+│   ├── 04_RLS 行级安全限制 (Row-Level Security)
+│   │   └── (SaaS 多租户系统神器：直接在数据库层限制 User A 只能 select 到 User A 的数据)
+│   └── 05_FDW 外部数据包装器 (Foreign Data Wrappers)
+│       └── (在 PG 里直接写 SQL 跨库查询 MySQL、Oracle、Redis、甚至 CSV 文件)
+│
+├── 08_高可用、复制与连接池 (HA_Replication_&_Pooling) => 【生产基建】
+│   ├── 01_物理复制 (Streaming Replication：基于 WAL 字节流，主从完全一致的镜像)
+│   ├── 02_逻辑复制 (Logical Replication：基于发布/订阅模型 Pub-Sub)
+│   │   └── (粒度极细：可以只同步某一张表的某几个字段，甚至可以跨 PG大版本 同步)
+│   ├── 03_高可用集群架构选型
+│   │   ├── Patroni + etcd/ZooKeeper => 【当前行业绝对主流、最强的高可用自动故障切换方案】
+│   │   └── Repmgr (经典轻量级管理工具)
+│   ├── 04_数据库备份与恢复 (pg_dump 逻辑备份, pg_basebackup 物理备份, PITR 基于时间点恢复)
+│   └── 05_连接池神器：PgBouncer => 【PG 生产环境绝对必装】
+│       └── (由于 PG 的进程模型太吃内存，必须在应用层与 DB 之间架设 PgBouncer 代理所有 TCP 连接)
+│
+└── 09_无敌的扩展生态 (Powerful_Extensions) => 【PG 称霸全球的关键】
+    ├── 01_PostGIS (空间地理位置信息处理：地球上所有 GIS 系统的绝对王者)
+    ├── 02_TimescaleDB (将 PG 爆改为高性能的时序数据库：处理物联网/金融行情数据)
+    ├── 03_pgvector (AI 时代的宠儿：在 PG 中直接存储大模型生成的向量 Embeddings 并进行相似度检索)
+    ├── 04_Citus (微软收购：将单机 PG 瞬间变为分布式/分库分表的 HTAP 数据库引擎)
+    ├── 05_pg_stat_statements (内置性能监控神级插件：记录所有执行过的 SQL 的平均耗时等画像)
+    └── 06_HypoPG (假设性索引验证：不用真建索引，就能验证加了某索引后会不会变快)

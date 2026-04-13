@@ -11,10 +11,14 @@
             "id": "020419739278ae50",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "计算机理论树/运维技术/Linux/Fedora & Debian DNS 修改完整笔记.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Fedora & Debian DNS 修改完整笔记"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 313.5
   },
   "right": {
     "id": "b0cd932c16c70b87",
@@ -138,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "计算机理论树/运维技术/Linux/Fedora & Debian DNS 修改完整笔记.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Fedora & Debian DNS 修改完整笔记 的大纲"
             }
           }
         ],
@@ -151,7 +156,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 289.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -166,42 +171,42 @@
   },
   "active": "020419739278ae50",
   "lastOpenFiles": [
-    "计算机理论树/运维技术/Nginx_Learning_Roadmap",
-    "计算机理论树/运维技术/Kafka/Kafka_Study_List.txt",
-    "计算机理论树/运维技术/Kafka/未确认 830952.crdownload",
-    "计算机理论树/运维技术/Redis/10_底层原理与源码探秘 (Under_The_Hood)",
-    "计算机理论树/运维技术/Redis/09_性能调优与安全运维 (Tuning_&_Operations)",
-    "计算机理论树/运维技术/Redis/08_客户端开发与集成 (Client_&_Integration)",
-    "计算机理论树/运维技术/Redis/07_实战应用场景 (Practical_Scenarios)",
-    "计算机理论树/运维技术/Redis/Redis_Study_List.txt",
-    "计算机理论树/运维技术/Redis/ai_studio_code.txt",
-    "计算机理论树/运维技术/Redis/06_企业级缓存架构与经典问题 (Enterprise_Architecture)",
-    "计算机理论树/运维技术/Redis/05_高可用与分布式集群 (High_Availability_&_Cluster)",
-    "计算机理论树/运维技术/Redis_old/3.4 哨兵模式（Sentinel）.md",
-    "计算机理论树/运维技术/Redis_old/3.3 主从复制.md",
-    "计算机理论树/运维技术/Redis_old/3.2 持久化.md",
-    "计算机理论树/运维技术/Redis_old/3.1 事务.md",
-    "计算机理论树/运维技术/Redis_old/2.2 Redis Stream（消息流）.md",
-    "计算机理论树/运维技术/Redis_old/2.1 发布订阅（Pub&Sub，Publish&Subscribe）.md",
-    "计算机理论树/运维技术/Redis_old/1.5 Zset.md",
-    "计算机理论树/运维技术/Redis_old/1.4 Set.md",
-    "计算机理论树/运维技术/Redis_old/1.3 Hash.md",
-    "计算机理论树/运维技术/Redis_old/1.2 List.md",
-    "计算机理论树/运维技术/Redis_old/1.1 String.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/48. 什么是 MySQL 的主从同步机制？它是如何实现的？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/47. 如何在 MySQL 中实现读写分离？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/46. MySQL 中如何进行 SQL 调优？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/45. MySQL 中 varchar 和 char 有什么区别？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/44. 为什么在 MySQL 中不推荐使用多表 JOIN？.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/43. MySQL 中 int (11) 的 11 表示什么？（简单）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/42. MySQL 中 count (星)、count (1) 和 count (字段) 的区别（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/57. MySQL 中 DATETIME 和 TIMESTAMP 的区别？（简单）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/56. MySQL 中 INNER JOIN、LEFT JOIN 和 RIGHT JOIN 的区别？（简单）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/55. MySQL 中 DELETE、DROP 和 TRUNCATE 的区别？（简单）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/54. 如何在 MySQL 中监控和优化慢 SQL？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/53. MySQL 中的 Log Buffer 是什么？它有什么作用？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/52. MySQL 的 Doublewrite Buffer 是什么？它有什么作用？（中等）.md",
-    "知识卡片(碎片化)/4.数据库技术/MySQL/51. MySQL 数据读取流程（面试必背）.md",
+    "计算机理论树/运维技术/Linux/mount - mount a filesystem（挂载文件系统）.md",
+    "计算机理论树/运维技术/Linux/Ubuntu 24.04 LTS 自定义静态 IP.md",
+    "计算机理论树/运维技术/Docker/02_环境安装与基础配置 (Setup_&_Configuration)/01_多平台安装 (Linux 生产环境、Docker Desktop for Mac&Windows).md",
+    "计算机理论树/运维技术/Docker/02_环境安装与基础配置 (Setup_&_Configuration)/02_加速器配置 (配置阿里云&腾讯云镜像加速器 daemon.json).md",
+    "计算机理论树/运维技术/Docker/01_初识与核心架构 (Introduction_&_Architecture)/05_OCI标准 (Open Container Initiative：runc, containerd 演进简史).md",
+    "计算机理论树/运维技术/Docker/01_初识与核心架构 (Introduction_&_Architecture)/04_三大核心概念 (Image 镜像、Container 容器、Repository 仓库).md",
+    "计算机理论树/运维技术/ELK/02_Elasticsearch 基础概念与 CRUD (ES_Basics_&_CRUD)/01_核心名词映射 (Index 索引 ~ DB, Document 文档 ~ Row, Field 字段 ~ Column).md",
+    "计算机理论树/运维技术/ELK/07_数据清洗管道：Logstash (ETL_Pipeline)/03_Filter 插件 =》 【Logstash 的灵魂】.md",
+    "计算机理论树/运维技术/ELK/07_数据清洗管道：Logstash (ETL_Pipeline)/02_Input 插件 (beats, kafka, file).md",
+    "计算机理论树/运维技术/ELK/07_数据清洗管道：Logstash (ETL_Pipeline)/01_Logstash 核心处理流 (Input -》 Filter -》 Output).md",
+    "计算机理论树/运维技术/ELK/06_数据采集探针：Beats 家族 (Data_Shippers)/03_Metricbeat 系统指标采集 (CPU、内存、网络、以及 Nginx&MySQL 服务监控).md",
+    "计算机理论树/运维技术/ELK/06_数据采集探针：Beats 家族 (Data_Shippers)/02_Filebeat 日志采集实战 =》 【最核心组件】.md",
+    "计算机理论树/运维技术/ELK/06_数据采集探针：Beats 家族 (Data_Shippers)/01_为什么引入 Beats？ (解决 Logstash 跑在每台业务机上太吃 JVM 内存的痛点).md",
+    "计算机理论树/运维技术/ELK/04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/01_查询上下文 vs 过滤上下文 (Query vs Filter =》 Filter 走缓存且不计分，性能极高).md",
+    "计算机理论树/运维技术/ELK/05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/01_聚合的概念 (在百万级日志中计算平均响应时间、错误状态码占比).md",
+    "计算机理论树/运维技术/ELK/05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/04_Pipeline Aggregations (管道聚合：对聚合结果再次聚合，如计算导数、移动平均值).md",
+    "计算机理论树/运维技术/ELK/05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/03_Metric Aggregations (指标聚合：类似 SQL 的 count, sum, max).md",
+    "计算机理论树/运维技术/ELK/05_聚合分析 (Aggregations) =》 【重点：数据统计大屏支撑】/02_Bucket Aggregations (分桶聚合：类似 SQL 的 Group By).md",
+    "计算机理论树/运维技术/ELK/04_Query DSL 高级查询语法 (Query_DSL) =》 【重点：日常开发高频核心】/04_Bool 复合查询 (Boolean Query) =》 【极其重要】.md",
+    "Exalidraw/ELK/4.4.1 Bool 查询核心架构.xmind",
+    "Exalidraw/ELK",
+    "Exalidraw/新建文件夹",
+    "计算机理论树/运维技术/Kafka/07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/03_消息积压 (报警发现、临时扩容Partition、消费者提速、死信队列DLQ降级).md",
+    "计算机理论树/运维技术/Kafka/07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/02_消息重复 (消费端接口幂等性设计：数据库唯一键、Redis防重).md",
+    "计算机理论树/运维技术/Kafka/07_实战场景与经典问题排查 (Practical_Scenarios) = 【重点：架构师与实战经验】/01_消息丢失 (Producer丢、Broker丢、Consumer丢及防范方案).md",
+    "计算机理论树/运维技术/Kafka/09_Kafka 生态与流处理 (Ecosystem_&_Stream_Processing)/01_Kafka Connect (数据集成：将DB&ES&HDFS等异构数据快速接入Kafka).md",
+    "计算机理论树/运维技术/Ansible/02_资产清单与主机连通 (Inventory_&_Connection) = 【重点：如何定义你的机器】/02_主机分组与嵌套 (定义 webservers, dbservers, 以及 children 组).md",
+    "计算机理论树/运维技术/Docker/10_企业级CICD实战与集群演进 (Enterprise_Real_World)/05_向云原生编排演进.md",
+    "计算机理论树/运维技术/Docker/10_企业级CICD实战与集群演进 (Enterprise_Real_World)/04_DevOps 持续集成流水线实战.md",
+    "计算机理论树/运维技术/PostgreSQL/PostgreSQL_studio_code.txt",
+    "计算机理论树/运维技术/MySQL/MySQL_studio_code.txt",
+    "计算机理论树/运维技术/PostgreSQL_studio_code.txt",
+    "计算机理论树/运维技术/未确认 5755.crdownload",
+    "计算机理论树/运维技术/PostgreSQL",
+    "计算机理论树/运维技术/新建文件夹",
+    "计算机理论树/运维技术/MySQL_studio_code.txt",
     "Pasted image 20260310212943.png",
     "Pasted image 20260310223106.png",
     "Pasted image 20260310221101.png",

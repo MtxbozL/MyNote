@@ -1,0 +1,131 @@
+MySQL_Learning_Roadmap/
+│
+├── 01_初识与基础环境 (Introduction_&_Setup)
+│   ├── 01_数据库基础理论 (关系型模型、实体关系图 ER图)
+│   ├── 02_MySQL 简介与版本 (MySQL 5.7 经典版 vs MySQL 8.0 新特性)
+│   ├── 03_环境搭建 (Windows/Linux 安装、Docker 快速部署)
+│   ├── 04_客户端工具 (Navicat, DBeaver, MySQL Workbench)
+│   └── 05_核心数据类型
+│       ├── 整数型 (TINYINT, INT, BIGINT 及 UNSIGNED 的意义)
+│       ├── 字符串 (CHAR vs VARCHAR 的本质区别、TEXT 存储机制)
+│       ├── 日期时间 (DATETIME vs TIMESTAMP 跨时区与底层存储差异)
+│       └── JSON 类型 (MySQL 5.7+ 引入，支持半结构化数据与函数化查询)
+│
+├── 02_SQL 基础与进阶查询 (SQL_Basics_&_Advanced)
+│   ├── 01_SQL 语言分类 (DDL 结构, DML 数据, DQL 查询, DCL 控制)
+│   ├── 02_基础查询语法 (SELECT, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT)
+│   ├── 03_多表联查 (JOIN) => 【重点】
+│   │   ├── 笛卡尔积现象 (Cross Join)
+│   │   ├── 内连接 (INNER JOIN)
+│   │   └── 外连接 (LEFT JOIN, RIGHT JOIN, 全外连接的 MySQL 变通实现)
+│   ├── 04_子查询 (Subqueries) (IN, EXISTS, ANY, ALL, 标量子查询、关联子查询)
+│   └── 05_MySQL 8.0 现代 SQL 特性 => 【加分项】
+│       ├── 窗口函数 (Window Functions: ROW_NUMBER(), RANK(), DENSE_RANK() 分组排名)
+│       └── CTE 通用表表达式 (WITH 关键字：极大提升复杂 SQL 可读性，支持递归)
+│
+├── 03_核心架构与存储引擎 (Architecture_&_Storage_Engines)
+│   ├── 01_MySQL 逻辑架构层级
+│   │   ├── 连接层 (连接池、鉴权、线程处理)
+│   │   ├── 服务层 (SQL 解析器 Parser、优化器 Optimizer、查询缓存 Query Cache-8.0已废弃)
+│   │   └── 存储引擎层 (Pluggable 插件式架构，API 统一封装)
+│   ├── 02_主流存储引擎对比 (InnoDB vs MyISAM)
+│   │   └── (事务支持、外键支持、表锁 vs 行锁、COUNT(*) 的统计差异)
+│   └── 03_InnoDB 内存架构深度剖析
+│       ├── Buffer Pool (缓冲池：极大提高读写性能，LRU 链表淘汰策略)
+│       ├── Change Buffer (写缓冲：针对非唯一普通索引的插入优化)
+│       ├── Adaptive Hash Index (自适应哈希索引：热点页自动转 Hash)
+│       └── Log Buffer (日志缓冲区：Redo log 刷盘前奏)
+│
+├── 04_索引底层原理与调优 (Indexes_&_Optimization) => 【极度重点：面试核武器】
+│   ├── 01_数据结构演进 (为什么不用 Hash、二叉树、红黑树、B树，而独宠 B+Tree？)
+│   ├── 02_索引分类与底层存储
+│   │   ├── 聚簇索引 (Clustered Index：主键索引，叶子节点存储整行完整数据)
+│   │   ├── 二级索引 (Secondary Index：非聚簇索引，叶子节点只存储【索引列值+主键值】)
+│   │   └── 回表查询 (Bookmark Lookup：通过二级索引找到主键，再回聚簇索引查完整数据的性能损耗)
+│   ├── 03_复合索引与黄金法则
+│   │   ├── 最左前缀法则 (Leftmost Prefix Rule)
+│   │   ├── 覆盖索引 (Covering Index：查询的字段全在索引里，彻底避免回表)
+│   │   └── 索引下推 (ICP - Index Condition Pushdown：在引擎层提前过滤数据)
+│   ├── 04_EXPLAIN 执行计划分析 => 【实战排障必备】
+│   │   ├── type (连接类型：ALL, index, range, ref, eq_ref, const 性能由差到极好)
+│   │   ├── key / possible_keys (实际使用 vs 预测使用的索引)
+│   │   └── Extra (Using filesort, Using temporary, Using index 状态解析)
+│   └── 05_索引失效的经典场景
+│       └── (左模糊 LIKE '%xx'、对列使用函数/计算、隐式类型转换、OR 连接条件错乱)
+│
+├── 05_事务并发控制与 MVCC (Transactions_&_MVCC) => 【极度重点：底层并发基石】
+│   ├── 01_ACID 特性 (原子性、一致性、隔离性、持久性)
+│   ├── 02_并发事务三大问题 (脏读 Dirty Read、不可重复读 Non-repeatable Read、幻读 Phantom Read)
+│   ├── 03_SQL 标准四大隔离级别 (RU, RC, RR 可重复读-MySQL默认, Serializable)
+│   └── 04_MVCC 多版本并发控制底层实现 => 【必考难点】
+│       ├── 核心机制 (无锁并发读，大大提升性能)
+│       ├── 隐藏字段 (trx_id 最近修改事务ID、roll_pointer 回滚指针)
+│       ├── Undo Log 版本链 (记录数据被修改前的各个历史版本)
+│       └── Read View (读视图：Creator_trx_id, m_ids, min_trx_id, max_trx_id 可见性判断算法)
+│
+├── 06_锁机制原理 (Locking_Mechanisms) => 【重点：解决并发冲突】
+│   ├── 01_全局锁 (FTWRL：全库逻辑备份 mysqldump 使用)
+│   ├── 02_表级锁 (Table Locks)
+│   │   ├── 表锁 (读锁、写锁)
+│   │   ├── 元数据锁 (MDL：修改表结构 DDL 时自动加锁，防止其他事务做 DML)
+│   │   └── 意向锁 (IS/IX：提升表锁加锁效率，避免遍历全表查行锁)
+│   ├── 03_行级锁 (Row Locks：InnoDB 独有，基于索引实现)
+│   │   ├── Record Lock (记录锁：锁住单行索引记录)
+│   │   ├── Gap Lock (间隙锁：锁住索引记录之间的间隙，防止插入，RR级别下解决幻读)
+│   │   └── Next-Key Lock (临键锁：Record Lock + Gap Lock 的结合体)
+│   └── 04_死锁问题排查 (Deadlock)
+│       └── (形成条件分析、死锁检测 innodb_deadlock_detect、查看死锁日志 SHOW ENGINE INNODB STATUS)
+│
+├── 07_三大核心日志系统 (Core_Logs) => 【架构师必备：故障恢复与主从基石】
+│   ├── 01_Undo Log (回滚日志)
+│   │   └── (逻辑日志：记录相反的 SQL，保障事务 Atomicity 原子性，支撑 MVCC)
+│   ├── 02_Redo Log (重做日志)
+│   │   ├── (物理日志：记录数据页的物理修改，WAL 预写日志机制，保障 Durability 持久性与 Crash-Safe 崩溃恢复)
+│   │   ├── 刷盘策略 (innodb_flush_log_at_trx_commit = 0/1/2 的性能与安全权衡)
+│   │   └── Checkpoint 机制 (擦除已刷入磁盘的 Redo 空间，循环覆盖写)
+│   ├── 03_Binlog (归档日志/二进制日志)
+│   │   ├── (逻辑日志：Server 层生成，记录 DDL/DML 操作，用于数据备份恢复与主从复制)
+│   │   ├── 格式选择 (Statement, Row 推荐, Mixed)
+│   │   └── 刷盘策略 (sync_binlog = 0/1 的权衡)
+│   └── 04_两阶段提交 (2PC - Two-Phase Commit)
+│       └── (协调 Redo Log 和 Binlog 的写入一致性，防止奔溃后主从数据不一致)
+│
+├── 08_性能调优与故障排查 (Performance_Tuning)
+│   ├── 01_Schema 设计规范
+│   │   └── (三大范式 vs 反范式冗余设计、避免使用 NULL、单表字段数量限制)
+│   ├── 02_定位慢查询 (Slow Query Log 设置开启、慢查询分析工具 mysqldumpslow)
+│   ├── 03_SQL 深度优化实战
+│   │   ├── 大分页优化 (LIMIT 1000000, 10 巨慢 -> 改用延迟关联/子查询/游标标记)
+│   │   ├── JOIN 优化 (小表驱动大表、Index Nested-Loop Join vs Block Nested-Loop)
+│   │   ├── COUNT 优化 (COUNT(*), COUNT(1), COUNT(id) 的性能对比与底层逻辑)
+│   │   └── UPDATE 避坑 (更新条件必须带索引，否则行锁会升级为表锁！)
+│   └── 04_服务器系统参数调优
+│       └── (innodb_buffer_pool_size 配置为物理内存 60%-80%、max_connections 连接数调优)
+│
+├── 09_高可用集群与复制架构 (High_Availability_&_Replication)
+│   ├── 01_主从复制原理 (Master-Slave)
+│   │   └── (底层三线程模型：Master Dump 线程 -> Slave IO 线程 -> Relay Log -> Slave SQL 线程)
+│   ├── 02_同步模式演进
+│   │   ├── 异步复制 (默认：快，但主库宕机极易丢失数据)
+│   │   ├── 半同步复制 (Semi-Sync：确保至少一个从库收到 Binlog 才返回给客户端，保证数据一致性)
+│   │   └── 全同步复制 (性能极差，较少使用)
+│   ├── 03_主从延迟痛点排查
+│   │   ├── 产生原因 (主库高并发并发写，从库单 SQL 线程串行回放)
+│   │   └── 解决方案 (开启多线程复制 MTS/MTA、业务层规避从库读延迟)
+│   ├── 04_GTID 复制 (全局事务ID：取代传统的 file+position，极大简化主从切换与故障迁移)
+│   └── 05_高可用架构方案选型
+│       ├── MHA (Master High Availability：老牌自动故障切换方案)
+│       └── MySQL InnoDB Cluster / Group Replication (基于 Paxos 的官方现代集群终极方案)
+│
+└── 10_海量数据架构：分库分表 (Sharding) => 【百万级并发/TB级数据破局之道】
+    ├── 01_演进路线 (单机 -> 读写分离 -> 垂直拆分 -> 水平拆分 Sharding)
+    ├── 02_垂直拆分 (按业务拆分库、将大字段/不常用字段拆分到扩展表)
+    ├── 03_水平拆分策略 (Hash 取模、Range 按时间/数值范围分片)
+    ├── 04_分片后的致命痛点
+    │   ├── 分布式 ID 生成 (雪花算法 Snowflake、号段模式)
+    │   ├── 跨库 JOIN 难题 (字段冗余、应用层拼接)
+    │   ├── 跨库 分页/排序 (归并排序问题)
+    │   └── 分布式事务 (2PC, TCC, 依靠 RocketMQ/RabbitMQ 的最终一致性)
+    └── 05_分库分表中间件生态
+        ├── 客户端代理层 (ShardingSphere-JDBC：轻量级，Java 圈绝对主流)
+        └── 服务端代理层 (Mycat, ShardingSphere-Proxy：语言无关，部署成本高)
