@@ -1,0 +1,4 @@
+
+```
+pip install "fastapi[standard]"
+```
