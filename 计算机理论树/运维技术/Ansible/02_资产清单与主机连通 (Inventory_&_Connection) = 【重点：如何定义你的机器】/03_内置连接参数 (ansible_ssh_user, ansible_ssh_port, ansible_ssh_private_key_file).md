@@ -1,4 +1,5 @@
-Ansible 提供了标准化的内置主机变量，用于定义单主机 / 组的远程连接行为、认证方式、权限提升、解释器路径等核心配置，是保障被控节点连通性的核心。参数可定义在主机级（优先级高）或组级（组内继承），优先级高于`ansible.cfg`全局配置。
+
+Ansible 提供了标准化的内置主机变量，用于定义单主机 / 组的远程连接行为、认证方式、权限提升、解释器路径等核心配置，是保障被控节点连通性的核心。参数可定义在主机级（优先级高）或组级（组内继承），优先级高于`ansible.cfg`全局配置，具体优先级如下：**命令行参数 > 清单（主机级）> 清单（组级）/Playbook 变量 > ansible.cfg 全局配置 > Ansible 默认值** 。
 
 ### 2.4.1 Linux/Unix 核心 SSH 连接参数
 
@@ -25,6 +26,79 @@ Ansible 提供了标准化的内置主机变量，用于定义单主机 / 组的
 |ansible_become_method|提权方式，默认`sudo`，可选`su`、`doas`、`pbrun`等|ansible_become_method=sudo|
 |ansible_become_user|提权至的目标用户，默认 root|ansible_become_user=root|
 |ansible_become_pass|提权密码，**明文严禁生产使用**，需用 Vault 加密|ansible_become_pass=sudo_pass|
+若后续有更多 MySQL/Redis 主机，按「组」统一配置（该主机自动继承）在 Inventory的配置如下：
+
+```ini
+[db_servers]                                                                            
+192.168.74.100                                                                                                                   
+
+[db_servers:vars]                                                                       
+ansible_port=22                                                                         
+ansible_user=ubuntu                                                                     
+ansible_ssh_private_key_file=/home/ubuntu/.ssh/id_ed25519                              
+ansible_python_interpreter=/usr/bin/python3                    
+ansible_become=yes                                                                      
+ansible_become_method=sudo                                                 
+asnible_become_user=root
+```
+
+#### 优雅拆分配置（生产级，易维护）：
+将该主机的参数拆分到 `host_vars/` 目录（隔离敏感配置、便于版本管理）：
+##### 前置准备
+
+```bash
+# 1. 创建核心inventory目录（Ansible默认配置目录下）
+sudo mkdir -p /etc/ansible/inventory/host_vars
+
+# 2. 调整目录权限（确保Ansible执行用户可读写，示例用当前登录用户ubuntu） 
+sudo chown -R ubuntu:ubuntu /etc/ansible/inventory 
+sudo chmod -R 755 /etc/ansible/inventory
+```
+
+##### 目录结构
+
+```bash
+inventory/
+├── inventory.ini       # 基础清单（仅定义主机组）
+└── host_vars/
+    └── 192.168.74.100.yml  # 该主机专属参数文件
+```
+
+#### `inventory.ini` 内容
+
+编辑 `/etc/ansible/inventory/inventory.ini`，仅定义主机组（无需写参数，参数放 host_vars）：
+
+```bash
+# /etc/ansible/inventory/inventory.ini 
+[db_servers]
+192.168.74.100 # 仅列出主机，参数在host_vars/192.168.74.100.yml中
+```
+
+#### 编写主机专属参数文件 `host_vars/192.168.74.100.yml` 内容（YAML 格式更易读）
+
+编辑 `/etc/ansible/inventory/host_vars/192.168.74.100.yml`，配置连接 / 提权参数：
+
+```yaml
+# /etc/ansible/inventory/host_vars/192.168.74.100.yml
+# SSH连接核心参数
+ansible_host: 192.168.74.100       # 明确指定连接IP（与主机名一致，可选）
+ansible_connection: ssh            # Linux默认ssh连接
+ansible_port: 22                   # SSH端口（默认22，修改过则改）
+ansible_user: ubuntu                  # 连接用的普通用户
+ansible_ssh_private_key_file: /home/ops/.ssh/id_ed25519  # 密钥路径
+ansible_python_interpreter: /usr/bin/python3.12           # Python解释器
+
+# 提权参数（管理MySQL/Redis需root）
+ansible_become: true
+ansible_become_method: sudo
+ansible_become_user: root
+# ansible_become_pass: xxx  # 提权密码（生产需用ansible-vault加密，暂注释）
+
+# 【测试用】若临时用密码认证（生产严禁明文！）
+# ansible_ssh_pass: your_ssh_pass
+# ansible_become_pass: your_sudo_pass
+```
+
 
 ### 2.4.3 Windows 被控节点 WinRM 核心参数
 
@@ -39,5 +113,3 @@ Ansible 提供了标准化的内置主机变量，用于定义单主机 / 组的
 |ansible_password|Windows 用户登录密码，需用 Vault 加密|ansible_password=windows_pass|
 |ansible_winrm_transport|WinRM 认证方式，推荐`ntlm`/`kerberos`|ansible_winrm_transport=ntlm|
 |ansible_winrm_server_cert_validation|SSL 证书验证，自签名证书需设置为`ignore`|ansible_winrm_server_cert_validation=ignore|
-
----

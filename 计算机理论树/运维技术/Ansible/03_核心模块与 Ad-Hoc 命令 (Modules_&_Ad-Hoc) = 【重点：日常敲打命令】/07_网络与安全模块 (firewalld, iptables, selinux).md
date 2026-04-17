@@ -1,5 +1,5 @@
 
-网络与安全模块是 Ansible 管理被控节点防火墙与安全策略的核心工具，覆盖 firewalld、iptables、SELinux 三大 Linux 安全体系，所有模块均**内置完整幂等性**。
+>网络与安全模块是 Ansible 管理被控节点防火墙与安全策略的核心工具，覆盖 firewalld、iptables、SELinux 三大 Linux 安全体系，所有模块均 **内置完整幂等性** 。
 
 ### 3.7.1 firewalld 模块
 

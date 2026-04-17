@@ -6,7 +6,7 @@
 
 ## 1.1 Ansible 核心定义与定位
 
-Ansible 是一款基于 Python 开发的**开源 IT 自动化引擎**，是 DevOps 体系中基础设施即代码（Infrastructure as Code, IaC）的核心实现工具之一，核心覆盖四大自动化场景：
+Ansible 是一款基于 Python 开发的 **开源 IT 自动化引擎** ，是 DevOps 体系中基础设施即代码（Infrastructure as Code, IaC）的核心实现工具之一，核心覆盖四大自动化场景：
 
 1. 批量服务器配置管理与系统基线收敛
 2. 跨环境应用程序自动化部署与发布

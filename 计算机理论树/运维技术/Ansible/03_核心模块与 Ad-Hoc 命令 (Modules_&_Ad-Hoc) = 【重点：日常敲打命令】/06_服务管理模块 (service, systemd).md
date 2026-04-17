@@ -1,5 +1,5 @@
 
-服务管理模块是 Ansible 管理被控节点系统服务的核心工具，覆盖服务的启动、停止、重启、重载、开机自启管理，分为通用 service 模块与 systemd 专属模块，所有模块均**内置完整幂等性**。
+>服务管理模块是 Ansible 管理被控节点系统服务的核心工具，覆盖服务的启动、停止、重启、重载、开机自启管理，分为通用 service 模块与 systemd 专属模块，所有模块均 **内置完整幂等性** 。
 
 ### 3.6.1 service 模块
 
@@ -33,7 +33,7 @@ ansible webservers -m service -a "name=nginx state=restarted" -b
 #### 核心特性与注意事项
 
 1. 必须提权执行；
-2. 幂等性说明：`state=started/stopped`是完全幂等的，仅当服务状态与目标不一致时才执行操作；`state=restarted`每次执行都会重启服务，非幂等，生产环境推荐使用 handlers 触发器，仅当配置变更时才重启；
+2. 幂等性说明：`state=started/stopped` 是完全幂等的，仅当服务状态与目标不一致时才执行操作；`state=restarted`每次执行都会重启服务，非幂等，生产环境推荐使用 handlers 触发器，仅当配置变更时才重启；
 3. 跨平台兼容性强，无需关注被控节点的服务管理系统，是通用服务管理的首选模块。
 
 ### 3.6.2 systemd 模块

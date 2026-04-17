@@ -66,6 +66,11 @@ sudo apt install -y python3 python3-pip
 python3 -m pip install --upgrade pip
 
 # 3. 安装Ansible
+# ubuntu 版本需要创建虚拟环境
+cd /opt
+sudo mkdir /ansible
+sudo python3 -m venv ansible_venv
+source /opt/ansible/ansible_venv/bin/activate
 # 安装最新稳定版
 python3 -m pip install ansible
 # 安装指定版本
@@ -84,12 +89,98 @@ ansible --version
 
 #### 1.5.3.1 配置文件加载优先级
 
-Ansible 按照**从高到低**的顺序加载配置文件，**仅加载第一个匹配到的配置文件，后续低优先级文件将被完全忽略**，该规则是避免配置冲突的核心：
+Ansible 按照 **从高到低** 的顺序加载配置文件，**仅加载第一个匹配到的配置文件，后续低优先级文件将被完全忽略**，该规则是避免配置冲突的核心：
 
-1. 环境变量指定的配置文件：通过`ANSIBLE_CONFIG`环境变量指定的文件路径，优先级最高；
-2. 当前工作目录配置文件：执行 Ansible 命令的当前目录下的`ansible.cfg`文件，适配单项目专属配置；
-3. 当前用户家目录配置文件：`~/.ansible.cfg`，适配当前用户的全局配置；
-4. 系统全局配置文件：`/etc/ansible/ansible.cfg`，Ansible 安装后默认生成的全局配置，优先级最低。
+1. **环境变量指定的配置文件**：通过`ANSIBLE_CONFIG`环境变量指定的文件路径，优先级最高；
+2. **当前工作目录配置文件**：执行 Ansible 命令的当前目录下的`ansible.cfg`文件，适配单项目专属配置；
+3. **当前用户家目录配置文件**：`~/.ansible.cfg`，适配当前用户的全局配置；
+4. **系统全局配置文件**：`/etc/ansible/ansible.cfg`，Ansible 安装后默认生成的全局配置，优先级最低。
+
+需要注意的是，使用 pip 在虚拟环境中安装的 ansible 默认是不会生成配置文件的：
+
+![[Pasted image 20260415171946.png]]
+
+#### 🔍 为什么会这样？（两种安装方式的核心区别）
+
+| 安装方式                          | 是否自动生成全局配置 | 说明                                                               |
+| ----------------------------- | ---------- | ---------------------------------------------------------------- |
+| `apt install ansible`（系统包安装）  | ✅ 自动生成     | 会自动创建 `/etc/ansible/` 目录、全局 `ansible.cfg` 配置文件、`hosts` 主机清单，开箱即用 |
+| `pip install ansible`（虚拟环境安装） | ❌ 不会生成     | 仅安装纯 Python 代码，不修改系统目录，不会创建任何配置文件，完全依赖手动配置                       |
+
+当前的状态就是后者：Ansible 本身安装成功（`ansible [core 2.20.4]` 正常显示），但因为没有找到任何配置文件，所以用的是 **硬编码的默认参数**，不影响核心功能，只是每次执行命令需要手动指定参数（比如 `-i` 清单、`-u` 远程用户）。
+
+因此需要自行创建配置文件：
+
+#### 🛠️ 两种配置方案（按需选择）
+
+##### 方案 1：创建系统全局配置（推荐，服务器 / 运维场景）
+
+适合需要统一配置、所有用户都能使用的场景，创建后 `ansible --version` 会显示配置文件路径：
+
+```bash
+# 1. 创建全局配置目录
+sudo mkdir -p /etc/ansible
+
+# 2. 生成基础全局配置文件 ansible.cfg
+sudo tee /etc/ansible/ansible.cfg << 'EOF'
+[defaults]
+# 主机清单文件路径
+inventory = /etc/ansible/hosts
+# 关闭SSH首次连接的主机密钥确认
+host_key_checking = False
+# 远程连接默认用户（根据你的系统修改，这里用ubuntu）
+remote_user = ubuntu
+# 日志文件路径
+log_path = /var/log/ansible.log
+# SSH连接超时时间
+timeout = 10
+
+[privilege_escalation]
+# 默认提权为root
+become = True
+become_method = sudo
+become_user = root
+EOF
+
+# 3. 创建主机清单文件
+sudo touch /etc/ansible/hosts
+
+# 4. 给日志文件授权（避免写入报错）
+sudo touch /var/log/ansible.log && sudo chmod 666 /var/log/ansible.log
+```
+
+执行完成后，再次运行 `ansible --version`，就会显示：
+
+```shell
+config file = /etc/ansible/ansible.cfg
+```
+
+✅ 全局配置生效。
+
+---
+
+##### 方案 2：创建用户级 / 项目级配置（个人开发场景）
+
+如果不想修改系统目录，仅为当前用户 / 项目配置：
+
+- **用户级（对当前 ubuntu 用户所有项目生效）**
+
+```bash
+# 在家目录创建用户级配置
+tee ~/.ansible.cfg << 'EOF'
+[defaults]
+inventory = ~/.ansible/hosts
+host_key_checking = False
+remote_user = ubuntu
+log_path = ~/.ansible/ansible.log
+EOF
+# 创建用户级主机清单
+mkdir -p ~/.ansible && touch ~/.ansible/hosts
+```
+
+- **项目级（仅对当前项目目录生效，优先级最高）**
+    
+    在你的 Ansible 项目文件夹中，直接创建 `ansible.cfg` 文件，写入对应配置即可，Ansible 会优先使用这个项目配置。
 
 #### 1.5.3.2 核心配置段与关键参数
 
@@ -107,7 +198,7 @@ Ansible 按照**从高到低**的顺序加载配置文件，**仅加载第一个
 | forks             | 并行执行的最大并发数      | 5                  | 大规模集群可提升至 50+     |
 | host_key_checking | 是否开启 SSH 主机密钥检查 | yes                | 测试环境可关闭，跳过首次连接确认  |
 | timeout           | SSH 连接超时时间（秒）   | 10                 | 复杂网络环境可适当延长       |
-    
+
 2. **[ssh_connection] 段：SSH 连接性能与稳定性配置**
 
 | 参数           | 作用                          | 默认值                                     | 基础配置建议                   |

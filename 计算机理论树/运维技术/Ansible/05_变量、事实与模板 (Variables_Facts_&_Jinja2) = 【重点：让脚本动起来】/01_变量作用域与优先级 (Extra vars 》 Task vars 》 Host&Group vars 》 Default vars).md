@@ -1,5 +1,5 @@
 
-本章完整覆盖 Ansible 动态化能力的三大核心支柱 —— 变量体系、Facts 系统信息、Jinja2 模板引擎，建立从静态剧本到动态、可复用、环境适配的自动化方案的完整能力。内容严格遵循大纲顺序，从变量作用域与优先级规则、全场景变量定义方式，到 Register 结果捕获机制、Facts 系统信息采集、内置魔法变量，再到 Jinja2 模板全语法体系与实战，最终完成 Facts 采集的性能优化方案，无核心知识点遗漏。本章是 Ansible 剧本工程化、跨环境复用、复杂业务逻辑实现的核心基础，承接前四章的基础语法，为后续流程控制、角色化编排提供核心支撑。
+>本章完整覆盖 Ansible 动态化能力的三大核心支柱 —— 变量体系、Facts 系统信息、Jinja2 模板引擎，建立从静态剧本到动态、可复用、环境适配的自动化方案的完整能力。内容严格遵循大纲顺序，从变量作用域与优先级规则、全场景变量定义方式，到 Register 结果捕获机制、Facts 系统信息采集、内置魔法变量，再到 Jinja2 模板全语法体系与实战，最终完成 Facts 采集的性能优化方案，无核心知识点遗漏。本章是 Ansible 剧本工程化、跨环境复用、复杂业务逻辑实现的核心基础，承接前四章的基础语法，为后续流程控制、角色化编排提供核心支撑。
 
 ---
 
@@ -23,18 +23,18 @@ Ansible 变量按生效范围从大到小，分为四大核心作用域，每个
 Ansible 变量解析遵循**就近原则**，作用域越具体、优先级越高，同名变量会被高优先级的变量值覆盖。以下为从 ** 最低优先级（最容易被覆盖）**到**最高优先级（永远生效）** 的官方完整排序，重点突出大纲指定的核心优先级链路：
 
 ```bash
-1.  Role defaults变量（角色defaults/main.yml，优先级最低）
-2.  Inventory group_vars/all全局组变量
-3.  Inventory group_vars/子组变量
-4.  Inventory host_vars/主机变量
+1.  Role defaults    变量（角色defaults/main.yml，优先级最低）
+2.  Inventory group_vars/all    全局组变量
+3.  Inventory group_vars/    子组变量
+4.  Inventory host_vars/    主机变量
 5.  Play级vars块变量
 6.  Play级vars_files导入变量
 7.  Role vars变量（角色vars/main.yml）
 8.  Block级变量
 9.  Task级变量（仅当前Task生效）
-10. include_role/import_role传入的角色参数
-11. register注册变量
-12. set_fact动态设置的变量
+10. include_role/import_role    传入的角色参数
+11. register    注册变量
+12. set_fact    动态设置的变量
 13. 命令行-e/--extra-vars传入的Extra vars（优先级最高，永远不会被覆盖）
 ```
 
